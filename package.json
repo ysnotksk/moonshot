@@ -1,6 +1,6 @@
 {
   "name": "moonshot-css",
-  "version": "0.2.0",
+  "version": "0.1.0",
   "description": "Clean, Minimal, Monochrome - Handy CSS Framework for Startups (SCSS Edition)",
   "main": "dist/moonshot.css",
   "module": "dist/moonshot.esm.js",
@@ -41,9 +41,9 @@
     "prettier": "^3.1.1",
     "pug": "^3.0.3",
     "sass": "^1.69.5",
-    "stylelint": "^17.1.0",
+    "stylelint": "^16.1.0",
     "stylelint-config-standard": "^36.0.0",
-    "stylelint-config-standard-scss": "^17.0.0"
+    "stylelint-config-standard-scss": "^13.0.0"
   },
   "files": [
     "dist/",
@@ -53,10 +53,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/moonshot/moonshot-css.git"
+    "url": "https://github.com/ysnotksk/moonshot.git"
   },
   "bugs": {
-    "url": "https://github.com/moonshot/moonshot-css/issues"
+    "url": "https://github.com/ysnotksk/moonshot/issues"
   },
-  "homepage": "https://github.com/moonshot/moonshot-css#readme"
+  "homepage": "https://ysnotksk.github.io/moonshot/"
 }

@@ -1,7 +1,7 @@
 /**
  * Moonshot CSS Framework - Main JavaScript Entry
  *
- * @version 0.2.0
+ * @version 0.1.0
  * @license MIT
  */
 
@@ -41,7 +41,7 @@ if (document.readyState === 'loading') {
 }
 
 // Export version
-export const version = '0.2.0';
+export const version = '0.1.0';
 
 // Global namespace (for non-module usage)
 if (typeof window !== 'undefined') {

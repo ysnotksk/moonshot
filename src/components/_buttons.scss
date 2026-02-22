@@ -15,14 +15,10 @@
 
   font-size: var(--ms-text-base);
   padding: var(--ms-space-4); // Equal padding on all sides
-}
 
-// ========================================
-// BUTTON VARIANTS
-// ========================================
-
-.ms-button,
-.ms-btn {
+  // ========================================
+  // BUTTON VARIANTS
+  // ========================================
   // Primary Variant
   &--primary {
     background-color: var(--ms-brand-primary);

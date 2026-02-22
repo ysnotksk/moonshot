@@ -1,0 +1,178 @@
+extends _layouts/default
+
+- var title = "Flow Demo - Process Visualization | Moonshot"
+- var description = "Step-by-step process flows with horizontal, vertical, and timeline layouts"
+
+block content
+  //- Page Header
+  section.ms-pt-32.ms-pb-16
+    .ms-container
+      .ms-text-center
+        h1.ms-heading-1.ms-mb-4 Flow Component
+        p.ms-lead.ms-text-secondary Step-by-step process visualization in multiple layout styles
+
+  //- Section 1: Default Horizontal Flow
+  section.ms-py-24.ms-bg-secondary
+    .ms-container
+      .ms-text-center.ms-mb-12
+        h2.ms-heading-2.ms-mb-4 Horizontal Flow (Default)
+        p.ms-text-secondary 4-column grid with numbered steps and connector lines
+
+      .ms-flow.ms-flow--4.ms-flow--brand-line
+        .ms-flow__step
+          .ms-flow__number
+          h3.ms-flow__title Discovery
+          p.ms-flow__description Understand your goals, challenges, and current technology landscape.
+        .ms-flow__step
+          .ms-flow__number
+          h3.ms-flow__title Strategy
+          p.ms-flow__description Design a custom solution roadmap with clear milestones.
+        .ms-flow__step
+          .ms-flow__number
+          h3.ms-flow__title Implementation
+          p.ms-flow__description Build and deploy using agile methodology and best practices.
+        .ms-flow__step
+          .ms-flow__number
+          h3.ms-flow__title Optimization
+          p.ms-flow__description Monitor performance, measure results, and continuously improve.
+
+  //- Section 2: Vertical Flow
+  section.ms-py-24
+    .ms-container
+      .ms-text-center.ms-mb-12
+        h2.ms-heading-2.ms-mb-4 Vertical Flow
+        p.ms-text-secondary Timeline-style layout for sequential processes
+
+      .ms-flow.ms-flow--vertical.ms-flow--brand-line(style="margin: 0 auto")
+        .ms-flow__step
+          .ms-flow__number
+          .ms-flow__content
+            h3.ms-flow__title Application
+            p.ms-flow__description Submit your resume and cover letter through our careers portal.
+        .ms-flow__step
+          .ms-flow__number
+          .ms-flow__content
+            h3.ms-flow__title Phone Screen
+            p.ms-flow__description 30-minute conversation with our recruiting team.
+        .ms-flow__step
+          .ms-flow__number
+          .ms-flow__content
+            h3.ms-flow__title Technical Interview
+            p.ms-flow__description Skills assessment and live pairing exercise with the engineering team.
+        .ms-flow__step
+          .ms-flow__number
+          .ms-flow__content
+            h3.ms-flow__title Offer
+            p.ms-flow__description Receive and review your offer package.
+
+  //- Section 3: Timeline Flow (new)
+  section.ms-py-24.ms-bg-secondary
+    .ms-container
+      .ms-text-center.ms-mb-12
+        h2.ms-heading-2.ms-mb-4 Timeline Flow
+        p.ms-text-secondary Rich zigzag timeline with images and content cards
+
+      .ms-flow.ms-flow--timeline(style="margin: 0 auto")
+        .ms-flow__step
+          .ms-flow__number
+          .ms-flow__media
+            img(
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop&q=80"
+              alt="Discovery workshop"
+              loading="lazy"
+            )
+          .ms-flow__card
+            h3.ms-flow__title Discovery
+            p.ms-flow__description We begin by understanding your business goals, user needs, and technical landscape through stakeholder interviews and competitive analysis.
+
+        .ms-flow__step
+          .ms-flow__number
+          .ms-flow__media
+            img(
+              src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&h=600&fit=crop&q=80"
+              alt="Strategy planning"
+              loading="lazy"
+            )
+          .ms-flow__card
+            h3.ms-flow__title Strategy
+            p.ms-flow__description Our team designs a detailed roadmap with clear milestones, technology choices, and resource allocation tailored to your objectives.
+
+        .ms-flow__step
+          .ms-flow__number
+          .ms-flow__media
+            img(
+              src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop&q=80"
+              alt="Development"
+              loading="lazy"
+            )
+          .ms-flow__card
+            h3.ms-flow__title Development
+            p.ms-flow__description We build iteratively using agile sprints, with regular demos and feedback cycles to ensure alignment throughout.
+
+        .ms-flow__step
+          .ms-flow__number
+          .ms-flow__media
+            img(
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80"
+              alt="Launch"
+              loading="lazy"
+            )
+          .ms-flow__card
+            h3.ms-flow__title Launch
+            p.ms-flow__description Rigorous QA, staging validation, and a smooth production rollout with monitoring and rollback plans in place.
+
+        .ms-flow__step
+          .ms-flow__number
+          .ms-flow__media
+            img(
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=80"
+              alt="Optimization"
+              loading="lazy"
+            )
+          .ms-flow__card
+            h3.ms-flow__title Optimization
+            p.ms-flow__description Post-launch, we monitor KPIs, gather user feedback, and iterate to continuously improve performance and outcomes.
+
+  //- Section 4: Dashed Timeline
+  section.ms-py-24
+    .ms-container
+      .ms-text-center.ms-mb-12
+        h2.ms-heading-2.ms-mb-4 Dashed Timeline
+        p.ms-text-secondary Timeline variant with dashed connector line
+
+      .ms-flow.ms-flow--timeline.ms-flow--dashed(style="margin: 0 auto")
+        .ms-flow__step
+          .ms-flow__number
+          .ms-flow__media
+            img(
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop&q=80"
+              alt="Consultation"
+              loading="lazy"
+            )
+          .ms-flow__card
+            h3.ms-flow__title Consultation
+            p.ms-flow__description Free initial consultation to discuss your vision and requirements.
+
+        .ms-flow__step
+          .ms-flow__number
+          .ms-flow__media
+            img(
+              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop&q=80"
+              alt="Proposal"
+              loading="lazy"
+            )
+          .ms-flow__card
+            h3.ms-flow__title Proposal
+            p.ms-flow__description Detailed project scope, timeline, and investment breakdown.
+
+        .ms-flow__step
+          .ms-flow__number
+          .ms-flow__media
+            img(
+              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop&q=80"
+              alt="Execution"
+              loading="lazy"
+            )
+          .ms-flow__card
+            h3.ms-flow__title Execution
+            p.ms-flow__description Agile delivery with weekly check-ins and transparent progress tracking.

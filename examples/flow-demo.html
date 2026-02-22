@@ -3,37 +3,13 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brand Family - Moonshot CSS</title>
-    <meta name="description" content="Brand Family - Our product ecosystem and sub-brands">
-    <meta property="og:title" content="Brand Family - Moonshot CSS">
-    <meta property="og:description" content="Brand Family - Our product ecosystem and sub-brands">
+    <title>Flow Demo - Process Visualization | Moonshot</title>
+    <meta name="description" content="Step-by-step process flows with horizontal, vertical, and timeline layouts">
+    <meta property="og:title" content="Flow Demo - Process Visualization | Moonshot">
+    <meta property="og:description" content="Step-by-step process flows with horizontal, vertical, and timeline layouts">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ja_JP">
     <link rel="stylesheet" href="../dist/moonshot.css">
-    <style>
-      /* Brand color customizations */
-      .brand-blue {
-        --ms-brand-primary: #2563eb;
-        --ms-brand-secondary: #3b82f6;
-        --ms-brand-accent: #1e40af;
-      }
-      .brand-red {
-        --ms-brand-primary: #dc2626;
-        --ms-brand-secondary: #ef4444;
-        --ms-brand-accent: #b91c1c;
-      }
-      .brand-green {
-        --ms-brand-primary: #16a34a;
-        --ms-brand-secondary: #22c55e;
-        --ms-brand-accent: #15803d;
-      }
-      .brand-purple {
-        --ms-brand-primary: #9333ea;
-        --ms-brand-secondary: #a855f7;
-        --ms-brand-accent: #7e22ce;
-      }
-      
-    </style>
   </head>
   <body><a class="ms-skip-link" href="#main-content">Skip to main content</a>
     <header class="ms-header">
@@ -84,95 +60,77 @@
       </nav>
     </header>
     <main id="main-content">
-      <section class="ms-hero ms-hero--subpage">
-        <div class="ms-hero__container">
-          <p class="ms-hero__eyebrow">Brand System</p>
-          <h1 class="ms-hero__heading">Our Brand Family</h1>
-          <p class="ms-hero__description">
-            Multiple brands, one unified design system. Moonshot enables you to maintain brand
-            consistency across your main brand and sub-brands through instant color customization.
-          </p>
+      <section class="ms-pt-32 ms-pb-16">
+        <div class="ms-container">
+          <div class="ms-text-center">
+            <h1 class="ms-heading-1 ms-mb-4">Flow Component</h1>
+            <p class="ms-lead ms-text-secondary">Step-by-step process visualization in multiple layout styles</p>
+          </div>
         </div>
       </section>
       <section class="ms-py-24 ms-bg-secondary">
         <div class="ms-container">
-          <h2 class="ms-heading-2 ms-text-center ms-mb-12">Main Brand</h2>
-          <div class="ms-card ms-card--elevated ms-max-w-2xl ms-mx-auto">
-            <div class="ms-card__body">
-              <div class="ms-flex ms-items-center ms-gap-6 ms-mb-6">
-                <div class="ms-w-24 ms-h-24 ms-bg-gray-200 ms-rounded-lg ms-flex ms-items-center ms-justify-center ms-text-3xl">🌙</div>
-                <div>
-                  <h3 class="ms-heading-3">Moonshot</h3>
-                  <p class="ms-text-secondary">CSS Framework for Startups</p>
-                </div>
-              </div>
-              <p class="ms-paragraph">Clean, minimal, monochrome design system for rapid corporate website deployment.</p>
-              <div class="ms-flex ms-gap-2 ms-mt-4"><a class="ms-btn ms-btn--primary" href="#">Visit Website</a><a class="ms-btn ms-btn--outline" href="#">Documentation</a></div>
+          <div class="ms-text-center ms-mb-12">
+            <h2 class="ms-heading-2 ms-mb-4">Horizontal Flow (Default)</h2>
+            <p class="ms-text-secondary">4-column grid with numbered steps and connector lines</p>
+          </div>
+          <div class="ms-flow ms-flow--4 ms-flow--brand-line">
+            <div class="ms-flow__step">
+              <div class="ms-flow__number"></div>
+              <h3 class="ms-flow__title">Discovery</h3>
+              <p class="ms-flow__description">Understand your goals, challenges, and current technology landscape.</p>
+            </div>
+            <div class="ms-flow__step">
+              <div class="ms-flow__number"></div>
+              <h3 class="ms-flow__title">Strategy</h3>
+              <p class="ms-flow__description">Design a custom solution roadmap with clear milestones.</p>
+            </div>
+            <div class="ms-flow__step">
+              <div class="ms-flow__number"></div>
+              <h3 class="ms-flow__title">Implementation</h3>
+              <p class="ms-flow__description">Build and deploy using agile methodology and best practices.</p>
+            </div>
+            <div class="ms-flow__step">
+              <div class="ms-flow__number"></div>
+              <h3 class="ms-flow__title">Optimization</h3>
+              <p class="ms-flow__description">Monitor performance, measure results, and continuously improve.</p>
             </div>
           </div>
         </div>
       </section>
       <section class="ms-py-24">
         <div class="ms-container">
-          <h2 class="ms-heading-2 ms-text-center ms-mb-4">Sub-Brands</h2>
-          <p class="ms-lead ms-text-center ms-mb-12">Each brand has its own identity while maintaining design consistency</p>
-          <div class="ms-grid ms-grid-cols-2 ms-gap-8">
-            <div class="ms-card ms-card--elevated brand-blue">
-              <div class="ms-card__body">
-                <div class="ms-flex ms-items-center ms-gap-4 ms-mb-4">
-                  <div class="ms-w-16 ms-h-16 ms-bg-brand-primary ms-rounded-lg ms-flex ms-items-center ms-justify-center ms-text-2xl">☁️</div>
-                  <div>
-                    <h3 class="ms-card__title">Moonshot Cloud</h3>
-                    <p class="ms-card__subtitle">Cloud Hosting Service</p>
-                  </div>
-                </div>
-                <p class="ms-card__description">
-                  Scalable, secure cloud infrastructure optimized for startup websites and
-                  applications.
-                </p>
-                <div class="ms-flex ms-gap-2 ms-mt-6"><a class="ms-btn ms-btn--primary ms-btn--sm" href="#">Learn More</a><a class="ms-btn ms-btn--outline ms-btn--sm" href="#">Get Started</a></div>
+          <div class="ms-text-center ms-mb-12">
+            <h2 class="ms-heading-2 ms-mb-4">Vertical Flow</h2>
+            <p class="ms-text-secondary">Timeline-style layout for sequential processes</p>
+          </div>
+          <div class="ms-flow ms-flow--vertical ms-flow--brand-line" style="margin: 0 auto">
+            <div class="ms-flow__step">
+              <div class="ms-flow__number"></div>
+              <div class="ms-flow__content">
+                <h3 class="ms-flow__title">Application</h3>
+                <p class="ms-flow__description">Submit your resume and cover letter through our careers portal.</p>
               </div>
             </div>
-            <div class="ms-card ms-card--elevated brand-red">
-              <div class="ms-card__body">
-                <div class="ms-flex ms-items-center ms-gap-4 ms-mb-4">
-                  <div class="ms-w-16 ms-h-16 ms-bg-brand-primary ms-rounded-lg ms-flex ms-items-center ms-justify-center ms-text-2xl">📊</div>
-                  <div>
-                    <h3 class="ms-card__title">Moonshot Analytics</h3>
-                    <p class="ms-card__subtitle">Web Analytics Platform</p>
-                  </div>
-                </div>
-                <p class="ms-card__description">
-                  Privacy-first analytics to understand your visitors and optimize your website
-                  performance.
-                </p>
-                <div class="ms-flex ms-gap-2 ms-mt-6"><a class="ms-btn ms-btn--primary ms-btn--sm" href="#">Learn More</a><a class="ms-btn ms-btn--outline ms-btn--sm" href="#">Start Free Trial</a></div>
+            <div class="ms-flow__step">
+              <div class="ms-flow__number"></div>
+              <div class="ms-flow__content">
+                <h3 class="ms-flow__title">Phone Screen</h3>
+                <p class="ms-flow__description">30-minute conversation with our recruiting team.</p>
               </div>
             </div>
-            <div class="ms-card ms-card--elevated brand-green">
-              <div class="ms-card__body">
-                <div class="ms-flex ms-items-center ms-gap-4 ms-mb-4">
-                  <div class="ms-w-16 ms-h-16 ms-bg-brand-primary ms-rounded-lg ms-flex ms-items-center ms-justify-center ms-text-2xl">✅</div>
-                  <div>
-                    <h3 class="ms-card__title">Moonshot Forms</h3>
-                    <p class="ms-card__subtitle">Form Builder &amp; Management</p>
-                  </div>
-                </div>
-                <p class="ms-card__description">Create beautiful, functional forms for your website. No coding required.</p>
-                <div class="ms-flex ms-gap-2 ms-mt-6"><a class="ms-btn ms-btn--primary ms-btn--sm" href="#">Learn More</a><a class="ms-btn ms-btn--outline ms-btn--sm" href="#">Try for Free</a></div>
+            <div class="ms-flow__step">
+              <div class="ms-flow__number"></div>
+              <div class="ms-flow__content">
+                <h3 class="ms-flow__title">Technical Interview</h3>
+                <p class="ms-flow__description">Skills assessment and live pairing exercise with the engineering team.</p>
               </div>
             </div>
-            <div class="ms-card ms-card--elevated brand-purple">
-              <div class="ms-card__body">
-                <div class="ms-flex ms-items-center ms-gap-4 ms-mb-4">
-                  <div class="ms-w-16 ms-h-16 ms-bg-brand-primary ms-rounded-lg ms-flex ms-items-center ms-justify-center ms-text-2xl">🎨</div>
-                  <div>
-                    <h3 class="ms-card__title">Moonshot Studio</h3>
-                    <p class="ms-card__subtitle">Design Consultation</p>
-                  </div>
-                </div>
-                <p class="ms-card__description">Professional design services to create custom brand identities and visual systems.</p>
-                <div class="ms-flex ms-gap-2 ms-mt-6"><a class="ms-btn ms-btn--primary ms-btn--sm" href="#">Learn More</a><a class="ms-btn ms-btn--outline ms-btn--sm" href="#">Book Consultation</a></div>
+            <div class="ms-flow__step">
+              <div class="ms-flow__number"></div>
+              <div class="ms-flow__content">
+                <h3 class="ms-flow__title">Offer</h3>
+                <p class="ms-flow__description">Receive and review your offer package.</p>
               </div>
             </div>
           </div>
@@ -180,32 +138,86 @@
       </section>
       <section class="ms-py-24 ms-bg-secondary">
         <div class="ms-container">
-          <h2 class="ms-heading-2 ms-text-center ms-mb-12">Brand Customization Example</h2>
-          <p class="ms-text-center ms-mb-8">Change 3 CSS variables to instantly apply brand colors</p>
-          <div class="ms-card ms-max-w-2xl ms-mx-auto">
-            <div class="ms-card__body">
-              <pre class="ms-code-block"><code>/* Default Monochrome */
-:root {
-  --ms-brand-primary: #374151;
-  --ms-brand-secondary: #6b7280;
-  --ms-brand-accent: #1f2937;
-}
-
-/* Your Brand Colors */
-:root {
-  --ms-brand-primary: #2563eb;
-  --ms-brand-secondary: #3b82f6;
-  --ms-brand-accent: #1e40af;
-}
-</code></pre>
+          <div class="ms-text-center ms-mb-12">
+            <h2 class="ms-heading-2 ms-mb-4">Timeline Flow</h2>
+            <p class="ms-text-secondary">Rich zigzag timeline with images and content cards</p>
+          </div>
+          <div class="ms-flow ms-flow--timeline" style="margin: 0 auto">
+            <div class="ms-flow__step">
+              <div class="ms-flow__number"></div>
+              <div class="ms-flow__media"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&amp;h=600&amp;fit=crop&amp;q=80" alt="Discovery workshop" loading="lazy"></div>
+              <div class="ms-flow__card">
+                <h3 class="ms-flow__title">Discovery</h3>
+                <p class="ms-flow__description">We begin by understanding your business goals, user needs, and technical landscape through stakeholder interviews and competitive analysis.</p>
+              </div>
+            </div>
+            <div class="ms-flow__step">
+              <div class="ms-flow__number"></div>
+              <div class="ms-flow__media"><img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&amp;h=600&amp;fit=crop&amp;q=80" alt="Strategy planning" loading="lazy"></div>
+              <div class="ms-flow__card">
+                <h3 class="ms-flow__title">Strategy</h3>
+                <p class="ms-flow__description">Our team designs a detailed roadmap with clear milestones, technology choices, and resource allocation tailored to your objectives.</p>
+              </div>
+            </div>
+            <div class="ms-flow__step">
+              <div class="ms-flow__number"></div>
+              <div class="ms-flow__media"><img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&amp;h=600&amp;fit=crop&amp;q=80" alt="Development" loading="lazy"></div>
+              <div class="ms-flow__card">
+                <h3 class="ms-flow__title">Development</h3>
+                <p class="ms-flow__description">We build iteratively using agile sprints, with regular demos and feedback cycles to ensure alignment throughout.</p>
+              </div>
+            </div>
+            <div class="ms-flow__step">
+              <div class="ms-flow__number"></div>
+              <div class="ms-flow__media"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&amp;h=600&amp;fit=crop&amp;q=80" alt="Launch" loading="lazy"></div>
+              <div class="ms-flow__card">
+                <h3 class="ms-flow__title">Launch</h3>
+                <p class="ms-flow__description">Rigorous QA, staging validation, and a smooth production rollout with monitoring and rollback plans in place.</p>
+              </div>
+            </div>
+            <div class="ms-flow__step">
+              <div class="ms-flow__number"></div>
+              <div class="ms-flow__media"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&amp;h=600&amp;fit=crop&amp;q=80" alt="Optimization" loading="lazy"></div>
+              <div class="ms-flow__card">
+                <h3 class="ms-flow__title">Optimization</h3>
+                <p class="ms-flow__description">Post-launch, we monitor KPIs, gather user feedback, and iterate to continuously improve performance and outcomes.</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
       <section class="ms-py-24">
-        <div class="ms-container ms-text-center">
-          <h2 class="ms-heading-2 ms-mb-6">Build Your Brand Family</h2>
-          <p class="ms-lead ms-mb-8">Start creating consistent, professional websites across all your brands</p><a class="ms-btn ms-btn--primary ms-btn--xl" href="#">Get Started</a>
+        <div class="ms-container">
+          <div class="ms-text-center ms-mb-12">
+            <h2 class="ms-heading-2 ms-mb-4">Dashed Timeline</h2>
+            <p class="ms-text-secondary">Timeline variant with dashed connector line</p>
+          </div>
+          <div class="ms-flow ms-flow--timeline ms-flow--dashed" style="margin: 0 auto">
+            <div class="ms-flow__step">
+              <div class="ms-flow__number"></div>
+              <div class="ms-flow__media"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&amp;h=600&amp;fit=crop&amp;q=80" alt="Consultation" loading="lazy"></div>
+              <div class="ms-flow__card">
+                <h3 class="ms-flow__title">Consultation</h3>
+                <p class="ms-flow__description">Free initial consultation to discuss your vision and requirements.</p>
+              </div>
+            </div>
+            <div class="ms-flow__step">
+              <div class="ms-flow__number"></div>
+              <div class="ms-flow__media"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&amp;h=600&amp;fit=crop&amp;q=80" alt="Proposal" loading="lazy"></div>
+              <div class="ms-flow__card">
+                <h3 class="ms-flow__title">Proposal</h3>
+                <p class="ms-flow__description">Detailed project scope, timeline, and investment breakdown.</p>
+              </div>
+            </div>
+            <div class="ms-flow__step">
+              <div class="ms-flow__number"></div>
+              <div class="ms-flow__media"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&amp;h=600&amp;fit=crop&amp;q=80" alt="Execution" loading="lazy"></div>
+              <div class="ms-flow__card">
+                <h3 class="ms-flow__title">Execution</h3>
+                <p class="ms-flow__description">Agile delivery with weekly check-ins and transparent progress tracking.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>

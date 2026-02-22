@@ -32,6 +32,10 @@
   &:focus-visible {
     outline: 2px solid var(--ms-brand-primary);
     outline-offset: 4px;
+
+    .ms-image-link__overlay {
+      opacity: 0.9;
+    }
   }
 
   // Hero variant - no rounding to connect with header
@@ -317,12 +321,6 @@
   // ========================================
 
   @include focus-ring;
-
-  &:focus-visible {
-    .ms-image-link__overlay {
-      opacity: 0.9;
-    }
-  }
 
   // Prefers reduced motion
   @include reduced-motion {

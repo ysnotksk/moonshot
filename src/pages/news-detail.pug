@@ -1,0 +1,121 @@
+extends _layouts/default
+
+- var title = "Moonshot Raises $25M Series B - News"
+- var description = "Moonshot raises $25M Series B to accelerate enterprise adoption and expand the team."
+- var activeNav = "news"
+- var ogType = "article"
+
+block append jsonLd
+  script(type="application/ld+json").
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "Moonshot Raises $25M Series B to Accelerate Enterprise Adoption",
+      "datePublished": "2026-02-15",
+      "dateModified": "2026-02-15",
+      "author": { "@type": "Organization", "name": "Moonshot" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Moonshot",
+        "logo": { "@type": "ImageObject", "url": "https://example.com/logo.svg" }
+      }
+    }
+
+block content
+  //- Breadcrumb
+  .ms-container.ms-py-12
+    .ms-breadcrumb
+      .ms-breadcrumb__item
+        a.ms-breadcrumb__link(href="front-page.html") Home
+      .ms-breadcrumb__item
+        a.ms-breadcrumb__link(href="news.html") News
+      .ms-breadcrumb__item.ms-breadcrumb__item--active Moonshot Raises $25M Series B
+
+  //- Article
+  .ms-container.ms-pb-24
+    article(style="max-width: 800px; margin: 0 auto")
+      //- Header: badge + date above title (no hero image — distinct from blog)
+      .ms-flex.ms-items-center.ms-gap-3.ms-mb-4
+        span.ms-news__badge.ms-news__badge--press Press
+        span.ms-news__date February 15, 2026
+
+      h1.ms-heading-1 Moonshot Raises $25M Series B to Accelerate Enterprise Adoption
+
+      //- Article body — short, structured press-release style
+      .ms-paragraph.ms-mt-8
+        strong San Francisco, CA &mdash; February 15, 2026 &mdash;
+        |  Moonshot, the monochrome-first CSS framework for startups, today announced the
+        | close of a $25 million Series B funding round led by Horizon Ventures, with
+        | participation from existing investors Basecamp Capital and Lighthouse Partners.
+
+      .ms-paragraph
+        | The new capital will be used to expand the Moonshot team from 30 to 80 employees
+        | over the next 18 months, with a focus on engineering, developer relations, and
+        | enterprise sales. The company plans to open offices in London and Singapore to
+        | complement its existing San Francisco and Tokyo locations.
+
+      .ms-paragraph
+        | "This funding validates our belief that the future of web development lies in
+        | opinionated, accessible-by-default frameworks that prioritize speed to market,"
+        | said Jane Smith, CEO and co-founder of Moonshot. "Our enterprise customers have
+        | seen a 40% reduction in time-to-launch for corporate websites."
+
+      .ms-paragraph
+        | Since the launch of Moonshot CSS v2.0 in January, the framework has been adopted
+        | by over 500 companies worldwide. Key enterprise features include brand
+        | customization tokens, WCAG 2.2 AA compliance out of the box, and a comprehensive
+        | template library covering 17 page types.
+
+      .ms-paragraph
+        | The company also announced plans to launch Moonshot Pro, a premium tier offering
+        | advanced analytics dashboards, A/B testing integration, and priority support for
+        | enterprise teams. Moonshot Pro is expected to be available in Q3 2026.
+
+      //- Share Links
+      .ms-news__share
+        span.ms-text-sm.ms-font-semibold Share:
+        a.ms-btn.ms-btn--outline.ms-btn--sm(href="#" aria-label="Share on X") X / Twitter
+        a.ms-btn.ms-btn--outline.ms-btn--sm(href="#" aria-label="Share on LinkedIn") LinkedIn
+        button.ms-btn.ms-btn--outline.ms-btn--sm(type="button" aria-label="Copy link") Copy Link
+
+      //- Media Contact
+      .ms-card.ms-mt-12
+        .ms-card__body
+          h3.ms-card__title Media Contact
+          .ms-mt-4
+            .ms-font-semibold Sarah Chen
+            .ms-text-sm.ms-text-secondary Head of Communications
+            .ms-text-sm.ms-text-secondary.ms-mt-1 press@moonshot.example.com
+            .ms-text-sm.ms-text-secondary +1 (415) 555-0199
+
+    //- Related News
+    .ms-mt-16(style="max-width: 1200px; margin-left: auto; margin-right: auto")
+      h3.ms-heading-4.ms-mb-6.ms-text-center Related News
+      .ms-grid.ms-grid-cols-3.ms-gap-6
+        .ms-card
+          .ms-card__body
+            .ms-flex.ms-items-center.ms-gap-3.ms-mb-2
+              span.ms-news__badge.ms-news__badge--product Product
+              span.ms-news__date Jan 28, 2026
+            h4.ms-card__title Moonshot CSS v2.0 Launches with SCSS Architecture
+            p.ms-card__description.ms-line-clamp-2.ms-mt-2 Major release brings modular SCSS architecture and 17 templates.
+
+        .ms-card
+          .ms-card__body
+            .ms-flex.ms-items-center.ms-gap-3.ms-mb-2
+              span.ms-news__badge.ms-news__badge--partnership Partnership
+              span.ms-news__date Jan 10, 2026
+            h4.ms-card__title Moonshot Partners with Vercel for Seamless Deployment
+            p.ms-card__description.ms-line-clamp-2.ms-mt-2 One-click deploy with automatic asset optimization and edge caching.
+
+        .ms-card
+          .ms-card__body
+            .ms-flex.ms-items-center.ms-gap-3.ms-mb-2
+              span.ms-news__badge.ms-news__badge--company Company
+              span.ms-news__date Nov 20, 2025
+            h4.ms-card__title Moonshot Opens Tokyo Office to Serve Asia-Pacific Market
+            p.ms-card__description.ms-line-clamp-2.ms-mt-2 Expanding presence in APAC with dedicated team for Japanese and Southeast Asian enterprises.
+
+    //- Back to News
+    .ms-text-center.ms-mt-12
+      a.ms-btn.ms-btn--outline(href="news.html") &larr; Back to News

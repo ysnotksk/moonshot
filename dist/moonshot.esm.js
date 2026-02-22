@@ -344,7 +344,7 @@ if (document.readyState === "loading") {
 } else {
   initMoonshot();
 }
-var version = "0.2.0";
+var version = "0.1.0";
 if (typeof window !== "undefined") {
   window.Moonshot = {
     Navigation,
@@ -366,12 +366,12 @@ export {
  * Animates numeric values in stats sections with a counting-up effect.
  * Uses Intersection Observer to trigger animation when stats enter viewport.
  *
- * @version 0.2.0
+ * @version 0.1.0
  * @license MIT
  */
 /**
  * Moonshot CSS Framework - Main JavaScript Entry
  *
- * @version 0.2.0
+ * @version 0.1.0
  * @license MIT
  */

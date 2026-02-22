@@ -46,7 +46,7 @@ Copy this for the repository description:
 Add these to the top of README.md for a professional look:
 
 ```markdown
-![Version](https://img.shields.io/badge/version-0.2.0-blue)
+![Version](https://img.shields.io/badge/version-0.1.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![SCSS](https://img.shields.io/badge/SCSS-powered-ff69b4)
 ![Size](https://img.shields.io/badge/size-11.58KB%20gzipped-success)
@@ -81,15 +81,15 @@ If you have a custom domain:
 
 ## Release Creation
 
-### Create First Release (v0.2.0)
+### Create First Release (v0.1.0)
 
 1. Go to **Releases** → **Create a new release**
-2. **Tag**: `v0.2.0`
-3. **Title**: `v0.2.0 - SCSS Edition`
+2. **Tag**: `v0.1.0`
+3. **Title**: `v0.1.0 - SCSS Edition`
 4. **Description**:
 
 ```markdown
-## 🎉 Moonshot CSS Framework v0.2.0 - SCSS Edition
+## 🎉 Moonshot CSS Framework v0.1.0 - SCSS Edition
 
 First major release featuring complete SCSS architecture.
 
@@ -232,7 +232,7 @@ When ready to publish to NPM:
 ```json
 {
   "name": "moonshot-css",
-  "version": "0.2.0",
+  "version": "0.1.0",
   "description": "Clean, minimal, monochrome CSS framework for startups",
   "main": "dist/moonshot.min.css",
   "repository": {

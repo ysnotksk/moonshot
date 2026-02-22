@@ -30,7 +30,7 @@ If applicable, add screenshots to help explain your problem.
 
 - **Browser**: [e.g. Chrome 120, Firefox 121]
 - **OS**: [e.g. macOS, Windows 11, Ubuntu 22.04]
-- **Moonshot Version**: [e.g. 0.2.0]
+- **Moonshot Version**: [e.g. 0.1.0]
 - **Screen Size**: [e.g. 1920x1080, mobile]
 
 ## Additional Context

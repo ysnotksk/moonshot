@@ -1,0 +1,128 @@
+extends _layouts/default
+
+- var title = "News - Moonshot CSS"
+- var description = "Press releases, product updates, and company announcements"
+- var activeNav = "news"
+
+block content
+  //- Header (simple heading, no hero image — distinct from blog)
+  .ms-container.ms-pt-32.ms-pb-16
+    .ms-breadcrumb
+      .ms-breadcrumb__item
+        a.ms-breadcrumb__link(href="front-page.html") Home
+      .ms-breadcrumb__item.ms-breadcrumb__item--active News
+
+    h1.ms-heading-1.ms-mt-8.ms-mb-4 Newsroom
+    p.ms-lead.ms-text-secondary Company announcements, press releases, and product updates.
+
+  //- Category Filter Bar
+  section.ms-container.ms-pb-8
+    .ms-flex.ms-flex-wrap.ms-gap-2
+      button.ms-btn.ms-btn--primary.ms-btn--sm All
+      button.ms-btn.ms-btn--outline.ms-btn--sm Press
+      button.ms-btn.ms-btn--outline.ms-btn--sm Product
+      button.ms-btn.ms-btn--outline.ms-btn--sm Company
+      button.ms-btn.ms-btn--outline.ms-btn--sm Partnership
+
+  //- Featured News (horizontal card — distinct from blog's image-link)
+  section.ms-container.ms-pb-16
+    .ms-card.ms-card--horizontal
+      .ms-card__image-wrapper
+        img.ms-card__image(
+          src="https://images.unsplash.com/photo-1553484771-371a605b060b?w=800&h=600&fit=crop&q=80"
+          alt="Moonshot Series B Funding"
+        )
+      .ms-card__body
+        .ms-flex.ms-items-center.ms-gap-3.ms-mb-4
+          span.ms-news__badge.ms-news__badge--press Press
+          span.ms-news__date February 15, 2026
+        h2.ms-card__title Moonshot Raises $25M Series B to Accelerate Enterprise Adoption
+        p.ms-card__description.ms-mt-4
+          | The funding will be used to expand the team, enhance the framework's enterprise
+          | features, and grow the partner ecosystem across North America and Europe.
+        a.ms-btn.ms-btn--outline.ms-mt-6(href="news-detail.html") Read More &rarr;
+
+  //- News List by Year
+  section.ms-container.ms-pb-24
+
+    //- 2026
+    h2.ms-news__year-divider 2026
+
+    .ms-news__list
+      .ms-news__item
+        .ms-flex.ms-items-center.ms-gap-3.ms-mb-2
+          span.ms-news__badge.ms-news__badge--press Press
+          span.ms-news__date February 15, 2026
+        h3.ms-news__item-title
+          a(href="news-detail.html") Moonshot Raises $25M Series B to Accelerate Enterprise Adoption
+        p.ms-news__item-description New funding to expand team, enhance enterprise features, and grow partner ecosystem across North America and Europe.
+
+      .ms-news__item
+        .ms-flex.ms-items-center.ms-gap-3.ms-mb-2
+          span.ms-news__badge.ms-news__badge--product Product
+          span.ms-news__date January 28, 2026
+        h3.ms-news__item-title
+          a(href="news-detail.html") Moonshot CSS v2.0 Launches with SCSS Architecture and 17 Templates
+        p.ms-news__item-description Major release brings modular SCSS architecture, new components including Flow and Client Logos, and full template coverage for corporate sites.
+
+      .ms-news__item
+        .ms-flex.ms-items-center.ms-gap-3.ms-mb-2
+          span.ms-news__badge.ms-news__badge--partnership Partnership
+          span.ms-news__date January 10, 2026
+        h3.ms-news__item-title
+          a(href="news-detail.html") Moonshot Partners with Vercel for Seamless Deployment Integration
+        p.ms-news__item-description One-click deploy from any Moonshot project to Vercel, including automatic asset optimization and edge caching.
+
+    //- 2025
+    h2.ms-news__year-divider 2025
+
+    .ms-news__list
+      .ms-news__item
+        .ms-flex.ms-items-center.ms-gap-3.ms-mb-2
+          span.ms-news__badge.ms-news__badge--company Company
+          span.ms-news__date November 20, 2025
+        h3.ms-news__item-title
+          a(href="news-detail.html") Moonshot Opens Tokyo Office to Serve Asia-Pacific Market
+        p.ms-news__item-description Expanding presence in APAC with dedicated team to support growing demand from Japanese and Southeast Asian enterprises.
+
+      .ms-news__item
+        .ms-flex.ms-items-center.ms-gap-3.ms-mb-2
+          span.ms-news__badge.ms-news__badge--product Product
+          span.ms-news__date October 5, 2025
+        h3.ms-news__item-title
+          a(href="news-detail.html") Introducing Moonshot Accessibility Toolkit for WCAG 2.2 Compliance
+        p.ms-news__item-description Built-in accessibility audit tools and compliant component patterns to help teams meet WCAG 2.2 AA standards out of the box.
+
+      .ms-news__item
+        .ms-flex.ms-items-center.ms-gap-3.ms-mb-2
+          span.ms-news__badge.ms-news__badge--press Press
+          span.ms-news__date August 12, 2025
+        h3.ms-news__item-title
+          a(href="news-detail.html") Moonshot Named in "Top 10 CSS Frameworks to Watch" by CSS Weekly
+        p.ms-news__item-description Industry publication highlights Moonshot's monochrome-first approach and rapid deployment capabilities for startup teams.
+
+  //- Pagination
+  .ms-container.ms-pb-16
+    .ms-flex.ms-justify-center.ms-items-center.ms-gap-4
+      button.ms-btn.ms-btn--outline(disabled) Previous
+      .ms-flex.ms-gap-2
+        button.ms-btn.ms-btn--primary 1
+        button.ms-btn.ms-btn--outline 2
+        button.ms-btn.ms-btn--outline 3
+      button.ms-btn.ms-btn--outline Next
+
+  //- Newsletter CTA (reuses blog pattern)
+  section.ms-container.ms-py-16.ms-pb-24
+    .ms-card.ms-card--glow.ms-p-16.ms-text-center
+      h2.ms-heading-2.ms-mb-6 Stay Informed
+      p.ms-lead.ms-text-secondary.ms-mb-8 Get the latest company news and product updates delivered to your inbox.
+      form.ms-flex.ms-gap-4.ms-justify-center(style="max-width: 500px; margin: 0 auto")
+        label.ms-sr-only(for="news-newsletter-email") Email address
+        input.ms-form-input.ms-flex-1(
+          type="email"
+          id="news-newsletter-email"
+          placeholder="Enter your email"
+          required
+        )
+        button.ms-btn.ms-btn--primary(type="submit") Subscribe
+      p.ms-text-sm.ms-text-secondary.ms-mt-6 No spam. Unsubscribe anytime.

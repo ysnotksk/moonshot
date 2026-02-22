@@ -43,3 +43,6 @@ coverage/
 *.ai
 SVG/
 .env.example
+
+# Temporary / screenshot files
+temp/

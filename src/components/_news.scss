@@ -1,0 +1,144 @@
+/**
+ * Moonshot CSS Framework - News Component (SCSS)
+ * Styles for news listing and detail pages: date display, category badges,
+ * year dividers, and share row
+ */
+
+@use '../abstracts' as *;
+
+// ========================================
+// DATE DISPLAY
+// ========================================
+
+.ms-news__date {
+  display: block;
+  font-size: font-size('sm');
+  font-weight: 600;
+  color: var(--ms-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+// ========================================
+// CATEGORY BADGE
+// ========================================
+
+.ms-news__badge {
+  display: inline-block;
+  padding: space(1) space(3);
+  border-radius: 9999px;
+  font-size: font-size('xs');
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+
+  // Default: neutral
+  background: var(--ms-gray-200);
+  color: var(--ms-gray-700);
+
+  // ---- Color variants ----
+  &--press {
+    background: var(--ms-gray-900);
+    color: #ffffff;
+  }
+
+  &--product {
+    background: var(--ms-brand-primary);
+    color: #ffffff;
+  }
+
+  &--company {
+    background: var(--ms-gray-600);
+    color: #ffffff;
+  }
+
+  &--partnership {
+    background: var(--ms-gray-400);
+    color: var(--ms-gray-900);
+  }
+}
+
+// ========================================
+// YEAR DIVIDER
+// ========================================
+
+.ms-news__year-divider {
+  @include heading-base;
+
+  display: flex;
+  align-items: center;
+  gap: space(4);
+  margin: space(12) 0 space(6);
+  font-size: font-size('2xl');
+
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--ms-border-light);
+  }
+}
+
+// ========================================
+// NEWS LIST (borderless item rows)
+// ========================================
+
+.ms-news__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.ms-news__item {
+  padding: space(6) 0;
+  border-bottom: 1px solid var(--ms-border-light);
+
+  &:first-child {
+    padding-top: 0;
+  }
+}
+
+.ms-news__item-title {
+  @include heading-base;
+
+  font-size: font-size('lg');
+  margin-bottom: 0;
+
+  a {
+    color: var(--ms-text-primary);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--ms-brand-primary);
+    }
+  }
+}
+
+.ms-news__item-description {
+  @include body-text;
+
+  color: var(--ms-text-secondary);
+  font-size: font-size('sm');
+  margin-top: space(2);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// ========================================
+// SHARE ROW
+// ========================================
+
+.ms-news__share {
+  display: flex;
+  align-items: center;
+  gap: space(4);
+  padding-top: space(6);
+  margin-top: space(8);
+  border-top: 1px solid var(--ms-border-light);
+
+  @include breakpoint-down('md') {
+    flex-wrap: wrap;
+  }
+}

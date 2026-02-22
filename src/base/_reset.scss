@@ -170,11 +170,6 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Prevent font size adjustment on orientation change */
-html {
-  -webkit-text-size-adjust: 100%;
-}
-
 /* Hidden attribute */
 [hidden] {
   display: none;

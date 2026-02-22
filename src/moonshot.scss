@@ -2,7 +2,7 @@
  * Moonshot CSS Framework (SCSS Edition)
  * Clean, Minimal, Monochrome - Handy CSS Framework for Startups
  *
- * @version 0.2.0 (SCSS Edition)
+ * @version 0.1.0 (SCSS Edition)
  * @license MIT
  */
 
@@ -42,3 +42,5 @@
 @use 'components/accordion';
 @use 'components/pricing';
 @use 'components/testimonials';
+@use 'components/flow';
+@use 'components/news';

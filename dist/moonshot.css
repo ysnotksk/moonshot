@@ -3,7 +3,7 @@
  * Moonshot CSS Framework (SCSS Edition)
  * Clean, Minimal, Monochrome - Handy CSS Framework for Startups
  *
- * @version 0.2.0 (SCSS Edition)
+ * @version 0.1.0 (SCSS Edition)
  * @license MIT
  */
 /* ========================================
@@ -346,11 +346,6 @@ table {
 a,
 button {
   -webkit-tap-highlight-color: transparent;
-}
-
-/* Prevent font size adjustment on orientation change */
-html {
-  -webkit-text-size-adjust: 100%;
 }
 
 /* Hidden attribute */
@@ -2404,7 +2399,7 @@ body {
  * Moonshot CSS Framework (SCSS Edition)
  * Clean, Minimal, Monochrome - Handy CSS Framework for Startups
  *
- * @version 0.2.0 (SCSS Edition)
+ * @version 0.1.0 (SCSS Edition)
  * @license MIT
  */
 /* ========================================
@@ -2824,7 +2819,7 @@ body {
  * Moonshot CSS Framework (SCSS Edition)
  * Clean, Minimal, Monochrome - Handy CSS Framework for Startups
  *
- * @version 0.2.0 (SCSS Edition)
+ * @version 0.1.0 (SCSS Edition)
  * @license MIT
  */
 /* ========================================
@@ -3644,7 +3639,7 @@ body {
  * Moonshot CSS Framework (SCSS Edition)
  * Clean, Minimal, Monochrome - Handy CSS Framework for Startups
  *
- * @version 0.2.0 (SCSS Edition)
+ * @version 0.1.0 (SCSS Edition)
  * @license MIT
  */
 /* ========================================
@@ -3687,7 +3682,6 @@ body {
   font-size: var(--ms-text-base);
   padding: var(--ms-space-4);
 }
-
 .ms-button--primary,
 .ms-btn--primary {
   background-color: var(--ms-brand-primary);
@@ -3828,7 +3822,7 @@ body {
  * Moonshot CSS Framework (SCSS Edition)
  * Clean, Minimal, Monochrome - Handy CSS Framework for Startups
  *
- * @version 0.2.0 (SCSS Edition)
+ * @version 0.1.0 (SCSS Edition)
  * @license MIT
  */
 /* ========================================
@@ -3948,6 +3942,11 @@ body {
   width: 40%;
   flex-shrink: 0;
 }
+.ms-card--horizontal .ms-card__image-wrapper .ms-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .ms-card--horizontal .ms-card__body {
   width: 60%;
 }
@@ -3955,7 +3954,10 @@ body {
   .ms-card--horizontal {
     flex-direction: column;
   }
-  .ms-card--horizontal .ms-card__image-wrapper,
+  .ms-card--horizontal .ms-card__image-wrapper {
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
   .ms-card--horizontal .ms-card__body {
     width: 100%;
   }
@@ -4011,7 +4013,7 @@ body {
  * Moonshot CSS Framework (SCSS Edition)
  * Clean, Minimal, Monochrome - Handy CSS Framework for Startups
  *
- * @version 0.2.0 (SCSS Edition)
+ * @version 0.1.0 (SCSS Edition)
  * @license MIT
  */
 /* ========================================
@@ -4331,7 +4333,7 @@ body {
  * Moonshot CSS Framework (SCSS Edition)
  * Clean, Minimal, Monochrome - Handy CSS Framework for Startups
  *
- * @version 0.2.0 (SCSS Edition)
+ * @version 0.1.0 (SCSS Edition)
  * @license MIT
  */
 /* ========================================
@@ -4855,7 +4857,7 @@ body {
  * Moonshot CSS Framework (SCSS Edition)
  * Clean, Minimal, Monochrome - Handy CSS Framework for Startups
  *
- * @version 0.2.0 (SCSS Edition)
+ * @version 0.1.0 (SCSS Edition)
  * @license MIT
  */
 /* ========================================
@@ -5141,7 +5143,7 @@ body {
  * Moonshot CSS Framework (SCSS Edition)
  * Clean, Minimal, Monochrome - Handy CSS Framework for Startups
  *
- * @version 0.2.0 (SCSS Edition)
+ * @version 0.1.0 (SCSS Edition)
  * @license MIT
  */
 /* ========================================
@@ -5172,6 +5174,9 @@ body {
 .ms-image-link:focus-visible {
   outline: 2px solid var(--ms-brand-primary);
   outline-offset: 4px;
+}
+.ms-image-link:focus-visible .ms-image-link__overlay {
+  opacity: 0.9;
 }
 .ms-image-link--hero {
   border-radius: 0 0 var(--ms-radius-2xl) var(--ms-radius-2xl);
@@ -5356,9 +5361,6 @@ body {
   outline: 3px solid var(--ms-brand-primary);
   outline-offset: 3px;
 }
-.ms-image-link:focus-visible .ms-image-link__overlay {
-  opacity: 0.9;
-}
 @media (prefers-reduced-motion: reduce) {
   .ms-image-link,
   .ms-image-link .ms-image-link__image,
@@ -5466,7 +5468,7 @@ body {
  * Moonshot CSS Framework (SCSS Edition)
  * Clean, Minimal, Monochrome - Handy CSS Framework for Startups
  *
- * @version 0.2.0 (SCSS Edition)
+ * @version 0.1.0 (SCSS Edition)
  * @license MIT
  */
 /* ========================================
@@ -5608,7 +5610,7 @@ body {
  * Moonshot CSS Framework (SCSS Edition)
  * Clean, Minimal, Monochrome - Handy CSS Framework for Startups
  *
- * @version 0.2.0 (SCSS Edition)
+ * @version 0.1.0 (SCSS Edition)
  * @license MIT
  */
 /* ========================================
@@ -5688,7 +5690,7 @@ body {
  * Moonshot CSS Framework (SCSS Edition)
  * Clean, Minimal, Monochrome - Handy CSS Framework for Startups
  *
- * @version 0.2.0 (SCSS Edition)
+ * @version 0.1.0 (SCSS Edition)
  * @license MIT
  */
 /* ========================================
@@ -5809,7 +5811,7 @@ body {
  * Moonshot CSS Framework (SCSS Edition)
  * Clean, Minimal, Monochrome - Handy CSS Framework for Startups
  *
- * @version 0.2.0 (SCSS Edition)
+ * @version 0.1.0 (SCSS Edition)
  * @license MIT
  */
 /* ========================================
@@ -5934,5 +5936,375 @@ body {
   .ms-testimonial-grid {
     grid-template-columns: 1fr;
     gap: var(--ms-space-6);
+  }
+}
+
+/**
+ * Moonshot CSS Framework (SCSS Edition)
+ * Clean, Minimal, Monochrome - Handy CSS Framework for Startups
+ *
+ * @version 0.1.0 (SCSS Edition)
+ * @license MIT
+ */
+/* ========================================
+ * ABSTRACTS
+ * Variables, functions, and mixins
+ * ======================================== */
+/**
+ * Moonshot CSS Framework - Flow Component (SCSS)
+ * Step-by-step process/flow visualization with numbered steps and connector lines
+ */
+.ms-flow {
+  display: grid;
+  grid-template-columns: repeat(var(--ms-flow-cols, 4), 1fr);
+  gap: 1.5rem;
+  counter-reset: flow-step;
+}
+@media (max-width: 767px) {
+  .ms-flow {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+.ms-flow__step {
+  position: relative;
+  text-align: center;
+  counter-increment: flow-step;
+}
+.ms-flow__step::after {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  right: -0.75rem;
+  width: 1.5rem;
+  height: 2px;
+  background: var(--ms-gray-300);
+}
+@media (max-width: 767px) {
+  .ms-flow__step::after {
+    top: auto;
+    right: auto;
+    bottom: -0.5rem;
+    left: 1rem;
+    width: 2px;
+    height: 1rem;
+  }
+}
+.ms-flow__step:last-child::after {
+  display: none;
+}
+.ms-flow__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: var(--ms-brand-primary);
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.ms-flow__number:empty::before {
+  content: counter(flow-step);
+}
+.ms-flow__title {
+  font-family: var(--ms-font-sans);
+  font-weight: var(--ms-font-bold);
+  line-height: var(--ms-leading-tight);
+  color: var(--ms-text-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+}
+.ms-flow__description {
+  font-family: var(--ms-font-sans);
+  font-weight: var(--ms-font-normal);
+  line-height: var(--ms-leading-normal);
+  color: var(--ms-text-primary);
+  color: var(--ms-text-secondary);
+  font-size: 0.875rem;
+}
+.ms-flow--3 {
+  --ms-flow-cols: 3;
+}
+.ms-flow--4 {
+  --ms-flow-cols: 4;
+}
+.ms-flow--5 {
+  --ms-flow-cols: 5;
+}
+.ms-flow--vertical {
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 600px;
+}
+.ms-flow--vertical .ms-flow__step {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: 1rem;
+  text-align: left;
+}
+.ms-flow--vertical .ms-flow__step::after {
+  top: 2rem;
+  right: auto;
+  bottom: 0;
+  left: 1rem;
+  width: 2px;
+  height: calc(100% - 2rem);
+}
+.ms-flow--vertical .ms-flow__step:last-child::after {
+  display: none;
+}
+.ms-flow--vertical .ms-flow__number {
+  margin: 0;
+  grid-row: 1/-1;
+}
+.ms-flow--vertical .ms-flow__content {
+  padding-top: 0.25rem;
+}
+.ms-flow__media {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--ms-shadow-md);
+}
+.ms-flow__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ms-flow__card {
+  border: 1px solid var(--ms-border-light);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  background: var(--ms-bg-primary);
+  box-shadow: var(--ms-shadow-sm);
+}
+.ms-flow--timeline {
+  grid-template-columns: 1fr;
+  max-width: 800px;
+  gap: 3rem;
+  position: relative;
+  padding: 1.5rem 0;
+}
+.ms-flow--timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 2.5rem;
+  bottom: 2.5rem;
+  width: 2px;
+  background: var(--ms-gray-300);
+  transform: translateX(-50%);
+}
+.ms-flow--timeline .ms-flow__step {
+  display: grid;
+  grid-template-columns: 1fr 4rem 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  text-align: left;
+}
+.ms-flow--timeline .ms-flow__step::after {
+  display: none;
+}
+.ms-flow--timeline .ms-flow__step:nth-child(even) .ms-flow__media {
+  order: 3;
+}
+.ms-flow--timeline .ms-flow__step:nth-child(even) .ms-flow__card {
+  order: 1;
+}
+.ms-flow--timeline .ms-flow__number {
+  order: 2;
+  width: 3rem;
+  height: 3rem;
+  background: var(--ms-bg-primary);
+  color: var(--ms-brand-primary);
+  border: 2px solid var(--ms-gray-200);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+  justify-self: center;
+  box-shadow: var(--ms-shadow-sm);
+}
+.ms-flow--timeline .ms-flow__media {
+  order: 1;
+  aspect-ratio: 4/3;
+}
+.ms-flow--timeline .ms-flow__card {
+  order: 3;
+}
+@media (max-width: 767px) {
+  .ms-flow--timeline {
+    gap: 2rem;
+    padding: 0;
+  }
+  .ms-flow--timeline::before {
+    display: none;
+  }
+  .ms-flow--timeline .ms-flow__step {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .ms-flow--timeline .ms-flow__number {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.125rem;
+    justify-self: start;
+  }
+  .ms-flow--timeline .ms-flow__media {
+    order: 1;
+  }
+  .ms-flow--timeline .ms-flow__card {
+    order: 2;
+  }
+  .ms-flow--timeline .ms-flow__step:nth-child(even) .ms-flow__media {
+    order: 1;
+  }
+  .ms-flow--timeline .ms-flow__step:nth-child(even) .ms-flow__card {
+    order: 2;
+  }
+}
+.ms-flow--brand-line .ms-flow__step::after {
+  background: var(--ms-brand-primary);
+  opacity: 0.3;
+}
+.ms-flow--dashed.ms-flow--timeline::before {
+  background: repeating-linear-gradient(to bottom, var(--ms-gray-300) 0, var(--ms-gray-300) 6px, transparent 6px, transparent 12px);
+}
+.ms-flow--dashed .ms-flow__step::after {
+  background: repeating-linear-gradient(to right, var(--ms-gray-300) 0, var(--ms-gray-300) 6px, transparent 6px, transparent 12px);
+}
+
+/**
+ * Moonshot CSS Framework (SCSS Edition)
+ * Clean, Minimal, Monochrome - Handy CSS Framework for Startups
+ *
+ * @version 0.1.0 (SCSS Edition)
+ * @license MIT
+ */
+/* ========================================
+ * ABSTRACTS
+ * Variables, functions, and mixins
+ * ======================================== */
+/**
+ * Moonshot CSS Framework - News Component (SCSS)
+ * Styles for news listing and detail pages: date display, category badges,
+ * year dividers, and share row
+ */
+.ms-news__date {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ms-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ms-news__badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+  background: var(--ms-gray-200);
+  color: var(--ms-gray-700);
+}
+.ms-news__badge--press {
+  background: var(--ms-gray-900);
+  color: #ffffff;
+}
+.ms-news__badge--product {
+  background: var(--ms-brand-primary);
+  color: #ffffff;
+}
+.ms-news__badge--company {
+  background: var(--ms-gray-600);
+  color: #ffffff;
+}
+.ms-news__badge--partnership {
+  background: var(--ms-gray-400);
+  color: var(--ms-gray-900);
+}
+
+.ms-news__year-divider {
+  font-family: var(--ms-font-sans);
+  font-weight: var(--ms-font-bold);
+  line-height: var(--ms-leading-tight);
+  color: var(--ms-text-primary);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 3rem 0 1.5rem;
+  font-size: 1.5rem;
+}
+.ms-news__year-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--ms-border-light);
+}
+
+.ms-news__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.ms-news__item {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--ms-border-light);
+}
+.ms-news__item:first-child {
+  padding-top: 0;
+}
+
+.ms-news__item-title {
+  font-family: var(--ms-font-sans);
+  font-weight: var(--ms-font-bold);
+  line-height: var(--ms-leading-tight);
+  color: var(--ms-text-primary);
+  font-size: 1.125rem;
+  margin-bottom: 0;
+}
+.ms-news__item-title a {
+  color: var(--ms-text-primary);
+  text-decoration: none;
+}
+.ms-news__item-title a:hover {
+  color: var(--ms-brand-primary);
+}
+
+.ms-news__item-description {
+  font-family: var(--ms-font-sans);
+  font-weight: var(--ms-font-normal);
+  line-height: var(--ms-leading-normal);
+  color: var(--ms-text-primary);
+  color: var(--ms-text-secondary);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ms-news__share {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  margin-top: 2rem;
+  border-top: 1px solid var(--ms-border-light);
+}
+@media (max-width: 767px) {
+  .ms-news__share {
+    flex-wrap: wrap;
   }
 }

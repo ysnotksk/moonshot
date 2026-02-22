@@ -320,7 +320,7 @@ var Moonshot = (() => {
       Navigation,
       AnimatedStats,
       BackToTop,
-      version: "0.2.0",
+      version: "0.1.0",
       init: initMoonshot
     };
   })(window);
@@ -329,6 +329,6 @@ var Moonshot = (() => {
  * Moonshot CSS Framework - Standalone Build (No modules)
  * This file can be used directly in browsers without module support
  *
- * @version 0.2.0
+ * @version 0.1.0
  * @license MIT
  */

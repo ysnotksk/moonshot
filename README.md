@@ -1,77 +1,33 @@
-# Moonshot CSS Framework
+# Moonshot
 
-**Clean, Minimal, Monochrome - Handy CSS Framework for Startups**
+Just a boring website template. Monochrome, minimal, gets the job done.
 
-## Overview
+SCSS-based CSS framework with 20+ page templates for corporate/startup sites. Drop in, tweak 3 CSS variables, ship.
 
-Moonshot is a modular, block-based CSS framework designed specifically for Japanese startup and venture company corporate websites. Built with a "clean, minimal, monochrome" design philosophy and instant brand customization via CSS Variables, Moonshot enables rapid deployment of high-quality corporate sites with optimized Japanese typography and SEO-ready structure.
+## Why Moonshot?
 
-## Features
-
-### Design & Architecture
-
-- **Block-based Architecture** - Mix and match components like LEGO blocks
-- **Monochrome Base** - Timeless broken white + grayscale foundation
-- **Dark Mode Support** - Opt-in dark mode via `data-theme="dark"` attribute
-- **Brand Customizable** - One-line theming with CSS Variables
-- **Image Links Philosophy** - Impactful, visually-driven UI components
-- **Japanese Optimized** - Typography and layouts tuned for Japanese content
-
-### Technical
-
-- **SCSS Powered** - Modern `@use`/`@forward` module system, zero deprecation warnings
-- **Lightweight** - ~14 KB gzipped, ~86 KB minified
-- **30+ Mixins** - Reusable patterns for rapid development
-- **15+ Functions** - Smart helpers (`gray()`, `space()`, `radius()`, etc.)
-- **Zero Config** - Drop in and start building immediately
-
-### Content & Templates
-
-- **18 Page Templates** - Front, Service, Service Detail, Case Study, Blog, Event, Recruitment, About, Demo, Contact, and more
-- **40+ Components** - Buttons, cards, forms, navigation, hero, image-links, accordion, pricing, testimonials
-- **SEO Ready** - Semantic HTML5, Open Graph tags, JSON-LD structured data
-- **WCAG 2.1 AA** - Skip navigation, form labels, focus-visible styles
+1. **Image-first design** — Ground your pages with full-bleed image-links. High reproducibility, easy originality — just swap the photos.
+2. **Build today, deliver tomorrow** — Speed is king for startups. No config, no decisions, no rabbit holes. Pick a template, brand it, ship it.
 
 ## Quick Start
 
-### CDN (fastest)
-
-```html
-<link rel="stylesheet" href="https://unpkg.com/moonshot-css/dist/moonshot.min.css" />
-```
-
-### NPM
-
 ```bash
-npm install moonshot-css
+git clone https://github.com/ysnotksk/moonshot.git
+cd moonshot
+npm install
+npm start
+# -> http://localhost:8080/examples/
 ```
 
-### HTML Boilerplate
+## What's Inside
 
-```html
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Site</title>
-    <link rel="stylesheet" href="dist/moonshot.min.css" />
-  </head>
-  <body>
-    <a href="#main-content" class="ms-skip-link">Skip to main content</a>
-    <main id="main-content">
-      <!-- Your content here -->
-    </main>
-    <script src="dist/moonshot.min.js"></script>
-  </body>
-</html>
-```
+- **21 page templates** — front page, services, blog, news, events, recruitment, about, contact, legal, etc.
+- **40+ components** — buttons, cards, forms, navigation, hero, image-links, flow, accordion, pricing, testimonials
+- **SCSS architecture** — `@use`/`@forward` modules, 30+ mixins, 15+ utility functions
+- **Dark mode** — `data-theme="dark"` and you're done
+- **~15 KB gzipped**
 
-See the [Getting Started Guide](docs/GETTING_STARTED.md) for a complete walkthrough.
-
-## Brand Customization
-
-Override just 3 CSS variables to match your brand:
+## Brand It
 
 ```css
 :root {
@@ -81,136 +37,36 @@ Override just 3 CSS variables to match your brand:
 }
 ```
 
-See the [Theming Guide](docs/THEMING.md) for the full list of customizable properties.
+That's it. Everything updates.
 
-## Development
-
-### Setup
+## Build
 
 ```bash
-git clone https://github.com/ysnotksk/moonshot.git
-cd moonshot
-npm install
-npm start
-# -> http://localhost:8080
-```
-
-### Build
-
-```bash
-npm run build       # Full build (CSS + JS + size report)
-npm run build:css   # SCSS -> CSS only
-npm run watch       # Watch mode for development
-```
-
-### Linting & Formatting
-
-```bash
-npm run lint        # Lint SCSS (with auto-fix)
-npm run format      # Format with Prettier
+npm run build       # CSS + JS + HTML templates
+npm run watch       # Dev mode with file watching
+npm run lint        # Stylelint with auto-fix
 ```
 
 ## Project Structure
 
 ```
-moonshot/
-├── src/                          # Source SCSS files
-│   ├── abstracts/               # Variables, functions, mixins
-│   │   ├── _index.scss         # Module forwarding entry point
-│   │   ├── _variables.scss     # Sass maps + CSS Custom Properties
-│   │   ├── _functions.scss     # Utility functions
-│   │   └── _mixins.scss        # Reusable patterns
-│   ├── base/                    # Foundation styles
-│   │   ├── _reset.scss         # Modern CSS reset
-│   │   ├── _typography.scss    # Japanese + English typography
-│   │   └── _grid.scss          # Grid system
-│   ├── components/              # UI components
-│   │   ├── _buttons.scss
-│   │   ├── _cards.scss
-│   │   ├── _forms.scss
-│   │   ├── _navigation.scss
-│   │   ├── _hero.scss
-│   │   ├── _image-links.scss
-│   │   ├── _client-logos.scss
-│   │   ├── _accordion.scss
-│   │   ├── _pricing.scss
-│   │   └── _testimonials.scss
-│   ├── utilities/               # Loop-generated utilities
-│   │   ├── _spacing.scss
-│   │   ├── _colors.scss
-│   │   └── _helpers.scss
-│   └── moonshot.scss            # Main entry point
-├── dist/                         # Built CSS (production-ready)
-│   ├── moonshot.css             # Uncompressed (~111 KB)
-│   └── moonshot.min.css         # Compressed (~86 KB, ~14 KB gzipped)
-├── examples/                     # 18 HTML page templates
-├── docs/                         # Documentation
-└── scripts/                      # Build scripts
+src/
+├── abstracts/      # Variables, functions, mixins
+├── base/           # Reset, typography, grid
+├── components/     # UI components (BEM, ms- prefix)
+├── utilities/      # Spacing, color, helper classes
+├── pages/          # Pug templates
+└── moonshot.scss   # Entry point
+
+dist/               # Built CSS/JS (committed)
+examples/           # Generated HTML pages
 ```
 
-## Documentation
+## Docs
 
-- [Getting Started](docs/GETTING_STARTED.md) - Installation and first page
-- [Component Reference](docs/COMPONENTS.md) - All classes and modifiers
-- [Theming Guide](docs/THEMING.md) - CSS custom properties and brand customization
-- [Framework Strategy](docs/01_moonshot_css_framework_strategy.md) - Design philosophy
-- [Image Links Philosophy](docs/02_image_links_philosophy.md) - Visual design approach
-- [Tech Stack](docs/00_tech_stack.md) - Technical specifications
-
-## SCSS Features
-
-**Mixins:**
-
-```scss
-@use 'moonshot/abstracts' as *;
-
-@include flex-center;
-@include card-base;
-@include breakpoint-down('md') {
-  /* mobile styles */
-}
-```
-
-**Functions:**
-
-```scss
-color: gray(500);
-padding: space(4);
-border-radius: radius('lg');
-```
-
-**Nesting:**
-
-```scss
-.ms-card {
-  &__header {
-  }
-  &__body {
-  }
-  &--elevated {
-    &:hover {
-    }
-  }
-}
-```
-
-## Browser Support
-
-- **Chrome/Edge**: Last 2 versions
-- **Firefox**: Last 2 versions
-- **Safari**: Last 2 versions
-- **Mobile**: iOS Safari 14+, Chrome Android 90+
-
-## Contributing
-
-See the [Contributing Guide](CONTRIBUTING.md) for development workflow, code standards, and how to submit pull requests.
+- [Component Reference](docs/COMPONENTS.md)
+- [Tech Stack](docs/00_tech_stack.md)
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) for details.
-
-## Resources
-
-- **Live Demo**: Open `examples/index.html` to browse all templates
-- **Components Demo**: `examples/image-links-demo.html`
-- **Brand Customization**: `examples/brand-family.html`
+MIT

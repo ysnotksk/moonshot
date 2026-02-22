@@ -15,6 +15,8 @@ All classes use the `ms-` prefix. Components follow BEM naming: `.ms-block__elem
 - [Hero](#hero)
 - [Animated Stats](#animated-stats)
 - [Image Links](#image-links)
+- [Flow](#flow)
+- [News](#news)
 - [Accordion](#accordion)
 - [Pricing](#pricing)
 - [Testimonials](#testimonials)
@@ -616,6 +618,212 @@ Set the element's initial text content to `0` (or `$0` when using a prefix) so u
     <span class="ms-image-link__cta">Learn More</span>
   </div>
 </a>
+```
+
+---
+
+## Flow
+
+Step-by-step process visualization with numbered circles, connector lines, and responsive layout. Use for "How It Works", interview processes, onboarding flows, etc.
+
+### Base Class
+
+`.ms-flow`
+
+### Elements
+
+| Element         | Description                                                |
+| --------------- | ---------------------------------------------------------- |
+| `__step`        | Individual step container. Auto-generates connectors       |
+| `__number`      | Numbered circle. Auto-numbers via CSS counter when empty   |
+| `__title`       | Step heading                                               |
+| `__description` | Step body text                                             |
+| `__content`     | Wrapper for title + description (used in vertical variant) |
+
+### Modifiers
+
+| Modifier       | Description                                     |
+| -------------- | ----------------------------------------------- |
+| `--3`          | 3-column layout                                 |
+| `--4`          | 4-column layout (default)                       |
+| `--5`          | 5-column layout                                 |
+| `--vertical`   | Vertical timeline layout (max-width 600px)      |
+| `--brand-line` | Connector lines use brand color instead of gray |
+
+### Responsive
+
+- Desktop: horizontal grid with connector lines between steps
+- Mobile (< md): single column, vertical connectors
+
+### Example — Horizontal (default)
+
+```html
+<div class="ms-flow ms-flow--4">
+  <div class="ms-flow__step">
+    <div class="ms-flow__number"></div>
+    <h3 class="ms-flow__title">Discovery</h3>
+    <p class="ms-flow__description">Understand your goals and challenges</p>
+  </div>
+  <div class="ms-flow__step">
+    <div class="ms-flow__number"></div>
+    <h3 class="ms-flow__title">Strategy</h3>
+    <p class="ms-flow__description">Design a custom solution roadmap</p>
+  </div>
+  <div class="ms-flow__step">
+    <div class="ms-flow__number"></div>
+    <h3 class="ms-flow__title">Implementation</h3>
+    <p class="ms-flow__description">Build and deploy with agile methodology</p>
+  </div>
+  <div class="ms-flow__step">
+    <div class="ms-flow__number"></div>
+    <h3 class="ms-flow__title">Optimization</h3>
+    <p class="ms-flow__description">Measure, iterate, and scale</p>
+  </div>
+</div>
+```
+
+Leave `__number` empty for auto-numbering (1, 2, 3...), or add custom content like icons.
+
+### Example — Vertical
+
+```html
+<div class="ms-flow ms-flow--vertical ms-flow--brand-line">
+  <div class="ms-flow__step">
+    <div class="ms-flow__number"></div>
+    <div class="ms-flow__content">
+      <h3 class="ms-flow__title">Application</h3>
+      <p class="ms-flow__description">Submit resume and cover letter</p>
+    </div>
+  </div>
+  <div class="ms-flow__step">
+    <div class="ms-flow__number"></div>
+    <div class="ms-flow__content">
+      <h3 class="ms-flow__title">Phone Screen</h3>
+      <p class="ms-flow__description">30-min chat with recruiter</p>
+    </div>
+  </div>
+  <div class="ms-flow__step">
+    <div class="ms-flow__number"></div>
+    <div class="ms-flow__content">
+      <h3 class="ms-flow__title">Technical</h3>
+      <p class="ms-flow__description">Skills assessment and pairing exercise</p>
+    </div>
+  </div>
+</div>
+```
+
+### Example — Timeline (zigzag)
+
+Rich alternating timeline with images, cards, and large decorative step numbers. On desktop, odd steps show media left / card right; even steps swap. On mobile, it collapses to a single column stack.
+
+**Additional Elements:**
+
+| Element   | Description                                                        |
+| --------- | ------------------------------------------------------------------ |
+| `__media` | Image/media container (aspect-ratio 4/3, rounded, overflow hidden) |
+| `__card`  | Bordered card wrapper for step content (border, radius, padding)   |
+
+**Additional Modifiers:**
+
+| Modifier     | Description                                                    |
+| ------------ | -------------------------------------------------------------- |
+| `--timeline` | Zigzag timeline layout with centered vertical line (max 800px) |
+| `--dashed`   | Dashed connector/timeline lines instead of solid               |
+
+**HTML structure:** Always place elements in order: `__number`, `__media`, `__card`. CSS `order` handles the zigzag swap on even steps.
+
+```html
+<div class="ms-flow ms-flow--timeline">
+  <!-- Step 1 (odd): media left, content right -->
+  <div class="ms-flow__step">
+    <div class="ms-flow__number"></div>
+    <div class="ms-flow__media">
+      <img src="step1.jpg" alt="Step 1" />
+    </div>
+    <div class="ms-flow__card">
+      <h3 class="ms-flow__title">Discovery</h3>
+      <p class="ms-flow__description">We analyze your goals...</p>
+    </div>
+  </div>
+
+  <!-- Step 2 (even): content left, media right (CSS order swap) -->
+  <div class="ms-flow__step">
+    <div class="ms-flow__number"></div>
+    <div class="ms-flow__media">
+      <img src="step2.jpg" alt="Step 2" />
+    </div>
+    <div class="ms-flow__card">
+      <h3 class="ms-flow__title">Strategy</h3>
+      <p class="ms-flow__description">Design a solution roadmap...</p>
+    </div>
+  </div>
+</div>
+```
+
+**Dashed variant:** Add `ms-flow--dashed` alongside `--timeline` for dashed connector lines.
+
+```html
+<div class="ms-flow ms-flow--timeline ms-flow--dashed">...</div>
+```
+
+**Responsive behavior:**
+
+- **Desktop (≥ md):** 3-column grid per step with centered vertical timeline line. Odd steps: media left, card right. Even steps: card left, media right.
+- **Mobile (< md):** Single column stack. Timeline line hidden. Number displays above content with brand color.
+
+---
+
+## News
+
+Styles for news listing and detail pages. Most layout uses existing cards and utilities; these classes add news-specific elements.
+
+### Date Display
+
+| Class           | Description                                          |
+| --------------- | ---------------------------------------------------- |
+| `ms-news__date` | Uppercase, small, secondary text for prominent dates |
+
+### Category Badge
+
+| Class                         | Description                       |
+| ----------------------------- | --------------------------------- |
+| `ms-news__badge`              | Base category pill (neutral gray) |
+| `ms-news__badge--press`       | Dark (gray-900) background        |
+| `ms-news__badge--product`     | Brand primary background          |
+| `ms-news__badge--company`     | Gray-600 background               |
+| `ms-news__badge--partnership` | Gray-400 background, dark text    |
+
+### Year Divider
+
+| Class                   | Description                                      |
+| ----------------------- | ------------------------------------------------ |
+| `ms-news__year-divider` | Bordered heading for chronological year grouping |
+
+### Share Row
+
+| Class            | Description                                |
+| ---------------- | ------------------------------------------ |
+| `ms-news__share` | Flex row with border-top for share buttons |
+
+### HTML Example
+
+```html
+<!-- Date + Badge -->
+<div class="ms-flex ms-items-center ms-gap-3">
+  <span class="ms-news__badge ms-news__badge--press">Press</span>
+  <span class="ms-news__date">February 15, 2026</span>
+</div>
+
+<!-- Year Divider -->
+<h2 class="ms-news__year-divider">2026</h2>
+
+<!-- Share Row -->
+<div class="ms-news__share">
+  <span>Share:</span>
+  <a href="#" class="ms-btn ms-btn--outline ms-btn--sm">X / Twitter</a>
+  <a href="#" class="ms-btn ms-btn--outline ms-btn--sm">LinkedIn</a>
+  <button class="ms-btn ms-btn--outline ms-btn--sm">Copy Link</button>
+</div>
 ```
 
 ---
