@@ -1,0 +1,117 @@
+/**
+ * Moonshot CSS Framework - Spacing Utilities (SCSS)
+ * Margin and padding utilities generated with SCSS loops
+ */
+
+@use 'sass:meta';
+
+// ========================================
+// SPACING UTILITIES GENERATOR
+// ========================================
+
+$spacing-sizes: (0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24, 32);
+$spacing-directions: (
+  't': 'top',
+  'b': 'bottom',
+  'l': 'left',
+  'r': 'right',
+  'x': (
+    'left',
+    'right',
+  ),
+  'y': (
+    'top',
+    'bottom',
+  ),
+);
+
+// Margin utilities
+@each $size in $spacing-sizes {
+  // All sides
+  .ms-m-#{$size} {
+    margin: var(--ms-space-#{$size});
+  }
+
+  // Individual sides
+  @each $key, $direction in $spacing-directions {
+    .ms-m#{$key}-#{$size} {
+      @if meta.type-of($direction) == 'list' {
+        @each $side in $direction {
+          margin-#{$side}: var(--ms-space-#{$size});
+        }
+      } @else {
+        margin-#{$direction}: var(--ms-space-#{$size});
+      }
+    }
+  }
+}
+
+// Margin auto
+.ms-m-auto {
+  margin: auto;
+}
+
+@each $key, $direction in $spacing-directions {
+  .ms-m#{$key}-auto {
+    @if meta.type-of($direction) == 'list' {
+      @each $side in $direction {
+        margin-#{$side}: auto;
+      }
+    } @else {
+      margin-#{$direction}: auto;
+    }
+  }
+}
+
+// Padding utilities
+@each $size in $spacing-sizes {
+  // All sides
+  .ms-p-#{$size} {
+    padding: var(--ms-space-#{$size});
+  }
+
+  // Individual sides
+  @each $key, $direction in $spacing-directions {
+    .ms-p#{$key}-#{$size} {
+      @if meta.type-of($direction) == 'list' {
+        @each $side in $direction {
+          padding-#{$side}: var(--ms-space-#{$size});
+        }
+      } @else {
+        padding-#{$direction}: var(--ms-space-#{$size});
+      }
+    }
+  }
+}
+
+// ========================================
+// GAP UTILITIES
+// ========================================
+
+@each $size in $spacing-sizes {
+  .ms-gap-#{$size} {
+    gap: var(--ms-space-#{$size});
+  }
+
+  .ms-gap-x-#{$size} {
+    column-gap: var(--ms-space-#{$size});
+  }
+
+  .ms-gap-y-#{$size} {
+    row-gap: var(--ms-space-#{$size});
+  }
+}
+
+// ========================================
+// SPACE BETWEEN (for flexbox/grid)
+// ========================================
+
+@each $size in $spacing-sizes {
+  .ms-space-x-#{$size} > * + * {
+    margin-left: var(--ms-space-#{$size});
+  }
+
+  .ms-space-y-#{$size} > * + * {
+    margin-top: var(--ms-space-#{$size});
+  }
+}

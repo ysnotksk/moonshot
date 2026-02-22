@@ -1,0 +1,373 @@
+extends _layouts/default
+
+- var title = "Cloud Infrastructure - Enterprise Solutions | Moonshot"
+- var description = "Scalable, secure cloud solutions built on AWS, Azure, and GCP. Auto-scaling, disaster recovery, and 99.99% uptime SLA."
+- var activeNav = "services"
+
+block append headStyles
+  style.
+    .service-detail-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: var(--ms-space-12);
+      align-items: start;
+    }
+    @media (max-width: 1024px) {
+      .service-detail-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+    .service-sidebar {
+      position: sticky;
+      top: calc(100px + var(--ms-space-6));
+    }
+    @media (max-width: 1024px) {
+      .service-sidebar {
+        position: static;
+      }
+    }
+    .sidebar-card {
+      background-color: var(--ms-bg-secondary);
+      border-radius: var(--ms-radius-lg);
+      padding: var(--ms-space-8);
+      margin-bottom: var(--ms-space-6);
+    }
+    .sidebar-card__title {
+      font-size: var(--ms-text-lg);
+      font-weight: var(--ms-font-semibold);
+      color: var(--ms-text-primary);
+      margin: 0 0 var(--ms-space-6) 0;
+    }
+    .sidebar-item {
+      padding: var(--ms-space-3) 0;
+      border-bottom: 1px solid var(--ms-border-light);
+    }
+    .sidebar-item:last-child {
+      border-bottom: none;
+    }
+    .sidebar-label {
+      font-size: var(--ms-text-xs);
+      font-weight: var(--ms-font-semibold);
+      color: var(--ms-text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: var(--ms-tracking-wider);
+      margin-bottom: var(--ms-space-1);
+    }
+    .sidebar-value {
+      font-size: var(--ms-text-sm);
+      color: var(--ms-text-primary);
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--ms-space-6);
+    }
+    @media (max-width: 768px) {
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .feature-card {
+      padding: var(--ms-space-6);
+      background-color: var(--ms-bg-secondary);
+      border-radius: var(--ms-radius-lg);
+    }
+    .feature-card__icon {
+      font-size: var(--ms-text-2xl);
+      margin-bottom: var(--ms-space-3);
+    }
+    .feature-card__title {
+      font-size: var(--ms-text-base);
+      font-weight: var(--ms-font-semibold);
+      color: var(--ms-text-primary);
+      margin-bottom: var(--ms-space-2);
+    }
+    .feature-card__description {
+      font-size: var(--ms-text-sm);
+      color: var(--ms-text-secondary);
+      line-height: var(--ms-leading-relaxed);
+    }
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--ms-space-6);
+    }
+    @media (max-width: 768px) {
+      .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .metric-card {
+      text-align: center;
+      padding: var(--ms-space-8);
+      background: linear-gradient(135deg, var(--ms-brand-primary) 0%, var(--ms-brand-accent) 100%);
+      border-radius: var(--ms-radius-lg);
+      color: #fff;
+    }
+    .metric-value {
+      font-size: var(--ms-text-4xl);
+      font-weight: var(--ms-font-bold);
+      line-height: 1;
+      margin-bottom: var(--ms-space-2);
+    }
+    .metric-label {
+      font-size: var(--ms-text-sm);
+      opacity: 0.9;
+    }
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--ms-space-2);
+    }
+    .tech-badge {
+      display: inline-block;
+      padding: var(--ms-space-1) var(--ms-space-3);
+      font-size: var(--ms-text-xs);
+      font-weight: var(--ms-font-medium);
+      color: var(--ms-text-secondary);
+      background-color: var(--ms-bg-tertiary);
+      border-radius: var(--ms-radius-full);
+    }
+
+block append jsonLd
+  script(type="application/ld+json").
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Cloud Infrastructure",
+      "provider": {
+        "@type": "Organization",
+        "name": "Moonshot"
+      },
+      "description": "Scalable, secure cloud solutions built on AWS, Azure, and GCP. Auto-scaling, disaster recovery, and 99.99% uptime SLA.",
+      "serviceType": "Cloud Infrastructure"
+    }
+
+block content
+  //- Hero
+  section
+    a.ms-image-link.ms-image-link--xl.ms-image-link--center.ms-image-link--hero(href="#overview")
+      .ms-image-link__background
+        img.ms-image-link__image(
+          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&h=800&fit=crop&q=80"
+          alt="Cloud infrastructure"
+        )
+      .ms-image-link__overlay
+      .ms-image-link__content
+        p.ms-hero__eyebrow(style="color: inherit; opacity: 0.8") Solutions
+        h1.ms-image-link__title Cloud Infrastructure
+        p.ms-image-link__description
+          | Scalable, secure cloud solutions built on AWS, Azure, and GCP. Auto-scaling, disaster
+          | recovery, and 99.99% uptime SLA.
+        span.ms-image-link__cta Explore Features
+
+  //- Key Metrics
+  section.ms-py-24#overview
+    .ms-container
+      .metrics-grid.ms-mb-16
+        .metric-card
+          .metric-value 99.99%
+          .metric-label Uptime SLA
+        .metric-card
+          .metric-value 10x
+          .metric-label Faster Scaling
+        .metric-card
+          .metric-value 40%
+          .metric-label Cost Reduction
+        .metric-card
+          .metric-value 24/7
+          .metric-label Monitoring
+
+  //- Service Detail Content
+  section.ms-pb-24
+    .ms-container
+      .service-detail-layout
+        //- Main Content
+        div
+          //- Overview
+          section.ms-mb-16
+            h2.ms-heading-2.ms-mb-6 Overview
+            p.ms-text-base.ms-leading-relaxed.ms-mb-4
+              | Our Cloud Infrastructure service provides end-to-end cloud solutions that scale
+              | with your business. Whether you're migrating from on-premise systems or building
+              | cloud-native applications, our team of certified architects designs infrastructure
+              | that's secure, performant, and cost-effective.
+            p.ms-text-base.ms-leading-relaxed.ms-mb-4
+              | We work across all major cloud providers — AWS, Azure, and Google Cloud Platform —
+              | and implement multi-cloud and hybrid strategies when they make sense for your
+              | business. Every deployment follows Infrastructure as Code (IaC) best practices for
+              | reproducibility and version control.
+
+          //- Key Features
+          section.ms-mb-16
+            h2.ms-heading-2.ms-mb-8 Key Features
+            .feature-grid
+              .feature-card
+                .feature-card__icon ☁
+                .feature-card__title Multi-Cloud Architecture
+                .feature-card__description
+                  | Deploy across AWS, Azure, and GCP with unified management. Avoid vendor
+                  | lock-in and optimize costs by leveraging each provider's strengths.
+              .feature-card
+                .feature-card__icon ⇅
+                .feature-card__title Auto-Scaling
+                .feature-card__description
+                  | Automatically scale resources up and down based on demand. Handle traffic
+                  | spikes without manual intervention or over-provisioning.
+              .feature-card
+                .feature-card__icon 🔒
+                .feature-card__title Security & Compliance
+                .feature-card__description
+                  | SOC 2, ISO 27001, GDPR, and HIPAA compliance built in. Encryption at rest and
+                  | in transit, IAM policies, and automated vulnerability scanning.
+              .feature-card
+                .feature-card__icon 🔄
+                .feature-card__title Disaster Recovery
+                .feature-card__description
+                  | Multi-region failover with RPO under 1 hour and RTO under 15 minutes.
+                  | Automated backups and tested recovery procedures.
+              .feature-card
+                .feature-card__icon 📈
+                .feature-card__title Cost Optimization
+                .feature-card__description
+                  | Right-sizing analysis, reserved instance planning, and spot instance
+                  | strategies. Clients typically see 30-50% reduction in cloud spend.
+              .feature-card
+                .feature-card__icon ⚙
+                .feature-card__title Infrastructure as Code
+                .feature-card__description
+                  | All infrastructure managed via Terraform and CloudFormation.
+                  | Version-controlled, peer-reviewed, and fully reproducible deployments.
+
+          //- How It Works
+          section.ms-mb-16
+            h2.ms-heading-2.ms-mb-6 How It Works
+
+            h3.ms-heading-4.ms-mb-4.ms-mt-8 1. Assessment & Planning
+            p.ms-text-base.ms-leading-relaxed.ms-mb-4
+              | We start with a thorough assessment of your current infrastructure, workloads, and
+              | business requirements. Our architects create a detailed migration or deployment
+              | plan with clear milestones and risk mitigation strategies.
+
+            h3.ms-heading-4.ms-mb-4.ms-mt-8 2. Architecture Design
+            p.ms-text-base.ms-leading-relaxed.ms-mb-4
+              | Based on the assessment, we design a cloud architecture optimized for your
+              | specific needs — whether that's high availability, low latency, regulatory
+              | compliance, or cost efficiency. All designs follow the Well-Architected Framework.
+
+            h3.ms-heading-4.ms-mb-4.ms-mt-8 3. Implementation & Migration
+            p.ms-text-base.ms-leading-relaxed.ms-mb-4
+              | Our engineers build and deploy the infrastructure using IaC tooling. For
+              | migrations, we use a phased approach — starting with non-critical workloads and
+              | progressively moving production systems with zero downtime.
+
+            h3.ms-heading-4.ms-mb-4.ms-mt-8 4. Monitoring & Optimization
+            p.ms-text-base.ms-leading-relaxed.ms-mb-4
+              | Post-deployment, we set up comprehensive monitoring, alerting, and dashboards.
+              | Monthly optimization reviews ensure your infrastructure stays performant and
+              | cost-effective as your business evolves.
+
+          //- Tech Stack
+          section.ms-mb-16
+            h2.ms-heading-2.ms-mb-6 Technology Stack
+            .tech-stack
+              each tech in ["AWS", "Azure", "Google Cloud", "Terraform", "Kubernetes", "Docker", "CloudFormation", "Datadog", "Prometheus", "Grafana", "Ansible", "CI/CD"]
+                span.tech-badge= tech
+
+          //- Client Testimonial
+          section.ms-mb-16
+            .ms-testimonial.ms-testimonial--featured
+              blockquote.ms-testimonial__quote
+                | "Moonshot migrated our entire infrastructure to AWS in under 8 weeks with zero
+                | downtime. Our cloud costs dropped 42% and we can now handle 10x our previous
+                | peak traffic without breaking a sweat."
+              .ms-testimonial__author
+                img.ms-testimonial__avatar(
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=96&h=96&fit=crop&q=80"
+                  alt="Alex Rivera"
+                )
+                .ms-testimonial__info
+                  span.ms-testimonial__name Alex Rivera
+                  span.ms-testimonial__title CTO, PayFlow
+
+          //- FAQ
+          section.ms-mb-16
+            h2.ms-heading-2.ms-mb-6 Frequently Asked Questions
+            .ms-accordion
+              details.ms-accordion__item
+                summary.ms-accordion__header How long does a typical cloud migration take?
+                .ms-accordion__body
+                  | A standard migration takes 4-12 weeks depending on the complexity and number
+                  | of workloads. Simple lift-and-shift migrations can be completed in as little
+                  | as 2 weeks, while complex re-architecture projects may take 3-6 months.
+
+              details.ms-accordion__item
+                summary.ms-accordion__header Which cloud provider do you recommend?
+                .ms-accordion__body
+                  | It depends on your specific needs. AWS offers the broadest service catalog,
+                  | Azure integrates well with Microsoft ecosystems, and GCP excels in data
+                  | analytics and ML. We often recommend a multi-cloud approach for critical
+                  | workloads.
+
+              details.ms-accordion__item
+                summary.ms-accordion__header Will there be downtime during migration?
+                .ms-accordion__body
+                  | No. We use blue-green deployments and traffic shifting to ensure zero downtime
+                  | during migrations. All cutover operations are performed during low-traffic
+                  | windows with instant rollback capability.
+
+              details.ms-accordion__item
+                summary.ms-accordion__header What's included in ongoing support?
+                .ms-accordion__body
+                  | Ongoing support includes 24/7 monitoring, incident response, monthly
+                  | optimization reviews, security patching, and a dedicated account manager. We
+                  | also provide quarterly business reviews with detailed reporting.
+
+        //- Sidebar
+        aside.service-sidebar
+          .sidebar-card
+            h3.sidebar-card__title Service Details
+            .sidebar-item
+              .sidebar-label Category
+              .sidebar-value Infrastructure
+            .sidebar-item
+              .sidebar-label Timeline
+              .sidebar-value 4-12 weeks
+            .sidebar-item
+              .sidebar-label Uptime SLA
+              .sidebar-value 99.99%
+            .sidebar-item
+              .sidebar-label Support
+              .sidebar-value 24/7 monitoring & incident response
+            .sidebar-item
+              .sidebar-label Compliance
+              .sidebar-value SOC 2, ISO 27001, GDPR, HIPAA
+
+          .sidebar-card
+            h3.sidebar-card__title Related Services
+            .sidebar-item
+              a.sidebar-value(href="service-page.html#security" style="color: var(--ms-brand-primary); text-decoration: underline") Security & Compliance
+            .sidebar-item
+              a.sidebar-value(href="service-page.html#analytics" style="color: var(--ms-brand-primary); text-decoration: underline") Data Analytics & BI
+            .sidebar-item
+              a.sidebar-value(href="service-page.html#transformation" style="color: var(--ms-brand-primary); text-decoration: underline") Digital Transformation
+
+          a.ms-btn.ms-btn--primary.ms-btn--lg(href="demo.html" style="width: 100%; text-align: center") Book a Free Consultation
+
+  //- CTA Section
+  section.ms-py-24
+    .ms-container
+      a.ms-image-link.ms-image-link--xl.ms-image-link--center.ms-image-link--glow(href="demo.html")
+        .ms-image-link__background
+          img.ms-image-link__image(
+            loading="lazy"
+            src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1920&h=800&fit=crop&q=80"
+            alt="Get started"
+          )
+        .ms-image-link__overlay
+        .ms-image-link__content
+          h2.ms-image-link__title Ready to Move to the Cloud?
+          p.ms-image-link__description
+            | Schedule a free consultation with our cloud architects. Let's design the
+            | infrastructure your business deserves.
+          span.ms-image-link__cta Book a Free Consultation

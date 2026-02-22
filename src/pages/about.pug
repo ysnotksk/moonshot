@@ -1,0 +1,367 @@
+extends _layouts/default
+
+- var title = "About Us - Our Story & Team | Moonshot"
+- var description = "About Us - Our team, mission, and company story"
+- var activeNav = "about"
+
+block append jsonLd
+  script(type="application/ld+json").
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "TechCorp",
+      "url": "https://example.com",
+      "foundingDate": "2020"
+    }
+
+block content
+  //- Hero - Company Story
+  section
+    a.ms-image-link.ms-image-link--xl.ms-image-link--center.ms-image-link--hero(href="#mission")
+      .ms-image-link__background
+        img.ms-image-link__image(
+          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&h=900&fit=crop&q=80"
+          alt="Our team"
+        )
+      .ms-image-link__overlay
+      .ms-image-link__content
+        h1.ms-image-link__title Building the Future Together
+        p.ms-image-link__description
+          | Founded in 2022, we're on a mission to empower startups with enterprise-grade
+          | technology. From Tokyo to the world.
+        span.ms-image-link__cta Our Story
+
+  //- Company Stats
+  section.ms-py-10.ms-bg-secondary(data-stats-section)
+    .ms-container
+      .ms-grid.ms-grid-cols-4.ms-gap-8.ms-text-center
+        div
+          .ms-text-5xl.ms-font-bold.ms-text-brand-primary.ms-mb-2(data-stat-value="3") 0
+          .ms-text-sm.ms-text-secondary.ms-uppercase.ms-tracking-wider Years in Business
+        div
+          .ms-text-5xl.ms-font-bold.ms-text-brand-primary.ms-mb-2(data-stat-value="28") 0
+          .ms-text-sm.ms-text-secondary.ms-uppercase.ms-tracking-wider Team Members
+        div
+          .ms-text-5xl.ms-font-bold.ms-text-brand-primary.ms-mb-2(
+            data-stat-value="150"
+            data-stat-suffix="+"
+          ) 0
+          .ms-text-sm.ms-text-secondary.ms-uppercase.ms-tracking-wider Clients Served
+        div
+          .ms-text-5xl.ms-font-bold.ms-text-brand-primary.ms-mb-2(
+            data-stat-value="5M"
+            data-stat-prefix="$"
+          ) $0
+          .ms-text-sm.ms-text-secondary.ms-uppercase.ms-tracking-wider Funding Raised
+
+  //- Mission & Values
+  section.ms-py-24
+    .ms-container
+      .ms-text-center.ms-mb-12
+        h2.ms-heading-2.ms-mb-4 Our Mission & Values
+        p.ms-lead.ms-text-secondary What drives us every day
+
+      .ms-grid.ms-grid-cols-3.ms-gap-6
+        a.ms-image-link(href="#mission")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop&q=80"
+              alt="Mission"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Mission
+            p.ms-image-link__description
+              | Democratize enterprise technology for startups. Make world-class infrastructure
+              | accessible to everyone.
+
+        a.ms-image-link(href="#innovation")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop&q=80"
+              alt="Innovation"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Innovation
+            p.ms-image-link__description Stay ahead of the curve. Embrace cutting-edge technology and continuously improve.
+
+        a.ms-image-link(href="#customer-first")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=600&fit=crop&q=80"
+              alt="Customer first"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Customer First
+            p.ms-image-link__description Your success is our success. We're partners in your growth journey.
+
+  //- Leadership Team
+  section.ms-py-24.ms-bg-secondary
+    .ms-container
+      .ms-text-center.ms-mb-12
+        h2.ms-heading-2.ms-mb-4 Leadership Team
+        p.ms-lead.ms-text-secondary Meet the people leading our mission
+
+      .ms-image-link-grid.ms-image-link-grid--3
+        a.ms-image-link.ms-image-link--grayscale(href="#ceo")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=800&fit=crop&q=80"
+              alt="Takeshi Yamamoto"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Takeshi Yamamoto
+            p.ms-image-link__description
+              strong Founder & CEO
+              br
+              | Former VP Engineering at TechCorp. 15 years building scalable systems. Stanford CS.
+            span.ms-image-link__cta LinkedIn →
+
+        a.ms-image-link.ms-image-link--grayscale(href="#cto")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=800&fit=crop&q=80"
+              alt="Sarah Chen"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Sarah Chen
+            p.ms-image-link__description
+              strong Co-founder & CTO
+              br
+              | Ex-Google Cloud architect. AI/ML specialist. MIT PhD in Computer Science.
+            span.ms-image-link__cta LinkedIn →
+
+        a.ms-image-link.ms-image-link--grayscale(href="#cpo")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=800&h=800&fit=crop&q=80"
+              alt="Michael Park"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Michael Park
+            p.ms-image-link__description
+              strong Chief Product Officer
+              br
+              | Product leader from Amazon. Built products used by millions. Berkeley MBA.
+            span.ms-image-link__cta LinkedIn →
+
+  //- Board Members & Advisors
+  section.ms-py-24
+    .ms-container
+      .ms-text-center.ms-mb-12
+        h2.ms-heading-2.ms-mb-4 Board & Advisors
+        p.ms-lead.ms-text-secondary Guided by industry veterans
+
+      .ms-grid.ms-grid-cols-4.ms-gap-6
+        a.ms-image-link.ms-image-link--sm.ms-image-link--grayscale(href="#board-1")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&h=600&fit=crop&q=80"
+              alt="Emily Zhang"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Emily Zhang
+            p.ms-image-link__description
+              | Board Member
+              br
+              small Partner, Sequoia Capital
+
+        a.ms-image-link.ms-image-link--sm.ms-image-link--grayscale(href="#board-2")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&h=600&fit=crop&q=80"
+              alt="David Kim"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title David Kim
+            p.ms-image-link__description
+              | Board Member
+              br
+              small Former CTO, Salesforce
+
+        a.ms-image-link.ms-image-link--sm.ms-image-link--grayscale(href="#advisor-1")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&h=600&fit=crop&q=80"
+              alt="Lisa Martinez"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Lisa Martinez
+            p.ms-image-link__description
+              | Advisor
+              br
+              small CEO, CloudScale Inc.
+
+        a.ms-image-link.ms-image-link--sm.ms-image-link--grayscale(href="#advisor-2")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&h=600&fit=crop&q=80"
+              alt="Tom Anderson"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Tom Anderson
+            p.ms-image-link__description
+              | Advisor
+              br
+              small Professor, Tokyo University
+
+  //- Team Culture
+  section.ms-py-24.ms-bg-secondary
+    .ms-container
+      .ms-text-center.ms-mb-12
+        h2.ms-heading-2.ms-mb-4 Life at Moonshot
+        p.ms-lead.ms-text-secondary Our culture and work environment
+
+      .ms-grid.ms-grid-cols-2.ms-gap-6
+        a.ms-image-link.ms-image-link--lg(href="#culture-remote")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=800&fit=crop&q=80"
+              alt="Remote work"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Remote-First
+            p.ms-image-link__description
+              | Work from anywhere. We have team members across 8 countries. Flexible hours, async
+              | communication, and trust-based culture.
+            span.ms-image-link__cta Learn More
+
+        a.ms-image-link.ms-image-link--lg(href="#culture-learning")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1200&h=800&fit=crop&q=80"
+              alt="Learning"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Continuous Learning
+            p.ms-image-link__description
+              | $5,000/year learning budget. Conference tickets, online courses, books. Weekly
+              | tech talks and knowledge sharing.
+            span.ms-image-link__cta Learn More
+
+        a.ms-image-link.ms-image-link--lg(href="#culture-balance")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&h=800&fit=crop&q=80"
+              alt="Work-life balance"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Work-Life Balance
+            p.ms-image-link__description
+              | Unlimited PTO. No overtime culture. Mental health support. Family-friendly
+              | policies. We believe in sustainable pace.
+            span.ms-image-link__cta Learn More
+
+        a.ms-image-link.ms-image-link--lg(href="#culture-diversity")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1200&h=800&fit=crop&q=80"
+              alt="Diversity"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Diversity & Inclusion
+            p.ms-image-link__description
+              | 40% women in engineering. 12 nationalities. LGBTQ+ friendly. Equal opportunity
+              | employer. Everyone belongs here.
+            span.ms-image-link__cta Learn More
+
+  //- Office Locations
+  section.ms-py-24
+    .ms-container
+      .ms-text-center.ms-mb-12
+        h2.ms-heading-2.ms-mb-4 Our Offices
+        p.ms-lead.ms-text-secondary Global presence, local impact
+
+      .ms-grid.ms-grid-cols-3.ms-gap-6
+        a.ms-image-link(href="#office-tokyo")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&h=600&fit=crop&q=80"
+              alt="Tokyo office"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Tokyo
+            p.ms-image-link__description
+              | Shibuya, Tokyo
+              br
+              | 15 team members
+            span.ms-image-link__cta View on Map
+
+        a.ms-image-link(href="#office-sf")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?w=800&h=600&fit=crop&q=80"
+              alt="San Francisco office"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title San Francisco
+            p.ms-image-link__description
+              | SoMa, San Francisco
+              br
+              | 8 team members
+            span.ms-image-link__cta View on Map
+
+        a.ms-image-link(href="#office-singapore")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&h=600&fit=crop&q=80"
+              alt="Singapore office"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Singapore
+            p.ms-image-link__description
+              | Marina Bay, Singapore
+              br
+              | 5 team members
+            span.ms-image-link__cta View on Map
+
+  //- CTA Section
+  section.ms-py-24
+    .ms-container
+      a.ms-image-link.ms-image-link--xl.ms-image-link--center.ms-image-link--glow(href="recruitment.html")
+        .ms-image-link__background
+          img.ms-image-link__image(
+            loading="lazy"
+            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1920&h=800&fit=crop&q=80"
+            alt="Join our team"
+          )
+        .ms-image-link__overlay
+        .ms-image-link__content
+          h2.ms-image-link__title Join Our Mission
+          p.ms-image-link__description
+            | We're looking for talented engineers, designers, and product managers to help us
+            | build the future. Check out our open positions.
+          span.ms-image-link__cta View Open Positions

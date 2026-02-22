@@ -1,0 +1,292 @@
+extends _layouts/default
+
+- var title = "Image Outboxed Links - Moonshot CSS"
+- var description = "Image Links Demo - Moonshot CSS visual component showcase"
+
+block content
+  //- Hero
+  section.ms-hero.ms-hero--minimal
+    .ms-hero__container
+      h1.ms-hero__heading Image Outboxed Links
+      p.ms-hero__description
+        | Visually impactful link components with background images that trigger curiosity and
+        | engagement.
+
+  //- Featured Grid Layout
+  section.ms-py-24
+    .ms-container
+      h2.ms-heading-2.ms-mb-12 Featured Grid Layout
+      p.ms-text-secondary.ms-mb-8 First item is larger, creating visual hierarchy
+
+      .ms-image-link-grid.ms-image-link-grid--3.ms-image-link-grid--featured
+        //- Featured Large Item
+        a.ms-image-link(href="#")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&h=800&fit=crop"
+              alt="Business team"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Enterprise Solutions
+            p.ms-image-link__description
+              | Scalable infrastructure designed for growing businesses. Deploy in minutes, scale
+              | to millions.
+            span.ms-image-link__cta Learn More
+
+        //- Regular Items
+        a.ms-image-link(href="#")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
+              alt="Analytics"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Analytics
+            p.ms-image-link__description Real-time insights for data-driven decisions.
+            span.ms-image-link__cta Explore
+
+        a.ms-image-link(href="#")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop"
+              alt="Collaboration"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Collaboration
+            p.ms-image-link__description Work together seamlessly, anywhere.
+            span.ms-image-link__cta Get Started
+
+        a.ms-image-link(href="#")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop"
+              alt="Security"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Security
+            p.ms-image-link__description Enterprise-grade security built-in.
+            span.ms-image-link__cta View Details
+
+        a.ms-image-link(href="#")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=600&fit=crop"
+              alt="Support"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title 24/7 Support
+            p.ms-image-link__description Expert help whenever you need it.
+            span.ms-image-link__cta Contact Us
+
+  //- Size Variants
+  section.ms-py-24.ms-bg-secondary
+    .ms-container
+      h2.ms-heading-2.ms-mb-12 Size Variants
+
+      .ms-grid.ms-grid-cols-3.ms-gap-6
+        //- Small
+        a.ms-image-link.ms-image-link--sm(href="#")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop"
+              alt="Small"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Small Size
+            span.ms-image-link__cta View
+
+        //- Default (Medium)
+        a.ms-image-link(href="#")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&h=400&fit=crop"
+              alt="Medium"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Default Size
+            p.ms-image-link__description Standard height and padding.
+            span.ms-image-link__cta View
+
+        //- Large
+        a.ms-image-link.ms-image-link--lg(href="#")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop"
+              alt="Large"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Large Size
+            p.ms-image-link__description Bigger impact with more space.
+            span.ms-image-link__cta View
+
+  //- Overlay Variants
+  section.ms-py-24
+    .ms-container
+      h2.ms-heading-2.ms-mb-12 Overlay Variants
+
+      .ms-grid.ms-grid-cols-4.ms-gap-6
+        //- Default Dark
+        a.ms-image-link.ms-image-link--sm(href="#")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop"
+              alt="Default"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Default
+            span.ms-image-link__cta View
+
+        //- Light Overlay
+        a.ms-image-link.ms-image-link--sm.ms-image-link--light(href="#")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=600&h=400&fit=crop"
+              alt="Light"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Light
+            span.ms-image-link__cta View
+
+        //- Extra Dark
+        a.ms-image-link.ms-image-link--sm.ms-image-link--dark(href="#")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400&fit=crop"
+              alt="Dark"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Dark
+            span.ms-image-link__cta View
+
+        //- Brand Overlay
+        a.ms-image-link.ms-image-link--sm.ms-image-link--brand(href="#")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400&fit=crop"
+              alt="Brand"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Brand
+            span.ms-image-link__cta View
+
+  //- Position Variants
+  section.ms-py-24.ms-bg-secondary
+    .ms-container
+      h2.ms-heading-2.ms-mb-12 Content Position Variants
+
+      .ms-grid.ms-grid-cols-2.ms-gap-6
+        //- Center
+        a.ms-image-link.ms-image-link--center(href="#")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=600&fit=crop"
+              alt="Center"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Center Aligned
+            p.ms-image-link__description Content centered for maximum impact.
+            span.ms-image-link__cta Explore
+
+        //- Top Right
+        a.ms-image-link.ms-image-link--top-right(href="#")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop"
+              alt="Top Right"
+            )
+          .ms-image-link__overlay.ms-image-link--gradient-top
+          .ms-image-link__content
+            h3.ms-image-link__title Top Right
+            p.ms-image-link__description Unique positioning option.
+            span.ms-image-link__cta View
+
+  //- Special Effects
+  section.ms-py-24
+    .ms-container
+      h2.ms-heading-2.ms-mb-12 Special Effects
+
+      .ms-grid.ms-grid-cols-3.ms-gap-6
+        //- Glow Effect
+        a.ms-image-link.ms-image-link--sm.ms-image-link--glow(href="#")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=600&h=400&fit=crop"
+              alt="Glow"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Glow Border
+            span.ms-image-link__cta Hover Me
+
+        //- Zoom In
+        a.ms-image-link.ms-image-link--sm.ms-image-link--zoom(href="#")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop"
+              alt="Zoom"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Zoom In
+            span.ms-image-link__cta Hover Me
+
+        //- Grayscale to Color
+        a.ms-image-link.ms-image-link--sm.ms-image-link--grayscale(href="#")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1542744094-3a31f272c490?w=600&h=400&fit=crop"
+              alt="Grayscale"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Grayscale
+            span.ms-image-link__cta Hover Me
+
+  //- Full Width Hero Style
+  section.ms-py-24.ms-bg-secondary
+    .ms-container
+      h2.ms-heading-2.ms-mb-12 Extra Large Hero Style
+
+      a.ms-image-link.ms-image-link--xl(href="#")
+        .ms-image-link__background
+          img.ms-image-link__image(
+            loading="lazy"
+            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1600&h=1000&fit=crop"
+            alt="Hero"
+          )
+        .ms-image-link__overlay
+        .ms-image-link__content
+          h3.ms-image-link__title Transform Your Business
+          p.ms-image-link__description
+            | Discover how our enterprise solutions can accelerate your growth and streamline
+            | operations. Built for scale, designed for simplicity.
+          span.ms-image-link__cta Start Your Journey

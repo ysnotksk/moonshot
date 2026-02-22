@@ -1,0 +1,105 @@
+/**
+ * Moonshot CSS Framework - Accordion (SCSS)
+ * CSS-only accordion using native <details>/<summary> elements
+ */
+
+@use '../abstracts' as *;
+
+// ========================================
+// ACCORDION CONTAINER
+// ========================================
+
+.ms-accordion {
+  width: 100%;
+
+  // ========================================
+  // ACCORDION ITEM
+  // ========================================
+
+  &__item {
+    border-bottom: 1px solid var(--ms-border-light);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  // ========================================
+  // ACCORDION HEADER (summary)
+  // ========================================
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--ms-space-6) var(--ms-space-2);
+    font-size: var(--ms-text-lg);
+    font-weight: var(--ms-font-semibold);
+    color: var(--ms-text-primary);
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    transition: color var(--ms-transition-fast);
+
+    // Remove default marker
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::marker {
+      display: none;
+      content: '';
+    }
+
+    // Chevron icon
+    &::after {
+      content: '';
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      margin-left: var(--ms-space-4);
+      background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 7.5L10 12.5L15 7.5' stroke='%234b5563' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      transition: transform var(--ms-transition-fast);
+    }
+
+    &:hover {
+      color: var(--ms-brand-primary);
+    }
+  }
+
+  // Rotate chevron when open
+  &__item[open] > &__header::after {
+    transform: rotate(180deg);
+  }
+
+  // ========================================
+  // ACCORDION BODY
+  // ========================================
+
+  &__body {
+    padding: 0 var(--ms-space-2) var(--ms-space-6);
+    font-size: var(--ms-text-base);
+    line-height: var(--ms-leading-relaxed);
+    color: var(--ms-text-secondary);
+  }
+
+  // ========================================
+  // RESPONSIVE
+  // ========================================
+
+  @include breakpoint-down('md') {
+    &__header {
+      font-size: var(--ms-text-base);
+      padding: var(--ms-space-5) var(--ms-space-1);
+    }
+
+    &__body {
+      padding: 0 var(--ms-space-1) var(--ms-space-5);
+      font-size: var(--ms-text-sm);
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "rules": {
+    "selector-class-pattern": "^ms-[a-z0-9]+(-[a-z0-9]+)*((__[a-z0-9]+(-[a-z0-9]+)*)?(--[a-z0-9]+(-[a-z0-9]+)*)?)?$",
+    "custom-property-pattern": "^ms-[a-z0-9]+(-[a-z0-9]+)*$",
+    "color-hex-length": "long",
+    "color-named": "never",
+    "declaration-block-no-redundant-longhand-properties": null,
+    "no-descending-specificity": null,
+    "property-no-vendor-prefix": null,
+    "value-no-vendor-prefix": null,
+    "import-notation": null,
+    "property-no-deprecated": null
+  }
+}

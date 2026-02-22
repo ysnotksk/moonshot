@@ -1,0 +1,54 @@
+//- Navbar include — single source of truth for all pages
+//- Uses `activeNav` variable to highlight current page link
+header.ms-header
+  nav.ms-navbar
+    a.ms-navbar__brand(href="front-page.html")
+      img.ms-navbar__logo(src="assets/logo.svg" alt="Moonshot")
+      | Moonshot
+
+    ul.ms-navbar__menu#navbar-menu
+      //- Services with Mega Menu
+      li.ms-navbar__item.ms-navbar__item--has-mega
+        a.ms-navbar__link(href="service-page.html" class=activeNav === 'services' ? 'ms-navbar__link--active' : '') Services
+        .ms-mega-menu
+          .ms-mega-menu__grid
+            .ms-mega-menu__section
+              h4.ms-mega-menu__heading Solutions
+              ul
+                li: a.ms-mega-menu__link(href="service-page.html#cloud") Cloud Infrastructure
+                li: a.ms-mega-menu__link(href="service-page.html#analytics") Data Analytics &amp; BI
+                li: a.ms-mega-menu__link(href="service-page.html#ai") AI &amp; Machine Learning
+                li: a.ms-mega-menu__link(href="service-page.html#transformation") Digital Transformation
+            .ms-mega-menu__section
+              h4.ms-mega-menu__heading Industries
+              ul
+                li: a.ms-mega-menu__link(href="#") FinTech
+                li: a.ms-mega-menu__link(href="#") Healthcare
+                li: a.ms-mega-menu__link(href="#") E-commerce
+                li: a.ms-mega-menu__link(href="#") Education
+            .ms-mega-menu__section
+              h4.ms-mega-menu__heading Resources
+              ul
+                li: a.ms-mega-menu__link(href="case-study-detail.html") Case Studies
+                li: a.ms-mega-menu__link(href="service-page.html#pricing") Pricing
+                li: a.ms-mega-menu__link(href="service-page.html#faq") FAQ
+                li: a.ms-mega-menu__link(href="contact.html") Contact
+
+      li.ms-navbar__item
+        a.ms-navbar__link(href="event-page.html" class=activeNav === 'events' ? 'ms-navbar__link--active' : '') Events
+      li.ms-navbar__item
+        a.ms-navbar__link(href="blog.html" class=activeNav === 'blog' ? 'ms-navbar__link--active' : '') Blog
+      li.ms-navbar__item
+        a.ms-navbar__link(href="recruitment.html" class=activeNav === 'careers' ? 'ms-navbar__link--active' : '') Careers
+      li.ms-navbar__item
+        a.ms-navbar__link(href="about.html" class=activeNav === 'about' ? 'ms-navbar__link--active' : '') About
+      li.ms-navbar__item
+        a.ms-navbar__link(href="contact.html" class=activeNav === 'contact' ? 'ms-navbar__link--active' : '') Contact
+
+    .ms-navbar__actions
+      a.ms-btn.ms-btn--primary.ms-btn--sm(href="demo.html") Get Demo
+
+    button.ms-navbar__toggle#navbar-toggle(aria-label="Toggle navigation")
+      span.ms-navbar__toggle-bar
+      span.ms-navbar__toggle-bar
+      span.ms-navbar__toggle-bar

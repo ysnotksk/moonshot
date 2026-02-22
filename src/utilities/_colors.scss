@@ -1,0 +1,206 @@
+/**
+ * Moonshot CSS Framework - Color Utilities (SCSS)
+ * Background and text color utilities generated with SCSS loops
+ */
+
+@use '../abstracts' as *;
+
+// ========================================
+// TEXT COLOR UTILITIES
+// ========================================
+
+$text-colors: (
+  'primary': var(--ms-text-primary),
+  'secondary': var(--ms-text-secondary),
+  'tertiary': var(--ms-text-tertiary),
+  'disabled': var(--ms-text-disabled),
+  'white': var(--ms-white),
+);
+
+@each $name, $value in $text-colors {
+  .ms-text-#{$name} {
+    color: $value;
+  }
+}
+
+// Brighter text in dark mode for stats sections
+[data-theme='dark'] .ms-bg-secondary {
+  .ms-text-brand-primary {
+    color: #9ca3af; // Gray-400 - brighter than default brand color
+  }
+
+  .ms-text-secondary {
+    color: #d1d5db; // Gray-300 - brighter than default gray-600
+  }
+}
+
+// Gray text colors
+@each $weight, $value in $colors-gray {
+  .ms-text-gray-#{$weight} {
+    color: var(--ms-gray-#{$weight});
+  }
+}
+
+// Brand text colors
+.ms-text-brand-primary {
+  color: var(--ms-brand-primary);
+}
+
+.ms-text-brand-secondary {
+  color: var(--ms-brand-secondary);
+}
+
+.ms-text-brand-accent {
+  color: var(--ms-brand-accent);
+}
+
+// Status text colors
+.ms-text-success {
+  color: var(--ms-success);
+}
+
+.ms-text-error {
+  color: var(--ms-error);
+}
+
+.ms-text-warning {
+  color: var(--ms-warning);
+}
+
+.ms-text-info {
+  color: var(--ms-info);
+}
+
+// ========================================
+// BACKGROUND COLOR UTILITIES
+// ========================================
+
+$bg-colors: (
+  'white': var(--ms-white),
+  'primary': var(--ms-bg-primary),
+  'secondary': var(--ms-bg-secondary),
+  'tertiary': var(--ms-bg-tertiary),
+);
+
+@each $name, $value in $bg-colors {
+  .ms-bg-#{$name} {
+    background-color: $value;
+  }
+}
+
+// Gray backgrounds
+@each $weight, $value in $colors-gray {
+  .ms-bg-gray-#{$weight} {
+    background-color: var(--ms-gray-#{$weight});
+  }
+}
+
+// Brand backgrounds
+.ms-bg-brand-primary {
+  background-color: var(--ms-brand-primary);
+  color: var(--ms-text-on-brand);
+}
+
+.ms-bg-brand-secondary {
+  background-color: var(--ms-brand-secondary);
+  color: var(--ms-text-on-brand);
+}
+
+.ms-bg-brand-accent {
+  background-color: var(--ms-brand-accent);
+  color: var(--ms-text-on-brand);
+}
+
+// Status backgrounds
+$status-colors: ('success', 'error', 'warning', 'info');
+
+@each $status in $status-colors {
+  .ms-bg-#{$status} {
+    background-color: var(--ms-#{$status});
+    color: var(--ms-white);
+  }
+}
+
+// ========================================
+// BORDER COLOR UTILITIES
+// ========================================
+
+.ms-border-light {
+  border-color: var(--ms-border-light);
+}
+
+.ms-border-medium {
+  border-color: var(--ms-border-medium);
+}
+
+.ms-border-dark {
+  border-color: var(--ms-border-dark);
+}
+
+.ms-border-brand {
+  border-color: var(--ms-brand-primary);
+}
+
+// ========================================
+// BORDER WIDTH UTILITIES
+// ========================================
+
+$border-widths: (0, 1, 2, 4);
+
+@each $width in $border-widths {
+  .ms-border-#{$width} {
+    border-width: var(--ms-border-width-#{$width});
+
+    @if $width > 0 {
+      border-style: solid;
+    }
+  }
+}
+
+// Border sides
+$border-sides: (
+  't': 'top',
+  'b': 'bottom',
+  'l': 'left',
+  'r': 'right',
+);
+
+@each $key, $side in $border-sides {
+  .ms-border-#{$key} {
+    border-#{$side}-width: var(--ms-border-width-1);
+    border-#{$side}-style: solid;
+  }
+}
+
+// ========================================
+// BORDER RADIUS UTILITIES
+// ========================================
+
+$radius-sizes: ('none', 'sm', 'base', 'md', 'lg', 'xl', '2xl', 'full');
+
+@each $size in $radius-sizes {
+  .ms-rounded-#{$size} {
+    border-radius: var(--ms-radius-#{$size});
+  }
+}
+
+// Default rounded
+.ms-rounded {
+  border-radius: var(--ms-radius-base);
+}
+
+// Individual corners
+$corners: (
+  'tl': 'top-left',
+  'tr': 'top-right',
+  'bl': 'bottom-left',
+  'br': 'bottom-right',
+);
+
+@each $size in ('none', 'sm', 'base', 'md', 'lg', 'xl', '2xl', 'full') {
+  @each $key, $corner in $corners {
+    .ms-rounded-#{$key}-#{$size} {
+      border-#{$corner}-radius: var(--ms-radius-#{$size});
+    }
+  }
+}

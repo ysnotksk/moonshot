@@ -1,0 +1,356 @@
+extends _layouts/default
+
+- var title = "Moonshot - Clean, Minimal, Monochrome CSS Framework"
+- var description = "TechCorp - Innovative technology solutions for modern businesses"
+
+block append jsonLd
+  script(type="application/ld+json").
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "TechCorp",
+      "url": "https://example.com",
+      "description": "Innovative technology solutions for modern businesses"
+    }
+
+block content
+  //- Hero Section - Image Outboxed
+  section
+    a.ms-image-link.ms-image-link--xl.ms-image-link--hero(href="#get-started")
+      .ms-image-link__background
+        img.ms-image-link__image(
+          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&h=1000&fit=crop&q=80"
+          alt="Team collaboration"
+        )
+      .ms-image-link__overlay
+      .ms-image-link__content
+        h1.ms-image-link__title Clean, Minimal, Monochrome
+        p.ms-image-link__description
+          | Handy CSS Framework for Startups. Build beautiful corporate websites with modular,
+          | block-based components designed for rapid deployment and brand customization.
+        span.ms-image-link__cta Get Started Free
+
+  //- Stats Section
+  section.ms-py-10.ms-bg-secondary(data-stats-section)
+    .ms-container
+      .ms-grid.ms-grid-cols-4.ms-gap-8.ms-text-center
+        div
+          .ms-text-5xl.ms-font-bold.ms-text-brand-primary.ms-mb-2(
+            data-stat-value="< 10KB"
+            data-stat-prefix="< "
+            data-stat-suffix="KB"
+          ) 0
+          .ms-text-sm.ms-text-secondary.ms-uppercase.ms-tracking-wider Gzipped Size
+        div
+          .ms-text-5xl.ms-font-bold.ms-text-brand-primary.ms-mb-2(data-stat-value="10") 0
+          .ms-text-sm.ms-text-secondary.ms-uppercase.ms-tracking-wider Page Templates
+        div
+          .ms-text-5xl.ms-font-bold.ms-text-brand-primary.ms-mb-2(
+            data-stat-value="40"
+            data-stat-suffix="+"
+          ) 0
+          .ms-text-sm.ms-text-secondary.ms-uppercase.ms-tracking-wider Components
+        div
+          .ms-text-5xl.ms-font-bold.ms-text-brand-primary.ms-mb-2(data-stat-value="∞") 0
+          .ms-text-sm.ms-text-secondary.ms-uppercase.ms-tracking-wider Customizations
+
+  //- Client Logos Section
+  section.ms-client-logos.ms-client-logos--stats-style
+    .ms-client-logos__container
+      h3.ms-client-logos__heading Trusted by Leading Companies
+      .ms-client-logos__scroll-wrapper
+        .ms-client-logos__scroll-track
+          each name in ["TechCorp", "StartupX", "InnovateCo", "GlobalInc", "FutureLabs", "DigitalPro", "CloudTech", "NextGen", "TechCorp", "StartupX", "InnovateCo", "GlobalInc", "FutureLabs", "DigitalPro", "CloudTech", "NextGen"]
+            .ms-client-logos__logo-item
+              svg(width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg")
+                rect(width="120" height="40" rx="4" fill="#374151")
+                text(x="60" y="25" font-family="Arial, sans-serif" font-size=(name.length > 8 ? "13" : "14") font-weight="600" fill="#ffffff" text-anchor="middle")= name
+
+  //- Key Features - Image Grid
+  section.ms-py-24#features
+    .ms-container
+      .ms-text-center.ms-mb-12
+        h2.ms-heading-2.ms-mb-4 Why Choose Moonshot?
+        p.ms-lead.ms-text-secondary Built for startups who need professional websites fast
+
+      .ms-image-link-grid.ms-image-link-grid--3.ms-image-link-grid--featured
+        //- Featured: Brand Customization
+        a.ms-image-link(href="#customization")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&h=800&fit=crop&q=80"
+              alt="Brand colors"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Brand Customizable
+            p.ms-image-link__description
+              | Change 3 CSS variables to instantly apply your brand colors. Monochrome base
+              | ensures professional appearance while your brand stands out.
+            span.ms-image-link__cta Learn How
+
+        //- Block-based
+        a.ms-image-link(href="#components")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1587440871875-191322ee64b0?w=800&h=600&fit=crop&q=80"
+              alt="Modular blocks"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Block-based
+            p.ms-image-link__description Mix and match components like LEGO blocks for maximum flexibility.
+            span.ms-image-link__cta View Components
+
+        //- Japanese Optimized
+        a.ms-image-link(href="#typography")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1528164344705-47542687000d?w=800&h=600&fit=crop&q=80"
+              alt="Japanese typography"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title 日本語最適化
+            p.ms-image-link__description Typography tuned for Japanese content. Perfect for bilingual sites.
+            span.ms-image-link__cta 詳細を見る
+
+        //- Lightweight
+        a.ms-image-link(href="#performance")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80"
+              alt="Fast performance"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Lightweight
+            p.ms-image-link__description Core framework under 10KB gzipped. Lightning-fast load times.
+            span.ms-image-link__cta Performance
+
+        //- Accessible
+        a.ms-image-link(href="#accessibility")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&h=600&fit=crop&q=80"
+              alt="Accessibility"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Accessible
+            p.ms-image-link__description WCAG 2.1 AA compliant with semantic HTML and screen reader support.
+            span.ms-image-link__cta Accessibility
+
+        //- Brand Logo
+        div(style="display: flex; align-items: center; justify-content: center; background-color: var(--ms-bg-tertiary); border-radius: var(--ms-radius-lg); padding: var(--ms-space-8);")
+          img(src="assets/logo.svg" alt="Moonshot" style="width: 120px; height: auto; opacity: 0.15")
+
+  //- Use Cases - Horizontal Image Links
+  section.ms-py-24.ms-bg-secondary#services
+    .ms-container
+      .ms-text-center.ms-mb-12
+        h2.ms-heading-2.ms-mb-4 Built for Startups
+        p.ms-lead.ms-text-secondary 7 essential page templates included
+
+      .ms-grid.ms-grid-cols-2.ms-gap-6
+        //- Service Showcase
+        a.ms-image-link.ms-image-link--sm(href="service-page.html")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop&q=80"
+              alt="Service page"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Service Pages
+            p.ms-image-link__description Showcase your 2-5 services with features and pricing
+            span.ms-image-link__cta View Template
+
+        //- Blog
+        a.ms-image-link.ms-image-link--sm(href="blog.html")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=600&fit=crop&q=80"
+              alt="Blog"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Blog & Content
+            p.ms-image-link__description SEO-optimized blog with sidebar and article layouts
+            span.ms-image-link__cta View Template
+
+        //- Events
+        a.ms-image-link.ms-image-link--sm(href="event-page.html")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop&q=80"
+              alt="Events"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Event Pages
+            p.ms-image-link__description Seminars, roadshows, and conference landing pages
+            span.ms-image-link__cta View Template
+
+        //- Recruitment
+        a.ms-image-link.ms-image-link--sm(href="recruitment.html")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&h=600&fit=crop&q=80"
+              alt="Recruitment"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Recruitment
+            p.ms-image-link__description Job listings with benefits and application forms
+            span.ms-image-link__cta View Template
+
+      .ms-text-center.ms-mt-8
+        a.ms-link.ms-text-lg(href="index.html") View all 7 templates →
+
+  //- Brand Showcase - Split Layout
+  section.ms-py-24
+    .ms-container
+      .ms-grid.ms-grid-cols-2.ms-gap-6
+        //- Main Brand
+        a.ms-image-link.ms-image-link--lg.ms-image-link--center(href="brand-family.html")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1000&h=800&fit=crop&q=80"
+              alt="Brand family"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Multi-Brand Support
+            p.ms-image-link__description Build main brand + sub-brand family with consistent design system
+            span.ms-image-link__cta See Examples
+
+        //- About/Team
+        a.ms-image-link.ms-image-link--lg.ms-image-link--center(href="about.html")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1000&h=800&fit=crop&q=80"
+              alt="Team"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Team & Company
+            p.ms-image-link__description Showcase your team, board members, and company story
+            span.ms-image-link__cta View Template
+
+  //- Testimonials Section
+  section.ms-py-24#testimonials
+    .ms-container
+      .ms-text-center.ms-mb-12
+        h2.ms-heading-2.ms-mb-4 What Our Clients Say
+        p.ms-lead.ms-text-secondary Trusted by startups and enterprises alike
+
+      .ms-testimonial-grid
+        .ms-testimonial
+          blockquote.ms-testimonial__quote
+            | "Moonshot enabled us to launch in just 10 days. The clean, monochrome design
+            | perfectly matches our brand identity. We customized the colors in 5 minutes."
+          .ms-testimonial__author
+            img.ms-testimonial__avatar(
+              src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=96&h=96&fit=crop&q=80"
+              alt="Sarah Chen"
+            )
+            .ms-testimonial__info
+              span.ms-testimonial__name Sarah Chen
+              span.ms-testimonial__title CEO, TechStart Inc.
+
+        .ms-testimonial
+          blockquote.ms-testimonial__quote
+            | "The block-based approach saved our team weeks of development time. We went from
+            | wireframe to production in record time without sacrificing quality."
+          .ms-testimonial__author
+            img.ms-testimonial__avatar(
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=96&h=96&fit=crop&q=80"
+              alt="James Miller"
+            )
+            .ms-testimonial__info
+              span.ms-testimonial__name James Miller
+              span.ms-testimonial__title CTO, CloudBase
+
+        .ms-testimonial
+          blockquote.ms-testimonial__quote
+            | "Finally a CSS framework that doesn't fight you on customization. The Japanese
+            | typography support was exactly what we needed for our bilingual platform."
+          .ms-testimonial__author
+            img.ms-testimonial__avatar(
+              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=96&h=96&fit=crop&q=80"
+              alt="Yuki Tanaka"
+            )
+            .ms-testimonial__info
+              span.ms-testimonial__name Yuki Tanaka
+              span.ms-testimonial__title Design Lead, NexBridge
+
+  //- FAQ Section
+  section.ms-py-24.ms-bg-secondary#faq
+    .ms-container(style="max-width: 800px")
+      .ms-text-center.ms-mb-12
+        h2.ms-heading-2.ms-mb-4 Frequently Asked Questions
+        p.ms-lead.ms-text-secondary Everything you need to know about Moonshot
+
+      .ms-accordion
+        details.ms-accordion__item
+          summary.ms-accordion__header What is Moonshot CSS Framework?
+          .ms-accordion__body
+            | Moonshot is a clean, minimal, monochrome CSS framework designed specifically for
+            | startup websites. It provides modular, block-based components that can be quickly
+            | assembled into professional corporate pages with minimal customization.
+
+        details.ms-accordion__item
+          summary.ms-accordion__header How do I customize the brand colors?
+          .ms-accordion__body
+            | Simply override three CSS custom properties: #[code --ms-brand-primary],
+            | #[code --ms-brand-secondary], and #[code --ms-brand-accent]. The entire
+            | framework will adapt to your brand colors instantly.
+
+        details.ms-accordion__item
+          summary.ms-accordion__header Is Moonshot suitable for Japanese websites?
+          .ms-accordion__body
+            | Yes. Moonshot includes built-in Japanese typography optimization with Hiragino, Noto
+            | Sans JP, and Yu Gothic font stacks. Add #[code lang="ja"] to your HTML element
+            | to activate Japanese-specific line-height and word-wrap settings.
+
+        details.ms-accordion__item
+          summary.ms-accordion__header What's the file size?
+          .ms-accordion__body
+            | The core framework is under 10KB gzipped. This includes all components, utilities,
+            | and responsive styles. No JavaScript is required for most components — the few
+            | interactive features use a minimal vanilla JS bundle.
+
+        details.ms-accordion__item
+          summary.ms-accordion__header Do I need to install Node.js or any build tools?
+          .ms-accordion__body
+            | No. You can use the pre-built CSS files directly via a link tag. If you want to
+            | customize the SCSS source, then Node.js and npm are needed for the build step, but
+            | they're optional for basic usage.
+
+  //- CTA Section
+  section.ms-py-24
+    .ms-container
+      a.ms-image-link.ms-image-link--xl.ms-image-link--center.ms-image-link--glow(href="demo.html")
+        .ms-image-link__background
+          img.ms-image-link__image(
+            loading="lazy"
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&h=800&fit=crop&q=80"
+            alt="Get started"
+          )
+        .ms-image-link__overlay
+        .ms-image-link__content
+          h2.ms-image-link__title Ready to Build?
+          p.ms-image-link__description Start creating beautiful startup websites today with Moonshot CSS Framework
+          span.ms-image-link__cta Get Started Free

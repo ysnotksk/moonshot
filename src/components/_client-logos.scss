@@ -1,0 +1,185 @@
+/**
+ * Moonshot CSS Framework - Client Logos Scroll (SCSS)
+ * Horizontal scrolling client logo carousel
+ * Alternative to stats section for showcasing clients/partners
+ */
+
+@use '../abstracts' as *;
+
+// ========================================
+// CLIENT LOGOS CONTAINER
+// ========================================
+
+.ms-client-logos {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+
+  &__container {
+    @include container('2xl');
+
+    padding: var(--ms-space-6) var(--ms-space-8); // Reduced vertical padding, maintained horizontal padding
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__heading {
+    @include heading-base;
+
+    font-size: var(--ms-text-lg);
+    text-align: left;
+    margin-bottom: var(--ms-space-6); // Increased spacing below heading
+    margin-left: var(--ms-space-2); // Small left margin to prevent edge alignment
+    color: var(--ms-text-secondary);
+    font-weight: var(--ms-font-medium);
+    text-transform: uppercase;
+    letter-spacing: var(--ms-tracking-wider);
+  }
+
+  // ========================================
+  // SCROLLING WRAPPER
+  // ========================================
+
+  &__scroll-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000000 5%,
+      #000000 95%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000000 5%,
+      #000000 95%,
+      transparent 100%
+    );
+  }
+
+  &__scroll-track {
+    display: flex;
+    gap: var(--ms-space-8); // Reduced from space-12
+    align-items: center;
+    animation: scroll-logos 30s linear infinite;
+    will-change: transform;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  // Duplicate logos for seamless loop
+  &__scroll-track--duplicate {
+    display: flex;
+    gap: var(--ms-space-12);
+    align-items: center;
+  }
+
+  // ========================================
+  // LOGO ITEM
+  // ========================================
+
+  &__logo-item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px; // Reduced from 60px
+    padding: 0 var(--ms-space-3); // Reduced from space-4
+    opacity: 0.6;
+    filter: grayscale(100%);
+    transition: all var(--ms-transition-base);
+
+    &:hover {
+      opacity: 1;
+      filter: grayscale(0%);
+    }
+
+    img {
+      max-height: 100%;
+      max-width: 120px; // Reduced from 150px
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  // ========================================
+  // ANIMATION
+  // ========================================
+
+  @keyframes scroll-logos {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  // ========================================
+  // VARIANT: STATS SECTION STYLE
+  // ========================================
+
+  &--stats-style {
+    background-color: var(--ms-bg-secondary);
+    padding: var(--ms-space-6) 0; // Reduced vertical padding for more compact design
+
+    .ms-client-logos__container {
+      padding-top: var(--ms-space-4);
+      padding-bottom: var(--ms-space-4);
+      padding-left: var(--ms-space-8); // Ensure consistent left padding
+      padding-right: var(--ms-space-8);
+    }
+
+    .ms-client-logos__heading {
+      color: var(--ms-text-primary);
+      margin-bottom: var(--ms-space-6); // Increased spacing below heading
+      margin-left: 0; // Reset margin-left for stats style
+    }
+
+    .ms-client-logos__logo-item {
+      height: 36px; // Reduced from 50px
+      opacity: 0.7;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  // ========================================
+  // RESPONSIVE
+  // ========================================
+
+  @include breakpoint-down('md') {
+    &__container {
+      padding: var(--ms-space-6) var(--ms-space-6); // Increased padding for better spacing on mobile
+    }
+
+    &__heading {
+      font-size: var(--ms-text-sm);
+      margin-bottom: var(--ms-space-4); // Consistent spacing
+      margin-left: var(--ms-space-1); // Small left margin on mobile
+    }
+
+    &__scroll-track {
+      gap: var(--ms-space-6); // Reduced from space-8
+      animation-duration: 20s; // Faster on mobile
+    }
+
+    &__logo-item {
+      height: 32px; // Reduced from 40px
+      padding: 0 var(--ms-space-2);
+
+      img {
+        max-width: 80px; // Reduced from 100px
+      }
+    }
+  }
+}

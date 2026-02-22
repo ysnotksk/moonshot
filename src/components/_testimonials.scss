@@ -1,0 +1,149 @@
+/**
+ * Moonshot CSS Framework - Testimonials (SCSS)
+ * Quote cards and testimonial grid layouts
+ */
+
+@use '../abstracts' as *;
+
+// ========================================
+// SINGLE TESTIMONIAL
+// ========================================
+
+.ms-testimonial {
+  @include flex-column;
+  @include card-base;
+
+  padding: var(--ms-space-8);
+  position: relative;
+
+  // Quote mark decoration
+  &::before {
+    content: '\201C'; // Left double quotation mark
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--ms-border-light);
+    position: absolute;
+    top: var(--ms-space-4);
+    left: var(--ms-space-6);
+  }
+
+  &__quote {
+    font-size: var(--ms-text-base);
+    line-height: var(--ms-leading-relaxed);
+    color: var(--ms-text-primary);
+    font-style: italic;
+    margin: var(--ms-space-6) 0 var(--ms-space-6);
+    flex: 1;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: var(--ms-space-4);
+    margin-top: auto;
+  }
+
+  &__avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--ms-radius-full);
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  &__info {
+    @include flex-column;
+
+    gap: var(--ms-space-1);
+  }
+
+  &__name {
+    font-size: var(--ms-text-sm);
+    font-weight: var(--ms-font-semibold);
+    color: var(--ms-text-primary);
+  }
+
+  &__title {
+    font-size: var(--ms-text-xs);
+    color: var(--ms-text-tertiary);
+  }
+
+  &__company {
+    font-size: var(--ms-text-xs);
+    color: var(--ms-text-tertiary);
+  }
+
+  // ========================================
+  // FEATURED VARIANT
+  // ========================================
+
+  &--featured {
+    background: linear-gradient(135deg, var(--ms-gray-900) 0%, var(--ms-gray-800) 100%);
+    border: none;
+    color: var(--ms-white);
+    padding: var(--ms-space-12);
+    text-align: center;
+
+    &::before {
+      color: rgb(255 255 255 / 15%);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .ms-testimonial__quote {
+      color: var(--ms-white);
+      font-size: var(--ms-text-xl);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .ms-testimonial__author {
+      justify-content: center;
+    }
+
+    .ms-testimonial__name {
+      color: var(--ms-white);
+    }
+
+    .ms-testimonial__title,
+    .ms-testimonial__company {
+      color: rgb(255 255 255 / 70%);
+    }
+  }
+
+  // ========================================
+  // RESPONSIVE
+  // ========================================
+
+  @include breakpoint-down('md') {
+    padding: var(--ms-space-6);
+
+    &--featured {
+      padding: var(--ms-space-8);
+
+      .ms-testimonial__quote {
+        font-size: var(--ms-text-base);
+      }
+    }
+  }
+}
+
+// ========================================
+// TESTIMONIAL GRID
+// ========================================
+
+.ms-testimonial-grid {
+  display: grid;
+  gap: var(--ms-space-8);
+  grid-template-columns: repeat(3, 1fr);
+
+  @include breakpoint-down('lg') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoint-down('md') {
+    grid-template-columns: 1fr;
+    gap: var(--ms-space-6);
+  }
+}

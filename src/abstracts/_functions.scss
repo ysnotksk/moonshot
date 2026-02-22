@@ -1,0 +1,163 @@
+/**
+ * Moonshot CSS Framework - Functions
+ * SCSS functions for calculations and utilities
+ */
+
+@use 'sass:map';
+@use 'sass:math';
+@use 'variables' as *;
+
+// ========================================
+// COLOR FUNCTIONS
+// ========================================
+
+/// Get color from map
+/// @param {String} $shade - The shade number (50-900)
+/// @return {Color} - The color value
+@function gray($shade) {
+  @if map.has-key($colors-gray, $shade) {
+    @return map.get($colors-gray, $shade);
+  }
+
+  @error "Shade #{$shade} not found in $colors-gray.";
+}
+
+/// Get brand color
+/// @param {String} $variant - The variant name (primary, secondary, accent)
+/// @return {Color} - The color value
+@function brand($variant: 'primary') {
+  @if map.has-key($colors-brand, $variant) {
+    @return map.get($colors-brand, $variant);
+  }
+
+  @error "Variant #{$variant} not found in $colors-brand.";
+}
+
+// ========================================
+// SPACING FUNCTIONS
+// ========================================
+
+/// Get spacing value
+/// @param {Number} $size - The size key (0, 1, 2, 3, 4, etc.)
+/// @return {Length} - The spacing value
+@function space($size) {
+  @if map.has-key($spacings, $size) {
+    @return map.get($spacings, $size);
+  }
+
+  @error "Size #{$size} not found in $spacings.";
+}
+
+/// Calculate spacing with multiplier
+/// @param {Number} $multiplier - The multiplier
+/// @return {Length} - The calculated spacing
+@function spacing($multiplier) {
+  @return calc(1rem * #{$multiplier});
+}
+
+// ========================================
+// TYPOGRAPHY FUNCTIONS
+// ========================================
+
+/// Get font size
+/// @param {String} $size - The size name (xs, sm, base, lg, xl, etc.)
+/// @return {Length} - The font size value
+@function font-size($size) {
+  @if map.has-key($font-sizes, $size) {
+    @return map.get($font-sizes, $size);
+  }
+
+  @error "Size #{$size} not found in $font-sizes.";
+}
+
+/// Get font weight
+/// @param {String} $weight - The weight name (normal, medium, semibold, bold)
+/// @return {Number} - The font weight value
+@function font-weight($weight) {
+  @if map.has-key($font-weights, $weight) {
+    @return map.get($font-weights, $weight);
+  }
+
+  @error "Weight #{$weight} not found in $font-weights.";
+}
+
+// ========================================
+// BORDER FUNCTIONS
+// ========================================
+
+/// Get border radius
+/// @param {String} $size - The size name (sm, base, md, lg, xl, 2xl, full)
+/// @return {Length} - The border radius value
+@function radius($size) {
+  @if map.has-key($radii, $size) {
+    @return map.get($radii, $size);
+  }
+
+  @error "Size #{$size} not found in $radii.";
+}
+
+// ========================================
+// SHADOW FUNCTIONS
+// ========================================
+
+/// Get shadow value
+/// @param {String} $size - The size name (sm, base, md, lg, xl, 2xl)
+/// @return {Shadow} - The box-shadow value
+@function shadow($size) {
+  @if map.has-key($shadows, $size) {
+    @return map.get($shadows, $size);
+  }
+
+  @error "Size #{$size} not found in $shadows.";
+}
+
+// ========================================
+// Z-INDEX FUNCTIONS
+// ========================================
+
+/// Get z-index value
+/// @param {String|Number} $layer - The layer name or number
+/// @return {Number} - The z-index value
+@function z($layer) {
+  @if map.has-key($z-indices, $layer) {
+    @return map.get($z-indices, $layer);
+  }
+
+  @error "Layer #{$layer} not found in $z-indices.";
+}
+
+// ========================================
+// UTILITY FUNCTIONS
+// ========================================
+
+/// Convert px to rem
+/// @param {Number} $px - The pixel value
+/// @param {Number} $base - The base font size (default: 16)
+/// @return {Length} - The rem value
+@function rem($px, $base: 16) {
+  @return math.div($px, $base) * 1rem;
+}
+
+/// Convert rem to px
+/// @param {Number} $rem - The rem value
+/// @param {Number} $base - The base font size (default: 16)
+/// @return {Length} - The pixel value
+@function px($rem, $base: 16) {
+  @return $rem * $base * 1px;
+}
+
+/// Strip unit from value
+/// @param {Number} $value - The value with unit
+/// @return {Number} - The unitless value
+@function strip-unit($value) {
+  @return math.div($value, $value * 0 + 1);
+}
+
+/// Clamp value between min and max
+/// @param {Number} $min - Minimum value
+/// @param {Number} $val - Preferred value
+/// @param {Number} $max - Maximum value
+/// @return {String} - CSS clamp() function
+@function clamp-value($min, $val, $max) {
+  @return clamp(#{$min}, #{$val}, #{$max});
+}

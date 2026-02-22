@@ -1,0 +1,137 @@
+extends _layouts/default
+
+- var title = "Blog - Moonshot CSS"
+- var description = "Building Modern Corporate Websites with Moonshot CSS Framework"
+- var activeNav = "blog"
+- var ogType = "article"
+
+block append jsonLd
+  script(type="application/ld+json").
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Building Modern Corporate Websites with Moonshot CSS",
+      "author": { "@type": "Person", "name": "John Doe" },
+      "datePublished": "2025-12-21"
+    }
+
+block content
+  .ms-container.ms-py-12
+    .ms-breadcrumb
+      .ms-breadcrumb__item
+        a.ms-breadcrumb__link(href="front-page.html") Home
+      .ms-breadcrumb__item
+        a.ms-breadcrumb__link(href="blog.html") Blog
+      .ms-breadcrumb__item.ms-breadcrumb__item--active Building Modern Corporate Websites
+
+  .ms-container.ms-pb-24
+    //- Centered Main Content
+    article(style="max-width: 800px; margin: 0 auto")
+      h1.ms-heading-1 Building Modern Corporate Websites with Moonshot CSS
+      .ms-text-sm.ms-text-secondary.ms-mb-6 Published on December 21, 2025 · 5 min read · By John Doe
+
+      .ms-mb-8
+        img.ms-w-full.ms-rounded-lg(
+          src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=400&fit=crop"
+          alt="Blog post hero"
+        )
+
+      .ms-paragraph
+        | In today's fast-paced startup ecosystem, having a professional corporate website is
+        | essential for establishing credibility and attracting customers. However, many startups
+        | struggle with the time and resources required to build a high-quality website from
+        | scratch.
+
+      .ms-paragraph
+        | That's where Moonshot CSS Framework comes in. Our monochrome-based, brand-customizable
+        | framework enables rapid deployment of startup corporate websites without sacrificing
+        | quality or flexibility.
+
+      h2.ms-heading-3.ms-mt-8.ms-mb-4 Why Monochrome?
+
+      .ms-paragraph A monochrome foundation provides several key advantages:
+
+      ul.ms-list.ms-list-unordered
+        li.ms-list-item Timeless, professional aesthetic that works for any industry
+        li.ms-list-item Client brand colors stand out without competing with framework colors
+        li.ms-list-item Easier to maintain consistent contrast ratios for accessibility
+        li.ms-list-item Reduces decision fatigue during the design process
+
+      .ms-blockquote
+        | "Moonshot CSS enabled us to launch our corporate site in just 10 days, with a design
+        | that perfectly matches our brand identity."
+
+      h2.ms-heading-3.ms-mt-8.ms-mb-4 Key Features for Startups
+
+      .ms-paragraph
+        | We've designed Moonshot specifically with startup needs in mind, including seven
+        | essential page templates: front page, service pages, blog, events, recruitment, about
+        | us, and brand family showcase.
+
+      .ms-paragraph
+        | Each template is optimized for SEO, mobile-responsive, and accessible out of the box.
+        | This means you can focus on your content and business goals rather than technical
+        | implementation details.
+
+      .ms-text-center.ms-my-12
+        a.ms-btn.ms-btn--primary.ms-btn--lg(href="#") Get Started with Moonshot
+
+      //- Tags at bottom of article
+      .ms-mt-12.ms-pt-6(style="border-top: 1px solid var(--ms-border-light)")
+        .ms-text-sm.ms-text-secondary.ms-mb-3 Tagged in:
+        .ms-flex.ms-flex-wrap.ms-gap-2
+          a.ms-px-3.ms-py-1.ms-bg-gray-200.ms-rounded-full.ms-text-sm.ms-text-primary.ms-no-underline(href="#") CSS
+          a.ms-px-3.ms-py-1.ms-bg-gray-200.ms-rounded-full.ms-text-sm.ms-text-primary.ms-no-underline(href="#") Startup
+          a.ms-px-3.ms-py-1.ms-bg-gray-200.ms-rounded-full.ms-text-sm.ms-text-primary.ms-no-underline(href="#") Design
+          a.ms-px-3.ms-py-1.ms-bg-gray-200.ms-rounded-full.ms-text-sm.ms-text-primary.ms-no-underline(href="#") SEO
+
+      //- Author Info
+      .ms-card.ms-mt-8
+        .ms-card__body
+          .ms-flex.ms-items-center.ms-gap-4
+            img.ms-rounded-full(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=128&h=128&fit=crop&crop=faces"
+              alt="Author"
+              width="80"
+              height="80"
+            )
+            div
+              .ms-font-semibold.ms-text-lg John Doe
+              .ms-text-sm.ms-text-secondary Lead Developer at Moonshot
+              .ms-text-sm.ms-text-secondary.ms-mt-1
+                | Passionate about creating elegant, accessible web frameworks that empower
+                | startups to build beautiful websites.
+
+      //- Previous/Next Navigation
+      nav.ms-flex.ms-justify-between.ms-items-center.ms-mt-12.ms-pt-6(style="border-top: 1px solid var(--ms-border-light)")
+        a.ms-flex.ms-items-center.ms-gap-2.ms-text-secondary.ms-no-underline(href="#")
+          span ←
+          div
+            .ms-text-xs.ms-text-secondary Previous
+            .ms-font-semibold SEO Best Practices
+        a.ms-flex.ms-items-center.ms-gap-2.ms-text-secondary.ms-text-right.ms-no-underline(href="#")
+          div
+            .ms-text-xs.ms-text-secondary Next
+            .ms-font-semibold Choosing CSS Framework
+          span →
+
+    //- Related Posts - Full Width Below Content
+    .ms-mt-16(style="max-width: 1200px; margin-left: auto; margin-right: auto")
+      h3.ms-heading-4.ms-mb-6.ms-text-center Related Posts
+      .ms-grid.ms-grid-cols-3.ms-gap-6
+        .ms-card
+          .ms-card__body
+            h4.ms-card__title SEO Best Practices for Startups
+            p.ms-card__subtitle Learn how to optimize your startup website for search engines and drive organic traffic.
+            .ms-text-sm.ms-text-secondary.ms-mt-4 5 min read
+        .ms-card
+          .ms-card__body
+            h4.ms-card__title Choosing the Right CSS Framework
+            p.ms-card__subtitle Compare popular CSS frameworks and find the best fit for your project needs.
+            .ms-text-sm.ms-text-secondary.ms-mt-4 7 min read
+        .ms-card
+          .ms-card__body
+            h4.ms-card__title Brand Identity for Startups
+            p.ms-card__subtitle Create a consistent brand identity that resonates with your target audience.
+            .ms-text-sm.ms-text-secondary.ms-mt-4 6 min read

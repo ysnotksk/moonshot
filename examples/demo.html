@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Demo - TechCorp</title>
+    <meta name="description" content="Schedule a personalized demo of TechCorp's enterprise solutions. See how we can accelerate your business growth.">
+    <meta property="og:title" content="Book a Demo - TechCorp">
+    <meta property="og:description" content="Schedule a personalized demo of TechCorp's enterprise solutions. See how we can accelerate your business growth.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <link rel="stylesheet" href="../dist/moonshot.css">
+    <style>
+      .demo-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--ms-space-16);
+        align-items: start;
+      }
+      @media (max-width: 768px) {
+        .demo-grid {
+          grid-template-columns: 1fr;
+          gap: var(--ms-space-10);
+        }
+      }
+      .demo-form-card {
+        background-color: var(--ms-bg-primary);
+        border: 1px solid var(--ms-border-light);
+        border-radius: var(--ms-radius-lg);
+        padding: var(--ms-space-10);
+      }
+      @media (max-width: 768px) {
+        .demo-form-card {
+          padding: var(--ms-space-6);
+        }
+      }
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--ms-space-4);
+      }
+      @media (max-width: 480px) {
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+      }
+      .value-prop {
+        display: flex;
+        gap: var(--ms-space-4);
+        align-items: flex-start;
+      }
+      .value-prop__icon {
+        flex-shrink: 0;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--ms-bg-secondary);
+        border-radius: var(--ms-radius-md);
+        color: var(--ms-brand-primary);
+      }
+      .trust-badges {
+        display: flex;
+        gap: var(--ms-space-4);
+        flex-wrap: wrap;
+        margin-top: var(--ms-space-8);
+        padding-top: var(--ms-space-8);
+        border-top: 1px solid var(--ms-border-light);
+      }
+      .trust-badge {
+        display: flex;
+        align-items: center;
+        gap: var(--ms-space-2);
+        font-size: var(--ms-text-xs);
+        color: var(--ms-text-tertiary);
+        text-transform: uppercase;
+        letter-spacing: var(--ms-tracking-wider);
+      }
+      
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Book a Demo - TechCorp",
+        "url": "https://example.com/demo",
+        "mainEntity": {
+          "@type": "Organization",
+          "name": "TechCorp",
+          "url": "https://example.com"
+        }
+      }
+      
+    </script>
+  </head>
+  <body><a class="ms-skip-link" href="#main-content">Skip to main content</a>
+    <header class="ms-header">
+      <nav class="ms-navbar"><a class="ms-navbar__brand" href="front-page.html"><img class="ms-navbar__logo" src="assets/logo.svg" alt="Moonshot">Moonshot</a>
+        <ul class="ms-navbar__menu" id="navbar-menu">
+          <li class="ms-navbar__item ms-navbar__item--has-mega"><a class="ms-navbar__link" href="service-page.html">Services</a>
+            <div class="ms-mega-menu">
+              <div class="ms-mega-menu__grid">
+                <div class="ms-mega-menu__section">
+                  <h4 class="ms-mega-menu__heading">Solutions</h4>
+                  <ul>
+                    <li><a class="ms-mega-menu__link" href="service-page.html#cloud">Cloud Infrastructure</a></li>
+                    <li><a class="ms-mega-menu__link" href="service-page.html#analytics">Data Analytics &amp; BI</a></li>
+                    <li><a class="ms-mega-menu__link" href="service-page.html#ai">AI &amp; Machine Learning</a></li>
+                    <li><a class="ms-mega-menu__link" href="service-page.html#transformation">Digital Transformation</a></li>
+                  </ul>
+                </div>
+                <div class="ms-mega-menu__section">
+                  <h4 class="ms-mega-menu__heading">Industries</h4>
+                  <ul>
+                    <li><a class="ms-mega-menu__link" href="#">FinTech</a></li>
+                    <li><a class="ms-mega-menu__link" href="#">Healthcare</a></li>
+                    <li><a class="ms-mega-menu__link" href="#">E-commerce</a></li>
+                    <li><a class="ms-mega-menu__link" href="#">Education</a></li>
+                  </ul>
+                </div>
+                <div class="ms-mega-menu__section">
+                  <h4 class="ms-mega-menu__heading">Resources</h4>
+                  <ul>
+                    <li><a class="ms-mega-menu__link" href="case-study-detail.html">Case Studies</a></li>
+                    <li><a class="ms-mega-menu__link" href="service-page.html#pricing">Pricing</a></li>
+                    <li><a class="ms-mega-menu__link" href="service-page.html#faq">FAQ</a></li>
+                    <li><a class="ms-mega-menu__link" href="contact.html">Contact</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="ms-navbar__item"><a class="ms-navbar__link" href="event-page.html">Events</a></li>
+          <li class="ms-navbar__item"><a class="ms-navbar__link" href="blog.html">Blog</a></li>
+          <li class="ms-navbar__item"><a class="ms-navbar__link" href="recruitment.html">Careers</a></li>
+          <li class="ms-navbar__item"><a class="ms-navbar__link" href="about.html">About</a></li>
+          <li class="ms-navbar__item"><a class="ms-navbar__link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="ms-navbar__actions"><a class="ms-btn ms-btn--primary ms-btn--sm" href="demo.html">Get Demo</a></div>
+        <button class="ms-navbar__toggle" id="navbar-toggle" aria-label="Toggle navigation"><span class="ms-navbar__toggle-bar"></span><span class="ms-navbar__toggle-bar"></span><span class="ms-navbar__toggle-bar"></span></button>
+      </nav>
+    </header>
+    <main id="main-content">
+      <section class="ms-hero ms-hero--subpage">
+        <div class="ms-hero__container">
+          <p class="ms-hero__eyebrow">Book a Demo</p>
+          <h1 class="ms-hero__heading">See It in Action</h1>
+          <p class="ms-hero__description">
+            Schedule a personalized demo with our team. We'll walk you through how TechCorp can
+            accelerate your business growth.
+          </p>
+        </div>
+      </section>
+      <section class="ms-section">
+        <div class="ms-container">
+          <div class="demo-grid">
+            <div class="demo-form-card">
+              <h2 style="font-size: var(--ms-text-xl); font-weight: var(--ms-font-semibold); color: var(--ms-text-primary); margin: 0 0 var(--ms-space-2) 0;">Request Your Demo</h2>
+              <p style="font-size: var(--ms-text-sm); color: var(--ms-text-tertiary); margin: 0 0 var(--ms-space-8) 0;">Fill out the form and we'll be in touch within 24 hours.</p>
+              <form action="#" method="post" novalidate>
+                <div class="form-row">
+                  <div class="ms-form-group">
+                    <label class="ms-label ms-label--required" for="demo-first-name">First Name</label>
+                    <input class="ms-input" id="demo-first-name" type="text" name="first_name" placeholder="Taro" required>
+                  </div>
+                  <div class="ms-form-group">
+                    <label class="ms-label ms-label--required" for="demo-last-name">Last Name</label>
+                    <input class="ms-input" id="demo-last-name" type="text" name="last_name" placeholder="Yamada" required>
+                  </div>
+                </div>
+                <div class="ms-form-group">
+                  <label class="ms-label ms-label--required" for="demo-email">Work Email</label>
+                  <input class="ms-input" id="demo-email" type="email" name="email" placeholder="taro@company.com" required>
+                </div>
+                <div class="ms-form-group">
+                  <label class="ms-label ms-label--required" for="demo-company">Company</label>
+                  <input class="ms-input" id="demo-company" type="text" name="company" placeholder="Company name" required>
+                </div>
+                <div class="form-row">
+                  <div class="ms-form-group">
+                    <label class="ms-label" for="demo-role">Job Title</label>
+                    <input class="ms-input" id="demo-role" type="text" name="role" placeholder="e.g. CTO, VP Engineering">
+                  </div>
+                  <div class="ms-form-group">
+                    <label class="ms-label" for="demo-team-size">Team Size</label>
+                    <select class="ms-select" id="demo-team-size" name="team_size">
+                      <option value="" disabled selected>Select</option>
+                      <option value="1-10">1-10</option>
+                      <option value="11-50">11-50</option>
+                      <option value="51-200">51-200</option>
+                      <option value="201-1000">201-1,000</option>
+                      <option value="1000+">1,000+</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="ms-form-group">
+                  <label class="ms-label" for="demo-message">What are you hoping to achieve?</label>
+                  <textarea class="ms-textarea" id="demo-message" name="message" rows="4" placeholder="Tell us about your goals and challenges..."></textarea>
+                </div>
+                <div class="ms-form-group">
+                  <div class="ms-checkbox-wrapper">
+                    <input class="ms-checkbox" id="demo-privacy" type="checkbox" name="privacy" required>
+                    <label class="ms-checkbox-wrapper__label" for="demo-privacy">
+                      I agree to the
+                      <a href="legal-template.html" style="text-decoration: underline">Privacy Policy</a>
+                    </label>
+                  </div>
+                </div>
+                <button class="ms-btn ms-btn--primary ms-btn--lg" type="submit" style="width: 100%">Request Demo</button>
+              </form>
+            </div>
+            <div>
+              <h2 style="font-size: var(--ms-text-2xl); font-weight: var(--ms-font-bold); color: var(--ms-text-primary); margin: 0 0 var(--ms-space-2) 0;">Why Book a Demo?</h2>
+              <p style="font-size: var(--ms-text-base); color: var(--ms-text-secondary); margin: 0 0 var(--ms-space-10) 0; line-height: var(--ms-leading-relaxed);">
+                Get a tailored walkthrough of our platform and see exactly how we can solve your
+                specific challenges.
+              </p>
+              <div style="display: flex; flex-direction: column; gap: var(--ms-space-8)">
+                <div class="value-prop">
+                  <div class="value-prop__icon">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 style="font-size: var(--ms-text-base); font-weight: var(--ms-font-semibold); color: var(--ms-text-primary); margin: 0 0 var(--ms-space-1) 0;">Personalized Walkthrough</h3>
+                    <p style="font-size: var(--ms-text-sm); color: var(--ms-text-secondary); margin: 0; line-height: var(--ms-leading-relaxed);">
+                      See our platform configured for your specific industry and use case. No
+                      generic slides.
+                    </p>
+                  </div>
+                </div>
+                <div class="value-prop">
+                  <div class="value-prop__icon">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 style="font-size: var(--ms-text-base); font-weight: var(--ms-font-semibold); color: var(--ms-text-primary); margin: 0 0 var(--ms-space-1) 0;">ROI Assessment</h3>
+                    <p style="font-size: var(--ms-text-sm); color: var(--ms-text-secondary); margin: 0; line-height: var(--ms-leading-relaxed);">
+                      Get a clear picture of the time and cost savings you can expect within the
+                      first 90 days.
+                    </p>
+                  </div>
+                </div>
+                <div class="value-prop">
+                  <div class="value-prop__icon">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 style="font-size: var(--ms-text-base); font-weight: var(--ms-font-semibold); color: var(--ms-text-primary); margin: 0 0 var(--ms-space-1) 0;">Expert Q&A</h3>
+                    <p style="font-size: var(--ms-text-sm); color: var(--ms-text-secondary); margin: 0; line-height: var(--ms-leading-relaxed);">
+                      Bring your toughest questions. Our solutions engineers will show you exactly
+                      how we handle them.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="trust-badges">
+                <div class="trust-badge">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>SOC 2 Certified
+                </div>
+                <div class="trust-badge">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>99.99% Uptime
+                </div>
+                <div class="trust-badge">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>500+ Clients
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="ms-footer">
+      <div class="ms-footer__container">
+        <div class="ms-footer__grid">
+          <div class="ms-footer__section">
+            <h4 class="ms-footer__heading">Product</h4><a class="ms-footer__link" href="service-page.html">Services</a><a class="ms-footer__link" href="service-page.html#pricing">Pricing</a><a class="ms-footer__link" href="image-links-demo.html">Components</a><a class="ms-footer__link" href="#">Documentation</a>
+          </div>
+          <div class="ms-footer__section">
+            <h4 class="ms-footer__heading">Company</h4><a class="ms-footer__link" href="about.html">About Us</a><a class="ms-footer__link" href="blog.html">Blog</a><a class="ms-footer__link" href="recruitment.html">Careers</a><a class="ms-footer__link" href="contact.html">Contact</a>
+          </div>
+          <div class="ms-footer__section">
+            <h4 class="ms-footer__heading">Legal</h4><a class="ms-footer__link" href="legal-template.html">Privacy Policy</a><a class="ms-footer__link" href="terms.html">Terms of Service</a><a class="ms-footer__link" href="#">License</a>
+          </div>
+          <div class="ms-footer__section">
+            <h4 class="ms-footer__heading">Newsletter</h4>
+            <p style="font-size: var(--ms-text-sm); color: #9ca3af; margin-bottom: var(--ms-space-4); line-height: 1.6;">Get the latest insights delivered to your inbox.</p>
+            <form action="#" method="post" style="display: flex; gap: var(--ms-space-2);">
+              <input class="ms-input ms-input--sm" type="email" placeholder="you@company.com" style="flex: 1; background: #1f2937; border-color: #374151; color: #f9fafb;">
+              <button class="ms-btn ms-btn--primary ms-btn--sm" type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="ms-footer__bottom">
+          <div class="ms-footer__copyright">&copy; 2025 Moonshot CSS Framework. All rights reserved.</div>
+          <div class="ms-footer__social"><a class="ms-footer__social-link" href="#" aria-label="GitHub">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"></path>
+              </svg></a><a class="ms-footer__social-link" href="#" aria-label="Twitter">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path>
+              </svg></a><a class="ms-footer__social-link" href="#" aria-label="LinkedIn">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+              </svg></a></div>
+        </div>
+      </div>
+    </footer>
+    <button class="ms-back-to-top" aria-label="Back to top">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M18 15l-6-6-6 6"></path>
+      </svg>
+    </button>
+    <script src="../dist/moonshot.min.js"></script>
+  </body>
+</html>

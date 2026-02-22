@@ -1,0 +1,501 @@
+/**
+ * Moonshot CSS Framework - Helper Utilities (SCSS)
+ * Display, positioning, and other utility classes
+ */
+
+@use 'sass:math';
+@use '../abstracts' as *;
+
+// ========================================
+// DISPLAY UTILITIES
+// ========================================
+
+$display-values: (
+  'block',
+  'inline-block',
+  'inline',
+  'flex',
+  'inline-flex',
+  'grid',
+  'inline-grid',
+  'none',
+  'contents'
+);
+
+@each $value in $display-values {
+  .ms-#{$value} {
+    display: $value;
+  }
+}
+
+// ========================================
+// FLEXBOX UTILITIES
+// ========================================
+
+.ms-flex {
+  display: flex;
+
+  &-row {
+    flex-direction: row;
+  }
+
+  &-row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  &-col {
+    flex-direction: column;
+  }
+
+  &-col-reverse {
+    flex-direction: column-reverse;
+  }
+
+  &-wrap {
+    flex-wrap: wrap;
+  }
+
+  &-nowrap {
+    flex-wrap: nowrap;
+  }
+
+  &-1 {
+    flex: 1;
+  }
+
+  &-auto {
+    flex: auto;
+  }
+
+  &-none {
+    flex: none;
+  }
+}
+
+// Justify content
+$justify-values: (
+  'start': flex-start,
+  'end': flex-end,
+  'center': center,
+  'between': space-between,
+  'around': space-around,
+  'evenly': space-evenly,
+);
+
+@each $name, $value in $justify-values {
+  .ms-justify-#{$name} {
+    justify-content: $value;
+  }
+}
+
+// Align items
+$align-values: (
+  'start': flex-start,
+  'end': flex-end,
+  'center': center,
+  'baseline': baseline,
+  'stretch': stretch,
+);
+
+@each $name, $value in $align-values {
+  .ms-items-#{$name} {
+    align-items: $value;
+  }
+
+  .ms-self-#{$name} {
+    align-self: $value;
+  }
+}
+
+// ========================================
+// GRID UTILITIES
+// ========================================
+
+// Grid columns are defined in base/_grid.scss to avoid duplication
+// Removed duplicate grid class generation to prevent conflicts with responsive breakpoints
+
+$grid-spans: (1, 2, 3, 4, 5, 6, 12);
+
+@each $span in $grid-spans {
+  .ms-col-span-#{$span} {
+    grid-column: span $span;
+  }
+
+  .ms-row-span-#{$span} {
+    grid-row: span $span;
+  }
+}
+
+// ========================================
+// POSITION UTILITIES
+// ========================================
+
+$positions: ('static', 'relative', 'absolute', 'fixed', 'sticky');
+
+@each $position in $positions {
+  .ms-#{$position} {
+    position: $position;
+  }
+}
+
+// Inset utilities
+$inset-values: (
+  '0': 0,
+  'auto': auto,
+);
+
+@each $name, $value in $inset-values {
+  .ms-inset-#{$name} {
+    inset: $value;
+  }
+
+  .ms-top-#{$name} {
+    top: $value;
+  }
+
+  .ms-bottom-#{$name} {
+    bottom: $value;
+  }
+
+  .ms-left-#{$name} {
+    left: $value;
+  }
+
+  .ms-right-#{$name} {
+    right: $value;
+  }
+}
+
+// ========================================
+// SIZE UTILITIES
+// ========================================
+
+$size-values: (
+  'full': 100%,
+  'screen': 100vh,
+  'min': min-content,
+  'max': max-content,
+  'fit': fit-content,
+  'auto': auto,
+);
+
+@each $name, $value in $size-values {
+  .ms-w-#{$name} {
+    width: $value;
+  }
+
+  .ms-h-#{$name} {
+    height: $value;
+  }
+}
+
+// Min/Max sizes
+.ms-min-w-0 {
+  min-width: 0;
+}
+
+.ms-min-h-0 {
+  min-height: 0;
+}
+
+.ms-max-w-full {
+  max-width: 100%;
+}
+
+.ms-max-h-full {
+  max-height: 100%;
+}
+
+// Container max-widths
+@each $name, $value in $max-widths {
+  .ms-max-w-#{$name} {
+    max-width: $value;
+  }
+}
+
+// ========================================
+// OVERFLOW UTILITIES
+// ========================================
+
+$overflow-values: ('auto', 'hidden', 'visible', 'scroll');
+
+@each $value in $overflow-values {
+  .ms-overflow-#{$value} {
+    overflow: $value;
+  }
+
+  .ms-overflow-x-#{$value} {
+    overflow-x: $value;
+  }
+
+  .ms-overflow-y-#{$value} {
+    overflow-y: $value;
+  }
+}
+
+// ========================================
+// VISIBILITY UTILITIES
+// ========================================
+
+.ms-visible {
+  visibility: visible;
+}
+
+.ms-invisible {
+  visibility: hidden;
+}
+
+.ms-opacity-0 {
+  opacity: 0;
+}
+
+.ms-opacity-50 {
+  opacity: 0.5;
+}
+
+.ms-opacity-100 {
+  opacity: 1;
+}
+
+// ========================================
+// TEXT UTILITIES
+// ========================================
+
+$text-aligns: ('left', 'center', 'right', 'justify');
+
+@each $align in $text-aligns {
+  .ms-text-#{$align} {
+    text-align: $align;
+  }
+}
+
+$text-transforms: ('uppercase', 'lowercase', 'capitalize', 'none');
+
+@each $transform in $text-transforms {
+  .ms-text-#{$transform} {
+    text-transform: $transform;
+  }
+}
+
+$text-decorations: ('underline', 'line-through', 'none');
+
+@each $decoration in $text-decorations {
+  .ms-#{$decoration} {
+    text-decoration: $decoration;
+  }
+}
+
+.ms-truncate {
+  @include text-truncate;
+}
+
+@for $lines from 1 through 5 {
+  .ms-line-clamp-#{$lines} {
+    @include text-clamp($lines);
+  }
+}
+
+// Font weights
+@each $name, $value in $font-weights {
+  .ms-font-#{$name} {
+    font-weight: $value;
+  }
+}
+
+// Font sizes
+@each $name, $value in $font-sizes {
+  .ms-text-#{$name} {
+    font-size: $value;
+  }
+}
+
+// ========================================
+// SHADOW UTILITIES
+// ========================================
+
+@each $name, $value in $shadows {
+  .ms-shadow-#{$name} {
+    box-shadow: $value;
+  }
+}
+
+// ========================================
+// Z-INDEX UTILITIES
+// ========================================
+
+@each $name, $value in $z-indices {
+  .ms-z-#{$name} {
+    z-index: $value;
+  }
+}
+
+// ========================================
+// CURSOR UTILITIES
+// ========================================
+
+$cursors: ('pointer', 'default', 'move', 'not-allowed', 'wait', 'text');
+
+@each $cursor in $cursors {
+  .ms-cursor-#{$cursor} {
+    cursor: $cursor;
+  }
+}
+
+// ========================================
+// POINTER EVENTS
+// ========================================
+
+.ms-pointer-events-none {
+  pointer-events: none;
+}
+
+.ms-pointer-events-auto {
+  pointer-events: auto;
+}
+
+// ========================================
+// USER SELECT
+// ========================================
+
+.ms-select-none {
+  user-select: none;
+}
+
+.ms-select-text {
+  user-select: text;
+}
+
+.ms-select-all {
+  user-select: all;
+}
+
+// ========================================
+// SCREEN READER ONLY
+// ========================================
+
+.ms-sr-only {
+  @include visually-hidden;
+}
+
+// ========================================
+// ASPECT RATIO UTILITIES
+// ========================================
+
+$aspect-ratios: (
+  'square': math.div(1, 1),
+  'video': math.div(16, 9),
+  '4-3': math.div(4, 3),
+  '21-9': math.div(21, 9),
+);
+
+@each $name, $ratio in $aspect-ratios {
+  .ms-aspect-#{$name} {
+    aspect-ratio: $ratio;
+  }
+}
+
+// ========================================
+// OBJECT FIT UTILITIES
+// ========================================
+
+$object-fits: ('contain', 'cover', 'fill', 'none', 'scale-down');
+
+@each $fit in $object-fits {
+  .ms-object-#{$fit} {
+    object-fit: $fit;
+  }
+}
+
+$object-positions: (
+  'center': center,
+  'top': top,
+  'bottom': bottom,
+  'left': left,
+  'right': right,
+);
+
+@each $name, $position in $object-positions {
+  .ms-object-#{$name} {
+    object-position: $position;
+  }
+}
+
+// ========================================
+// SECTION SPACING
+// ========================================
+
+.ms-section {
+  padding-top: var(--ms-space-16);
+  padding-bottom: var(--ms-space-16);
+}
+
+// ========================================
+// BACK TO TOP BUTTON
+// ========================================
+
+.ms-back-to-top {
+  position: fixed;
+  bottom: var(--ms-space-6);
+  right: var(--ms-space-6);
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background-color: var(--ms-bg-primary);
+  color: var(--ms-text-secondary);
+  border: 1px solid var(--ms-border-primary);
+  border-radius: var(--ms-radius-full);
+  box-shadow: var(--ms-shadow-md);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+  text-decoration: none;
+
+  &:hover {
+    background-color: var(--ms-bg-secondary);
+    color: var(--ms-text-primary);
+  }
+
+  &--visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// ========================================
+// SKIP LINK (Accessibility)
+// ========================================
+
+.ms-skip-link {
+  @include visually-hidden;
+
+  &:focus {
+    position: fixed;
+    top: var(--ms-space-4);
+    left: var(--ms-space-4);
+    z-index: 9999;
+    width: auto;
+    height: auto;
+    padding: var(--ms-space-3) var(--ms-space-6);
+    margin: 0;
+    overflow: visible;
+    clip-path: none;
+    white-space: normal;
+    background-color: var(--ms-bg-primary);
+    color: var(--ms-text-primary);
+    border: 2px solid var(--ms-brand-primary);
+    border-radius: var(--ms-radius-md);
+    font-size: var(--ms-text-sm);
+    font-weight: var(--ms-font-semibold);
+    text-decoration: none;
+    box-shadow: var(--ms-shadow-lg);
+  }
+}

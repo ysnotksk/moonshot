@@ -1,0 +1,62 @@
+{
+  "name": "moonshot-css",
+  "version": "0.2.0",
+  "description": "Clean, Minimal, Monochrome - Handy CSS Framework for Startups (SCSS Edition)",
+  "main": "dist/moonshot.css",
+  "module": "dist/moonshot.esm.js",
+  "scripts": {
+    "build:css": "sass src/moonshot.scss dist/moonshot.css --no-source-map",
+    "build:min": "sass src/moonshot.scss dist/moonshot.min.css --style=compressed --no-source-map",
+    "build:js": "esbuild src/js/moonshot.standalone.js --bundle --outfile=dist/moonshot.js --format=iife --global-name=Moonshot",
+    "build:js:min": "esbuild src/js/moonshot.standalone.js --bundle --minify --outfile=dist/moonshot.min.js --format=iife --global-name=Moonshot",
+    "build:js:esm": "esbuild src/js/moonshot.js --bundle --outfile=dist/moonshot.esm.js --format=esm",
+    "build:html": "node scripts/build-html.js",
+    "build": "npm run build:css && npm run build:min && npm run build:js && npm run build:js:min && npm run build:js:esm && npm run build:html",
+    "postbuild": "node scripts/size-report.js",
+    "watch:css": "sass src/moonshot.scss dist/moonshot.css --watch --no-source-map",
+    "watch:js": "esbuild src/js/moonshot.standalone.js --bundle --outfile=dist/moonshot.js --format=iife --global-name=Moonshot --watch",
+    "watch:html": "node scripts/watch-html.js",
+    "watch": "npm run watch:css & npm run watch:js & npm run watch:html",
+    "lint": "stylelint 'src/**/*.{css,scss}' --fix",
+    "format": "prettier --write 'src/**/*.{css,scss,js}'",
+    "clean": "rm -rf dist/*",
+    "start": "http-server ./ -p 8080"
+  },
+  "keywords": [
+    "css",
+    "framework",
+    "monochrome",
+    "minimal",
+    "startup",
+    "corporate",
+    "japanese",
+    "modular",
+    "responsive"
+  ],
+  "author": "Moonshot Team",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.19.12",
+    "http-server": "^14.1.1",
+    "prettier": "^3.1.1",
+    "pug": "^3.0.3",
+    "sass": "^1.69.5",
+    "stylelint": "^17.1.0",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-config-standard-scss": "^17.0.0"
+  },
+  "files": [
+    "dist/",
+    "src/",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moonshot/moonshot-css.git"
+  },
+  "bugs": {
+    "url": "https://github.com/moonshot/moonshot-css/issues"
+  },
+  "homepage": "https://github.com/moonshot/moonshot-css#readme"
+}

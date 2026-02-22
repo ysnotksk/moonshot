@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+yarn.lock
+# Note: package-lock.json should be committed for reproducible builds
+
+# Build outputs
+*.css.map
+examples/_archive/
+
+# Don't ignore dist/ - it contains production CSS
+# dist/ is the main deliverable for users
+
+# Environment
+.env
+.env.local
+
+# IDE
+.vscode/
+.cursor/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Testing
+coverage/
+.nyc_output/
+
+# AI tools
+.claude/
+.claudeignore
+.cursorignore
+
+# Source design files
+*.ai
+SVG/
+.env.example

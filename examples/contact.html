@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - TechCorp</title>
+    <meta name="description" content="Get in touch with TechCorp. We'd love to hear from you about your next project.">
+    <meta property="og:title" content="Contact Us - TechCorp">
+    <meta property="og:description" content="Get in touch with TechCorp. We'd love to hear from you about your next project.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <link rel="stylesheet" href="../dist/moonshot.css">
+    <style>
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--ms-space-16);
+        align-items: start;
+      }
+      @media (max-width: 768px) {
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: var(--ms-space-10);
+        }
+      }
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: var(--ms-space-8);
+      }
+      .contact-info__item {
+        display: flex;
+        gap: var(--ms-space-4);
+        align-items: flex-start;
+      }
+      .contact-info__icon {
+        flex-shrink: 0;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--ms-bg-secondary);
+        border-radius: var(--ms-radius-md);
+        color: var(--ms-text-primary);
+      }
+      .contact-info__label {
+        font-size: var(--ms-text-sm);
+        font-weight: var(--ms-font-semibold);
+        color: var(--ms-text-primary);
+        margin-bottom: var(--ms-space-1);
+        text-transform: uppercase;
+        letter-spacing: var(--ms-tracking-wider);
+      }
+      .contact-info__value {
+        font-size: var(--ms-text-base);
+        color: var(--ms-text-secondary);
+        line-height: var(--ms-leading-relaxed);
+      }
+      .contact-info__value a {
+        color: var(--ms-text-secondary);
+        text-decoration: none;
+        border-bottom: 1px solid var(--ms-border-light);
+        transition: border-color 0.2s ease;
+      }
+      .contact-info__value a:hover {
+        border-color: var(--ms-text-primary);
+        color: var(--ms-text-primary);
+      }
+      .contact-form-card {
+        background-color: var(--ms-bg-primary);
+        border: 1px solid var(--ms-border-light);
+        border-radius: var(--ms-radius-lg);
+        padding: var(--ms-space-10);
+      }
+      .contact-form-card__title {
+        font-size: var(--ms-text-xl);
+        font-weight: var(--ms-font-semibold);
+        color: var(--ms-text-primary);
+        margin: 0 0 var(--ms-space-2) 0;
+      }
+      .contact-form-card__subtitle {
+        font-size: var(--ms-text-sm);
+        color: var(--ms-text-tertiary);
+        margin: 0 0 var(--ms-space-8) 0;
+      }
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--ms-space-4);
+      }
+      @media (max-width: 480px) {
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 768px) {
+        .contact-form-card {
+          padding: var(--ms-space-6);
+        }
+      }
+      .map-section {
+        margin-top: var(--ms-space-16);
+        border-radius: var(--ms-radius-lg);
+        overflow: hidden;
+        border: 1px solid var(--ms-border-light);
+        height: 320px;
+        background-color: var(--ms-bg-secondary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--ms-text-tertiary);
+        font-size: var(--ms-text-sm);
+      }
+      
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact TechCorp",
+        "url": "https://example.com/contact",
+        "mainEntity": {
+          "@type": "Organization",
+          "name": "TechCorp",
+          "email": "hello@techcorp.example.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1-2-3 Shibuya",
+            "addressLocality": "Shibuya-ku",
+            "addressRegion": "Tokyo",
+            "postalCode": "150-0002",
+            "addressCountry": "JP"
+          }
+        }
+      }
+      
+    </script>
+  </head>
+  <body><a class="ms-skip-link" href="#main-content">Skip to main content</a>
+    <header class="ms-header">
+      <nav class="ms-navbar"><a class="ms-navbar__brand" href="front-page.html"><img class="ms-navbar__logo" src="assets/logo.svg" alt="Moonshot">Moonshot</a>
+        <ul class="ms-navbar__menu" id="navbar-menu">
+          <li class="ms-navbar__item ms-navbar__item--has-mega"><a class="ms-navbar__link" href="service-page.html">Services</a>
+            <div class="ms-mega-menu">
+              <div class="ms-mega-menu__grid">
+                <div class="ms-mega-menu__section">
+                  <h4 class="ms-mega-menu__heading">Solutions</h4>
+                  <ul>
+                    <li><a class="ms-mega-menu__link" href="service-page.html#cloud">Cloud Infrastructure</a></li>
+                    <li><a class="ms-mega-menu__link" href="service-page.html#analytics">Data Analytics &amp; BI</a></li>
+                    <li><a class="ms-mega-menu__link" href="service-page.html#ai">AI &amp; Machine Learning</a></li>
+                    <li><a class="ms-mega-menu__link" href="service-page.html#transformation">Digital Transformation</a></li>
+                  </ul>
+                </div>
+                <div class="ms-mega-menu__section">
+                  <h4 class="ms-mega-menu__heading">Industries</h4>
+                  <ul>
+                    <li><a class="ms-mega-menu__link" href="#">FinTech</a></li>
+                    <li><a class="ms-mega-menu__link" href="#">Healthcare</a></li>
+                    <li><a class="ms-mega-menu__link" href="#">E-commerce</a></li>
+                    <li><a class="ms-mega-menu__link" href="#">Education</a></li>
+                  </ul>
+                </div>
+                <div class="ms-mega-menu__section">
+                  <h4 class="ms-mega-menu__heading">Resources</h4>
+                  <ul>
+                    <li><a class="ms-mega-menu__link" href="case-study-detail.html">Case Studies</a></li>
+                    <li><a class="ms-mega-menu__link" href="service-page.html#pricing">Pricing</a></li>
+                    <li><a class="ms-mega-menu__link" href="service-page.html#faq">FAQ</a></li>
+                    <li><a class="ms-mega-menu__link" href="contact.html">Contact</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="ms-navbar__item"><a class="ms-navbar__link" href="event-page.html">Events</a></li>
+          <li class="ms-navbar__item"><a class="ms-navbar__link" href="blog.html">Blog</a></li>
+          <li class="ms-navbar__item"><a class="ms-navbar__link" href="recruitment.html">Careers</a></li>
+          <li class="ms-navbar__item"><a class="ms-navbar__link" href="about.html">About</a></li>
+          <li class="ms-navbar__item"><a class="ms-navbar__link ms-navbar__link--active" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="ms-navbar__actions"><a class="ms-btn ms-btn--primary ms-btn--sm" href="demo.html">Get Demo</a></div>
+        <button class="ms-navbar__toggle" id="navbar-toggle" aria-label="Toggle navigation"><span class="ms-navbar__toggle-bar"></span><span class="ms-navbar__toggle-bar"></span><span class="ms-navbar__toggle-bar"></span></button>
+      </nav>
+    </header>
+    <main id="main-content">
+      <section class="ms-hero ms-hero--subpage">
+        <div class="ms-hero__container">
+          <p class="ms-hero__eyebrow">Contact</p>
+          <h1 class="ms-hero__heading">Get in Touch</h1>
+          <p class="ms-hero__description">
+            Have a question or want to work together? Fill out the form below and we'll get back to
+            you within 24 hours.
+          </p>
+        </div>
+      </section>
+      <section class="ms-section">
+        <div class="ms-container">
+          <div class="contact-grid">
+            <div class="contact-form-card">
+              <h2 class="contact-form-card__title">Send us a message</h2>
+              <p class="contact-form-card__subtitle">All fields marked with * are required.</p>
+              <form action="#" method="post" novalidate>
+                <div class="form-row">
+                  <div class="ms-form-group">
+                    <label class="ms-label ms-label--required" for="first-name">First Name</label>
+                    <input class="ms-input" type="text" id="first-name" name="first_name" placeholder="Taro" required>
+                  </div>
+                  <div class="ms-form-group">
+                    <label class="ms-label ms-label--required" for="last-name">Last Name</label>
+                    <input class="ms-input" type="text" id="last-name" name="last_name" placeholder="Yamada" required>
+                  </div>
+                </div>
+                <div class="ms-form-group">
+                  <label class="ms-label ms-label--required" for="email">Email</label>
+                  <input class="ms-input" type="email" id="email" name="email" placeholder="taro@example.com" required>
+                </div>
+                <div class="ms-form-group">
+                  <label class="ms-label" for="company">Company</label>
+                  <input class="ms-input" type="text" id="company" name="company" placeholder="Company name">
+                </div>
+                <div class="ms-form-group">
+                  <label class="ms-label ms-label--required" for="subject">Subject</label>
+                  <select class="ms-select" id="subject" name="subject" required>
+                    <option value="" disabled selected>Select a topic</option>
+                    <option value="general">General Inquiry</option>
+                    <option value="sales">Sales & Pricing</option>
+                    <option value="support">Technical Support</option>
+                    <option value="partnership">Partnership</option>
+                    <option value="careers">Careers</option>
+                  </select>
+                </div>
+                <div class="ms-form-group">
+                  <label class="ms-label ms-label--required" for="message">Message</label>
+                  <textarea class="ms-textarea" id="message" name="message" rows="5" placeholder="Tell us about your project or question..." required></textarea><span class="ms-form-help">Maximum 2000 characters.</span>
+                </div>
+                <div class="ms-form-group">
+                  <div class="ms-checkbox-wrapper">
+                    <input class="ms-checkbox" id="privacy" type="checkbox" name="privacy" required>
+                    <label class="ms-checkbox-wrapper__label" for="privacy">
+                      I agree to the
+                      <a href="legal-template.html" style="text-decoration: underline">Privacy Policy</a>
+                    </label>
+                  </div>
+                </div>
+                <button class="ms-btn ms-btn--primary ms-btn--lg" type="submit" style="width: 100%">Send Message</button>
+              </form>
+            </div>
+            <div class="contact-info">
+              <div>
+                <h2 style="font-size: var(--ms-text-2xl); font-weight: var(--ms-font-bold); color: var(--ms-text-primary); margin: 0 0 var(--ms-space-2) 0;">Other ways to reach us</h2>
+                <p style="font-size: var(--ms-text-base); color: var(--ms-text-secondary); margin: 0 0 var(--ms-space-8) 0; line-height: var(--ms-leading-relaxed);">
+                  Prefer a different channel? We're available through email, phone, or visit us at
+                  our office.
+                </p>
+              </div>
+              <div class="contact-info__item">
+                <div class="contact-info__icon">
+                  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path>
+                  </svg>
+                </div>
+                <div>
+                  <p class="contact-info__label">Email</p>
+                  <p class="contact-info__value"><a href="mailto:hello@techcorp.example.com">hello@techcorp.example.com</a></p>
+                </div>
+              </div>
+              <div class="contact-info__item">
+                <div class="contact-info__icon">
+                  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <p class="contact-info__label">Phone</p>
+                  <p class="contact-info__value"><a href="tel:+81312345678">+81 3-1234-5678</a></p>
+                </div>
+              </div>
+              <div class="contact-info__item">
+                <div class="contact-info__icon">
+                  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <p class="contact-info__label">Office</p>
+                  <p class="contact-info__value">1-2-3 Shibuya, Shibuya-ku<br>Tokyo 150-0002, Japan</p>
+                </div>
+              </div>
+              <div class="contact-info__item">
+                <div class="contact-info__icon">
+                  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <p class="contact-info__label">Business Hours</p>
+                  <p class="contact-info__value">Mon - Fri: 9:00 - 18:00 (JST)<br>Sat, Sun & Holidays: Closed</p>
+                </div>
+              </div>
+              <div class="map-section"><span>Map embed placeholder — replace with Google Maps iframe</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="ms-footer">
+      <div class="ms-footer__container">
+        <div class="ms-footer__grid">
+          <div class="ms-footer__section">
+            <h4 class="ms-footer__heading">Product</h4><a class="ms-footer__link" href="service-page.html">Services</a><a class="ms-footer__link" href="service-page.html#pricing">Pricing</a><a class="ms-footer__link" href="image-links-demo.html">Components</a><a class="ms-footer__link" href="#">Documentation</a>
+          </div>
+          <div class="ms-footer__section">
+            <h4 class="ms-footer__heading">Company</h4><a class="ms-footer__link" href="about.html">About Us</a><a class="ms-footer__link" href="blog.html">Blog</a><a class="ms-footer__link" href="recruitment.html">Careers</a><a class="ms-footer__link" href="contact.html">Contact</a>
+          </div>
+          <div class="ms-footer__section">
+            <h4 class="ms-footer__heading">Legal</h4><a class="ms-footer__link" href="legal-template.html">Privacy Policy</a><a class="ms-footer__link" href="terms.html">Terms of Service</a><a class="ms-footer__link" href="#">License</a>
+          </div>
+          <div class="ms-footer__section">
+            <h4 class="ms-footer__heading">Newsletter</h4>
+            <p style="font-size: var(--ms-text-sm); color: #9ca3af; margin-bottom: var(--ms-space-4); line-height: 1.6;">Get the latest insights delivered to your inbox.</p>
+            <form action="#" method="post" style="display: flex; gap: var(--ms-space-2);">
+              <input class="ms-input ms-input--sm" type="email" placeholder="you@company.com" style="flex: 1; background: #1f2937; border-color: #374151; color: #f9fafb;">
+              <button class="ms-btn ms-btn--primary ms-btn--sm" type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="ms-footer__bottom">
+          <div class="ms-footer__copyright">&copy; 2025 Moonshot CSS Framework. All rights reserved.</div>
+          <div class="ms-footer__social"><a class="ms-footer__social-link" href="#" aria-label="GitHub">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"></path>
+              </svg></a><a class="ms-footer__social-link" href="#" aria-label="Twitter">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path>
+              </svg></a><a class="ms-footer__social-link" href="#" aria-label="LinkedIn">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+              </svg></a></div>
+        </div>
+      </div>
+    </footer>
+    <button class="ms-back-to-top" aria-label="Back to top">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M18 15l-6-6-6 6"></path>
+      </svg>
+    </button>
+    <script src="../dist/moonshot.min.js"></script>
+  </body>
+</html>

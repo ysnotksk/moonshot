@@ -1,0 +1,115 @@
+extends _layouts/default
+
+- var title = "Client Logos Demo - Moonshot CSS"
+- var description = "Client Logos Demo - Scrolling logo carousel component"
+
+block content
+  //- Demo Content
+  .ms-container.ms-py-16
+    .ms-text-center.ms-mb-12
+      h1.ms-heading-1.ms-mb-4 Client Logos Scroll Component
+      p.ms-lead.ms-text-secondary
+        | Showcase your clients and partners with a smooth horizontal scrolling logo carousel.
+        | Perfect alternative to stats sections for B2B and enterprise websites.
+
+    //- Example 1: Stats Style (with background)
+    section.ms-mb-24
+      h2.ms-heading-2.ms-mb-8.ms-text-center Stats Style (with background)
+      .ms-client-logos.ms-client-logos--stats-style
+        .ms-client-logos__container
+          h3.ms-client-logos__heading Trusted by Leading Companies
+          .ms-client-logos__scroll-wrapper
+            .ms-client-logos__scroll-track
+              .ms-client-logos__logo-item
+                img(src="https://via.placeholder.com/150x60/374151/ffffff?text=TechCorp" alt="TechCorp")
+              .ms-client-logos__logo-item
+                img(src="https://via.placeholder.com/150x60/374151/ffffff?text=StartupX" alt="StartupX")
+              .ms-client-logos__logo-item
+                img(loading="lazy" src="https://via.placeholder.com/150x60/374151/ffffff?text=InnovateCo" alt="InnovateCo")
+              .ms-client-logos__logo-item
+                img(loading="lazy" src="https://via.placeholder.com/150x60/374151/ffffff?text=GlobalInc" alt="GlobalInc")
+              .ms-client-logos__logo-item
+                img(loading="lazy" src="https://via.placeholder.com/150x60/374151/ffffff?text=FutureLabs" alt="FutureLabs")
+              .ms-client-logos__logo-item
+                img(loading="lazy" src="https://via.placeholder.com/150x60/374151/ffffff?text=DigitalPro" alt="DigitalPro")
+              .ms-client-logos__logo-item
+                img(loading="lazy" src="https://via.placeholder.com/150x60/374151/ffffff?text=CloudTech" alt="CloudTech")
+              .ms-client-logos__logo-item
+                img(loading="lazy" src="https://via.placeholder.com/150x60/374151/ffffff?text=NextGen" alt="NextGen")
+              //- Duplicate for seamless loop
+              .ms-client-logos__logo-item
+                img(loading="lazy" src="https://via.placeholder.com/150x60/374151/ffffff?text=TechCorp" alt="TechCorp")
+              .ms-client-logos__logo-item
+                img(loading="lazy" src="https://via.placeholder.com/150x60/374151/ffffff?text=StartupX" alt="StartupX")
+              .ms-client-logos__logo-item
+                img(loading="lazy" src="https://via.placeholder.com/150x60/374151/ffffff?text=InnovateCo" alt="InnovateCo")
+              .ms-client-logos__logo-item
+                img(loading="lazy" src="https://via.placeholder.com/150x60/374151/ffffff?text=GlobalInc" alt="GlobalInc")
+              .ms-client-logos__logo-item
+                img(loading="lazy" src="https://via.placeholder.com/150x60/374151/ffffff?text=FutureLabs" alt="FutureLabs")
+              .ms-client-logos__logo-item
+                img(loading="lazy" src="https://via.placeholder.com/150x60/374151/ffffff?text=DigitalPro" alt="DigitalPro")
+              .ms-client-logos__logo-item
+                img(loading="lazy" src="https://via.placeholder.com/150x60/374151/ffffff?text=CloudTech" alt="CloudTech")
+              .ms-client-logos__logo-item
+                img(loading="lazy" src="https://via.placeholder.com/150x60/374151/ffffff?text=NextGen" alt="NextGen")
+
+    //- Example 2: Minimal Style (no background)
+    section.ms-mb-24
+      h2.ms-heading-2.ms-mb-8.ms-text-center Minimal Style (no background)
+      .ms-client-logos
+        .ms-client-logos__container
+          h3.ms-client-logos__heading Our Partners
+          .ms-client-logos__scroll-wrapper
+            .ms-client-logos__scroll-track
+              .ms-client-logos__logo-item
+                img(loading="lazy" src="https://via.placeholder.com/150x60/6b7280/ffffff?text=Partner+1" alt="Partner 1")
+              .ms-client-logos__logo-item
+                img(loading="lazy" src="https://via.placeholder.com/150x60/6b7280/ffffff?text=Partner+2" alt="Partner 2")
+              .ms-client-logos__logo-item
+                img(loading="lazy" src="https://via.placeholder.com/150x60/6b7280/ffffff?text=Partner+3" alt="Partner 3")
+              .ms-client-logos__logo-item
+                img(loading="lazy" src="https://via.placeholder.com/150x60/6b7280/ffffff?text=Partner+4" alt="Partner 4")
+              .ms-client-logos__logo-item
+                img(loading="lazy" src="https://via.placeholder.com/150x60/6b7280/ffffff?text=Partner+5" alt="Partner 5")
+              .ms-client-logos__logo-item
+                img(loading="lazy" src="https://via.placeholder.com/150x60/6b7280/ffffff?text=Partner+6" alt="Partner 6")
+              //- Duplicate for seamless loop
+              .ms-client-logos__logo-item
+                img(loading="lazy" src="https://via.placeholder.com/150x60/6b7280/ffffff?text=Partner+1" alt="Partner 1")
+              .ms-client-logos__logo-item
+                img(loading="lazy" src="https://via.placeholder.com/150x60/6b7280/ffffff?text=Partner+2" alt="Partner 2")
+              .ms-client-logos__logo-item
+                img(loading="lazy" src="https://via.placeholder.com/150x60/6b7280/ffffff?text=Partner+3" alt="Partner 3")
+              .ms-client-logos__logo-item
+                img(loading="lazy" src="https://via.placeholder.com/150x60/6b7280/ffffff?text=Partner+4" alt="Partner 4")
+              .ms-client-logos__logo-item
+                img(loading="lazy" src="https://via.placeholder.com/150x60/6b7280/ffffff?text=Partner+5" alt="Partner 5")
+              .ms-client-logos__logo-item
+                img(loading="lazy" src="https://via.placeholder.com/150x60/6b7280/ffffff?text=Partner+6" alt="Partner 6")
+
+    //- Usage Instructions
+    section.ms-container.ms-mb-24
+      .ms-card.ms-p-8
+        h2.ms-heading-2.ms-mb-6 Usage Instructions
+        .ms-paragraph
+          p.ms-mb-4
+            | The Client Logos component is a perfect alternative to the stats section. Simply
+            | replace the stats section HTML with the client logos markup.
+          h3.ms-heading-3.ms-mt-6.ms-mb-4 Features:
+          ul.ms-list.ms-list-unordered.ms-mb-4
+            li.ms-list-item Smooth infinite horizontal scroll animation
+            li.ms-list-item Pauses on hover for better UX
+            li.ms-list-item Grayscale filter with color on hover
+            li.ms-list-item Fade edges for seamless appearance
+            li.ms-list-item Fully responsive (faster scroll on mobile)
+            li.ms-list-item Two variants: Stats style (with background) or Minimal (no background)
+          h3.ms-heading-3.ms-mt-6.ms-mb-4 To Use:
+          ol.ms-list.ms-list-ordered
+            li.ms-list-item Replace your stats section with the client logos HTML
+            li.ms-list-item Add your client logo images (SVG or PNG recommended)
+            li.ms-list-item Duplicate the logo items for seamless looping
+            li.ms-list-item
+              | Choose between
+              code ms-client-logos--stats-style
+              |  or minimal style

@@ -1,0 +1,284 @@
+extends _layouts/default
+
+- var title = "Tech Summit 2025 - AI & Machine Learning Track | Moonshot"
+- var description = "Tech Summit 2025 - Conference schedule, speakers, and registration"
+- var activeNav = "events"
+
+block content
+  .ms-container.ms-py-12
+    .ms-breadcrumb
+      .ms-breadcrumb__item
+        a.ms-breadcrumb__link(href="front-page.html") Home
+      .ms-breadcrumb__item
+        a.ms-breadcrumb__link(href="event-page.html") Events
+      .ms-breadcrumb__item.ms-breadcrumb__item--active Tech Summit 2025
+
+  .ms-container.ms-pb-24
+    //- Centered Event Content
+    article(style="max-width: 900px; margin: 0 auto")
+      .ms-text-center.ms-mb-8
+        .ms-text-sm.ms-font-semibold.ms-text-primary.ms-mb-3(style="letter-spacing: 0.1em") TECH SUMMIT 2025
+        h1.ms-heading-1.ms-mb-4 AI &amp; Machine Learning Track
+        .ms-text-lg.ms-text-secondary.ms-mb-6
+          | Explore the future of artificial intelligence and machine learning with industry
+          | pioneers
+        .ms-flex.ms-justify-center.ms-gap-6.ms-text-sm.ms-text-secondary
+          div March 15-17, 2025
+          div Tokyo International Forum
+          div 3 Days
+
+      .ms-mb-12
+        img.ms-w-full.ms-rounded-lg(
+          src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=600&fit=crop&q=80"
+          alt="AI & Machine Learning Track"
+        )
+
+      //- Registration CTA
+      .ms-card.ms-mb-12(style="background: linear-gradient(135deg, var(--ms-bg-primary) 0%, var(--ms-gray-100) 100%);")
+        .ms-card__body.ms-text-center
+          h3.ms-heading-4.ms-mb-3 Secure Your Spot - Early Bird 30% Off
+          p.ms-text-secondary.ms-mb-6 Limited seats available. Register now to join 1,000+ innovators.
+          a.ms-btn.ms-btn--primary.ms-btn--lg(
+            href="https://forms.example.com/tech-summit-2025-registration"
+            target="_blank"
+            rel="noopener noreferrer"
+          ) Register for This Event
+          .ms-text-sm.ms-text-secondary.ms-mt-4 Early Bird pricing ends February 1, 2025
+
+      h2.ms-heading-3.ms-mt-12.ms-mb-4 Track Overview
+
+      .ms-paragraph
+        | The AI &amp; Machine Learning track brings together the brightest minds in artificial
+        | intelligence to explore cutting-edge developments, practical applications, and future
+        | trends. Whether you're a data scientist, ML engineer, or business leader, this track
+        | offers valuable insights into leveraging AI for competitive advantage.
+
+      .ms-paragraph
+        | Over three intensive days, you'll dive deep into transformer architectures, large
+        | language models, computer vision, reinforcement learning, and ethical AI deployment.
+        | Interactive workshops and hands-on labs complement keynote presentations from leaders at
+        | OpenAI, Google DeepMind, and leading startups.
+
+      h2.ms-heading-3.ms-mt-12.ms-mb-4 What You'll Learn
+
+      ul.ms-list.ms-list-unordered
+        li.ms-list-item State-of-the-art architectures: Transformers, GANs, and diffusion models
+        li.ms-list-item Production ML systems: MLOps, model deployment, and monitoring
+        li.ms-list-item Large Language Models: Fine-tuning, prompt engineering, and RAG systems
+        li.ms-list-item Computer Vision: Object detection, segmentation, and generative AI
+        li.ms-list-item Ethical AI: Bias mitigation, fairness, and responsible deployment
+        li.ms-list-item Business applications: ROI measurement and organizational adoption
+
+      .ms-blockquote.ms-my-8
+        | "Last year's AI track was transformative for our team. We implemented three new ML
+        | models within 60 days of the conference."
+
+      h2.ms-heading-3.ms-mt-12.ms-mb-6 Featured Speakers
+
+      .ms-grid.ms-grid-cols-2.ms-gap-6.ms-mb-12
+        .ms-card
+          .ms-card__body
+            .ms-flex.ms-gap-4
+              img.ms-rounded-full(
+                loading="lazy"
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&crop=faces"
+                alt="Speaker"
+                width="80"
+                height="80"
+              )
+              div
+                .ms-font-semibold.ms-text-lg Dr. Sarah Chen
+                .ms-text-sm.ms-text-secondary Chief AI Officer, TechCorp
+                .ms-text-sm.ms-mt-2 Keynote: "The Next Frontier of LLMs"
+
+        .ms-card
+          .ms-card__body
+            .ms-flex.ms-gap-4
+              img.ms-rounded-full(
+                loading="lazy"
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&h=120&fit=crop&crop=faces"
+                alt="Speaker"
+                width="80"
+                height="80"
+              )
+              div
+                .ms-font-semibold.ms-text-lg Michael Rodriguez
+                .ms-text-sm.ms-text-secondary Lead ML Engineer, DataAI
+                .ms-text-sm.ms-mt-2 Workshop: "Production MLOps"
+
+      h2.ms-heading-3.ms-mt-12.ms-mb-6 Session Schedule (Day 1 - March 15)
+
+      .ms-card.ms-mb-4
+        .ms-card__body
+          .ms-flex.ms-justify-between.ms-items-start
+            div
+              .ms-text-sm.ms-text-secondary.ms-mb-1 09:00 - 10:30
+              .ms-font-semibold.ms-mb-2 Keynote: The Next Frontier of Large Language Models
+              .ms-text-sm.ms-text-secondary Dr. Sarah Chen • Main Hall A
+
+      .ms-card.ms-mb-4
+        .ms-card__body
+          .ms-flex.ms-justify-between.ms-items-start
+            div
+              .ms-text-sm.ms-text-secondary.ms-mb-1 11:00 - 12:30
+              .ms-font-semibold.ms-mb-2 Workshop: Hands-on Fine-tuning with LoRA
+              .ms-text-sm.ms-text-secondary ML Lab Team • Lab 3
+
+      .ms-card.ms-mb-4
+        .ms-card__body
+          .ms-flex.ms-justify-between.ms-items-start
+            div
+              .ms-text-sm.ms-text-secondary.ms-mb-1 14:00 - 15:30
+              .ms-font-semibold.ms-mb-2 Panel: Ethical AI and Bias Mitigation
+              .ms-text-sm.ms-text-secondary Industry Experts • Hall B
+
+      .ms-card.ms-mb-4
+        .ms-card__body
+          .ms-flex.ms-justify-between.ms-items-start
+            div
+              .ms-text-sm.ms-text-secondary.ms-mb-1 16:00 - 17:30
+              .ms-font-semibold.ms-mb-2 Case Study: Scaling ML from 0 to Production
+              .ms-text-sm.ms-text-secondary Michael Rodriguez • Hall A
+
+      h2.ms-heading-3.ms-mt-12.ms-mb-4 Ticket Pricing
+
+      .ms-grid.ms-grid-cols-3.ms-gap-6.ms-mb-12
+        .ms-card
+          .ms-card__body.ms-text-center
+            .ms-text-sm.ms-text-secondary.ms-mb-2 Early Bird
+            .ms-text-4xl.ms-font-bold.ms-mb-2 ¥42,000
+            .ms-text-sm.ms-text-secondary.ms-mb-4 30% Off • Ends Feb 1
+            a.ms-btn.ms-btn--primary.ms-w-full(
+              href="https://forms.example.com/tech-summit-2025-registration"
+              target="_blank"
+              rel="noopener noreferrer"
+            ) Register
+        .ms-card
+          .ms-card__body.ms-text-center
+            .ms-text-sm.ms-text-secondary.ms-mb-2 Standard
+            .ms-text-4xl.ms-font-bold.ms-mb-2 ¥60,000
+            .ms-text-sm.ms-text-secondary.ms-mb-4 Regular Price
+            a.ms-btn.ms-btn--outline.ms-w-full(
+              href="https://forms.example.com/tech-summit-2025-registration"
+              target="_blank"
+              rel="noopener noreferrer"
+            ) Register
+        .ms-card
+          .ms-card__body.ms-text-center
+            .ms-text-sm.ms-text-secondary.ms-mb-2 Group (5+)
+            .ms-text-4xl.ms-font-bold.ms-mb-2 ¥50,000
+            .ms-text-sm.ms-text-secondary.ms-mb-4 Per Person
+            a.ms-btn.ms-btn--outline.ms-w-full(
+              href="https://forms.example.com/tech-summit-2025-group-inquiry"
+              target="_blank"
+              rel="noopener noreferrer"
+            ) Contact Us
+
+      h2.ms-heading-3.ms-mt-12.ms-mb-4 What's Included
+
+      .ms-grid.ms-grid-cols-2.ms-gap-4.ms-mb-12
+        .ms-flex.ms-gap-3
+          .ms-text-2xl ✓
+          div
+            .ms-font-semibold 3-Day Access
+            .ms-text-sm.ms-text-secondary All sessions and workshops
+        .ms-flex.ms-gap-3
+          .ms-text-2xl ✓
+          div
+            .ms-font-semibold Networking Events
+            .ms-text-sm.ms-text-secondary Coffee breaks and socials
+        .ms-flex.ms-gap-3
+          .ms-text-2xl ✓
+          div
+            .ms-font-semibold Digital Materials
+            .ms-text-sm.ms-text-secondary Slides and recordings
+        .ms-flex.ms-gap-3
+          .ms-text-2xl ✓
+          div
+            .ms-font-semibold Meals &amp; Refreshments
+            .ms-text-sm.ms-text-secondary Lunch and coffee included
+
+      //- Registration CTA Section
+      #registration-form.ms-card.ms-mt-16(
+        style="background: linear-gradient(135deg, var(--ms-bg-primary) 0%, var(--ms-gray-100) 100%); scroll-margin-top: 120px;"
+      )
+        .ms-card__body.ms-text-center(style="padding: var(--ms-space-12)")
+          h2.ms-heading-2.ms-mb-4 Complete Your Registration
+          p.ms-text-lg.ms-text-secondary.ms-mb-8(style="max-width: 600px; margin-left: auto; margin-right: auto")
+            | Secure your spot at Tech Summit 2025. Fill out the registration form to reserve your
+            | ticket and receive event updates.
+
+          //- External Form Button
+          a.ms-btn.ms-btn--primary.ms-btn--lg(
+            href="https://forms.example.com/tech-summit-2025-registration"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="display: inline-block; min-width: 280px"
+          ) Open Registration Form →
+
+          .ms-text-sm.ms-text-secondary.ms-mt-6 Secure payment powered by Stripe • Full refund available until Feb 28
+
+          .ms-mt-8.ms-pt-6(style="border-top: 1px solid var(--ms-border-light); max-width: 600px; margin-left: auto; margin-right: auto;")
+            p.ms-text-sm.ms-text-secondary
+              strong What to expect:
+              br
+              | • Registration takes 2-3 minutes
+              br
+              | • You'll receive instant email confirmation
+              br
+              | • Payment options: Credit card, PayPal, or Bank transfer
+              br
+              | • Group discounts processed after form submission
+
+      //- Event Contact
+      .ms-mt-12.ms-pt-6(style="border-top: 1px solid var(--ms-border-light)")
+        .ms-text-sm.ms-text-secondary.ms-mb-3 Questions?
+        p.ms-text-sm
+          | Contact our events team at
+          |
+          a(href="mailto:events@moonshot.com" style="color: var(--ms-color-primary)") events@moonshot.com
+          |  or call +81-3-1234-5678
+
+      //- Back to All Events
+      nav.ms-flex.ms-justify-center.ms-mt-12.ms-pt-6(style="border-top: 1px solid var(--ms-border-light)")
+        a.ms-btn.ms-btn--outline(href="event-page.html") ← Back to All Events
+
+    //- Related Events - Full Width Below Content
+    .ms-mt-20(style="max-width: 1200px; margin-left: auto; margin-right: auto")
+      h3.ms-heading-4.ms-mb-6.ms-text-center Other Tracks &amp; Events
+      .ms-grid.ms-grid-cols-3.ms-gap-6
+        a.ms-image-link.ms-image-link--md(href="event-detail.html")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop&q=80"
+              alt="Cloud track"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h4.ms-image-link__title Cloud &amp; DevOps
+            p.ms-image-link__description Modern infrastructure and deployment strategies
+
+        a.ms-image-link.ms-image-link--md(href="event-detail.html")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=800&h=600&fit=crop&q=80"
+              alt="Security track"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h4.ms-image-link__title Security &amp; Privacy
+            p.ms-image-link__description Zero-trust architecture and compliance
+
+        a.ms-image-link.ms-image-link--md(href="event-detail.html")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80"
+              alt="Product track"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h4.ms-image-link__title Product &amp; Growth
+            p.ms-image-link__description Data-driven product development

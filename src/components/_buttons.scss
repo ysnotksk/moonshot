@@ -1,0 +1,183 @@
+/**
+ * Moonshot CSS Framework - Buttons (SCSS)
+ * Button components with variants using SCSS nesting
+ */
+
+@use '../abstracts' as *;
+
+// ========================================
+// BASE BUTTON
+// ========================================
+
+.ms-button,
+.ms-btn {
+  @include button-base;
+
+  font-size: var(--ms-text-base);
+  padding: var(--ms-space-4); // Equal padding on all sides
+}
+
+// ========================================
+// BUTTON VARIANTS
+// ========================================
+
+.ms-button,
+.ms-btn {
+  // Primary Variant
+  &--primary {
+    background-color: var(--ms-brand-primary);
+    color: var(--ms-white);
+    border-color: transparent; // No border
+
+    &:hover {
+      background-color: var(--ms-brand-accent);
+      border-color: transparent; // No border on hover
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+
+  // Secondary Variant
+  &--secondary {
+    background-color: var(--ms-gray-100);
+    color: var(--ms-text-primary);
+    border-color: transparent; // No border
+
+    &:hover {
+      background-color: var(--ms-gray-200);
+      border-color: transparent; // No border on hover
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+
+  // Outline Variant
+  &--outline {
+    background-color: transparent;
+    color: var(--ms-brand-primary);
+    border: 1px solid var(--ms-brand-primary); // Border for outline variant
+
+    &:hover {
+      background-color: var(--ms-brand-primary);
+      color: var(--ms-white);
+      border-color: var(--ms-brand-primary); // Keep border on hover
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+
+  // Ghost Variant
+  &--ghost {
+    background-color: transparent;
+    color: var(--ms-text-primary);
+    border-color: transparent;
+
+    &:hover {
+      background-color: var(--ms-gray-100);
+    }
+
+    &:active {
+      background-color: var(--ms-gray-200);
+    }
+  }
+
+  // Danger Variant
+  &--danger {
+    background-color: var(--ms-error);
+    color: var(--ms-white);
+    border-color: transparent; // No border
+
+    &:hover {
+      background-color: #dc2626;
+      border-color: transparent; // No border on hover
+    }
+  }
+
+  // ========================================
+  // SIZE MODIFIERS
+  // ========================================
+
+  &--sm {
+    font-size: var(--ms-text-sm);
+    padding: var(--ms-space-3); // Equal padding on all sides
+  }
+
+  &--lg {
+    font-size: var(--ms-text-lg);
+    padding: var(--ms-space-6); // Equal padding on all sides
+  }
+
+  &--xl {
+    font-size: var(--ms-text-xl);
+    padding: var(--ms-space-8); // Equal padding on all sides
+  }
+
+  // ========================================
+  // WIDTH MODIFIERS
+  // ========================================
+
+  &--full {
+    width: 100%;
+  }
+
+  &--square {
+    padding: var(--ms-space-3);
+    aspect-ratio: 1 / 1;
+  }
+
+  // ========================================
+  // ICON BUTTONS
+  // ========================================
+
+  &--icon {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--ms-space-2);
+  }
+
+  &__icon {
+    display: inline-flex;
+    flex-shrink: 0;
+
+    svg {
+      width: 1.25em;
+      height: 1.25em;
+    }
+  }
+}
+
+// ========================================
+// BUTTON GROUP
+// ========================================
+
+.ms-button-group {
+  display: inline-flex;
+  gap: var(--ms-space-2);
+
+  &--attached {
+    gap: 0;
+
+    .ms-button,
+    .ms-btn {
+      border-radius: 0;
+      border-right-width: 0;
+
+      &:first-child {
+        border-top-left-radius: var(--ms-radius-md);
+        border-bottom-left-radius: var(--ms-radius-md);
+      }
+
+      &:last-child {
+        border-top-right-radius: var(--ms-radius-md);
+        border-bottom-right-radius: var(--ms-radius-md);
+        border-right-width: 1px;
+      }
+    }
+  }
+}

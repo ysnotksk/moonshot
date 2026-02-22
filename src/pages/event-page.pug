@@ -1,0 +1,462 @@
+extends _layouts/default
+
+- var title = "Tech Summit 2025 - Innovation Conference | Moonshot"
+- var description = "Tech Summit 2025 - Innovation conference for startups"
+- var activeNav = "events"
+
+block append jsonLd
+  script(type="application/ld+json").
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Tech Summit 2025",
+      "startDate": "2025-03-15",
+      "location": { "@type": "Place", "name": "Tokyo International Forum" }
+    }
+
+block content
+  //- Hero - Event Landing
+  section
+    .ms-image-link.ms-image-link--xl.ms-image-link--center.ms-image-link--hero
+      .ms-image-link__background
+        img(
+          src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1920&h=900&fit=crop&q=80"
+          alt="Tech Summit 2025"
+        ).ms-image-link__image
+      .ms-image-link__overlay
+      .ms-image-link__content
+        h1.ms-image-link__title Tech Summit 2025
+        p.ms-image-link__description
+          | Join 1,000+ tech leaders, innovators, and entrepreneurs for 3 days of inspiration,
+          | networking, and cutting-edge insights.
+          br
+          strong March 15-17, 2025 | Tokyo International Forum
+        .ms-mt-6.ms-mb-8
+          a.ms-btn.ms-btn--primary.ms-btn--lg(
+            href="https://forms.example.com/tech-summit-2025-registration"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="display: inline-block"
+          ) Register Now - Early Bird 30% Off
+
+  //- Event Introduction
+  section.ms-py-16.ms-bg-secondary
+    .ms-container
+      .ms-text-center.ms-max-w-3xl.ms-mx-auto
+        p.ms-lead.ms-text-secondary
+          | Join us for three days of cutting-edge insights, networking opportunities, and
+          | hands-on workshops. Connect with 1,000+ tech leaders, learn from 50+ industry
+          | pioneers, and discover the future of technology at Tokyo International Forum, March
+          | 15-17, 2025.
+
+  //- Event Tracks / Themes
+  section.ms-py-24
+    .ms-container
+      .ms-text-center.ms-mb-12
+        h2.ms-heading-2.ms-mb-4 Event Tracks
+        p.ms-lead.ms-text-secondary Choose your learning path across 4 specialized tracks
+
+      .ms-grid.ms-grid-cols-2.ms-gap-6
+        //- Track 1: AI & Machine Learning
+        a.ms-image-link.ms-image-link--lg(href="event-detail.html")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=800&fit=crop&q=80"
+              alt="AI track"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title AI &amp; Machine Learning
+            p.ms-image-link__description
+              | Explore the future of AI, from LLMs to computer vision. Learn practical
+              | implementation strategies and ethical considerations.
+            .ms-mt-4.ms-text-sm
+              strong 12 Sessions
+              |  | Day 1-2 | Hall A
+            span.ms-image-link__cta View Details &amp; Register
+
+        //- Track 2: Cloud & DevOps
+        a.ms-image-link.ms-image-link--lg(href="event-detail.html")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=800&fit=crop&q=80"
+              alt="Cloud track"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Cloud &amp; DevOps
+            p.ms-image-link__description
+              | Master modern infrastructure, Kubernetes, serverless, and CI/CD pipelines. Build
+              | scalable, resilient systems.
+            .ms-mt-4.ms-text-sm
+              strong 10 Sessions
+              |  | Day 1-3 | Hall B
+            span.ms-image-link__cta View Details &amp; Register
+
+        //- Track 3: Product & Design
+        a.ms-image-link.ms-image-link--lg(href="event-detail.html")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&h=800&fit=crop&q=80"
+              alt="Product track"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Product &amp; Design
+            p.ms-image-link__description
+              | Learn product strategy, UX research, and design systems. Create products users
+              | love.
+            .ms-mt-4.ms-text-sm
+              strong 8 Sessions
+              |  | Day 2-3 | Hall C
+            span.ms-image-link__cta View Details &amp; Register
+
+        //- Track 4: Startup & Growth
+        a.ms-image-link.ms-image-link--lg(href="event-detail.html")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=1200&h=800&fit=crop&q=80"
+              alt="Startup track"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Startup &amp; Growth
+            p.ms-image-link__description
+              | Fundraising, scaling teams, go-to-market strategies, and lessons from successful
+              | founders.
+            .ms-mt-4.ms-text-sm
+              strong 10 Sessions
+              |  | Day 1-3 | Hall D
+            span.ms-image-link__cta View Details &amp; Register
+
+  //- Featured Speakers
+  section.ms-py-24.ms-bg-secondary
+    .ms-container
+      .ms-text-center.ms-mb-12
+        h2.ms-heading-2.ms-mb-4 Featured Speakers
+        p.ms-lead.ms-text-secondary Learn from industry pioneers and thought leaders
+
+      .ms-image-link-grid.ms-image-link-grid--4
+        //- Speaker 1
+        a.ms-image-link.ms-image-link--sm.ms-image-link--grayscale(href="#speaker-1")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop&q=80"
+              alt="Dr. James Chen"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Dr. James Chen
+            p.ms-image-link__description
+              | Chief AI Officer, TechCorp
+              br
+              small Keynote: The Future of AI
+
+        //- Speaker 2
+        a.ms-image-link.ms-image-link--sm.ms-image-link--grayscale(href="#speaker-2")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=600&fit=crop&q=80"
+              alt="Sarah Williams"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Sarah Williams
+            p.ms-image-link__description
+              | VP Engineering, CloudScale
+              br
+              small Building at Scale
+
+        //- Speaker 3
+        a.ms-image-link.ms-image-link--sm.ms-image-link--grayscale(href="#speaker-3")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=600&h=600&fit=crop&q=80"
+              alt="Michael Park"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Michael Park
+            p.ms-image-link__description
+              | Founder &amp; CEO, StartupX
+              br
+              small 0 to $100M ARR
+
+        //- Speaker 4
+        a.ms-image-link.ms-image-link--sm.ms-image-link--grayscale(href="#speaker-4")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&h=600&fit=crop&q=80"
+              alt="Emily Zhang"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Emily Zhang
+            p.ms-image-link__description
+              | Head of Design, DesignLab
+              br
+              small Design Systems at Scale
+
+        //- Speaker 5
+        a.ms-image-link.ms-image-link--sm.ms-image-link--grayscale(href="#speaker-5")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&h=600&fit=crop&q=80"
+              alt="David Kim"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title David Kim
+            p.ms-image-link__description
+              | CTO, SecureNet
+              br
+              small Zero Trust Security
+
+        //- Speaker 6
+        a.ms-image-link.ms-image-link--sm.ms-image-link--grayscale(href="#speaker-6")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&h=600&fit=crop&q=80"
+              alt="Lisa Martinez"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Lisa Martinez
+            p.ms-image-link__description
+              | Partner, VentureCapital
+              br
+              small What VCs Look For
+
+        //- Speaker 7
+        a.ms-image-link.ms-image-link--sm.ms-image-link--grayscale(href="#speaker-7")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&h=600&fit=crop&q=80"
+              alt="Tom Anderson"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Tom Anderson
+            p.ms-image-link__description
+              | Director, DataLabs
+              br
+              small Real-time Analytics
+
+        //- Speaker 8
+        a.ms-image-link.ms-image-link--sm.ms-image-link--grayscale(href="#speaker-8")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=600&fit=crop&q=80"
+              alt="Rachel Lee"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Rachel Lee
+            p.ms-image-link__description
+              | CPO, ProductHub
+              br
+              small Product-Led Growth
+
+  //- What's Included
+  section.ms-py-24
+    .ms-container
+      .ms-text-center.ms-mb-12
+        h2.ms-heading-2.ms-mb-4 What's Included
+        p.ms-lead.ms-text-secondary Everything you need for an amazing experience
+
+      .ms-grid.ms-grid-cols-3.ms-gap-6
+        //- Networking
+        a.ms-image-link(href="#networking")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&h=600&fit=crop&q=80"
+              alt="Networking"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Networking Events
+            p.ms-image-link__description Evening receptions, 1-on-1 matchmaking, and exclusive VIP dinner
+            span.ms-image-link__cta Learn More
+
+        //- Workshops
+        a.ms-image-link(href="#workshops")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop&q=80"
+              alt="Workshops"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Hands-on Workshops
+            p.ms-image-link__description 20+ interactive workshops with industry experts
+            span.ms-image-link__cta Learn More
+
+        //- Expo
+        a.ms-image-link(href="#expo")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&h=600&fit=crop&q=80"
+              alt="Expo"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Startup Expo
+            p.ms-image-link__description 50+ startups showcasing cutting-edge innovations
+            span.ms-image-link__cta Learn More
+
+  //- Pricing / Tickets
+  section.ms-py-24.ms-bg-secondary#register
+    .ms-container
+      .ms-text-center.ms-mb-12
+        h2.ms-heading-2.ms-mb-4 Get Your Ticket
+        p.ms-lead.ms-text-secondary Early bird pricing ends February 15, 2025
+
+      .ms-grid.ms-grid-cols-3.ms-gap-6
+        //- Standard
+        a.ms-image-link.ms-image-link--light(
+          href="https://forms.example.com/tech-summit-2025-registration"
+        )
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&h=600&fit=crop&q=80"
+              alt="Standard ticket"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Early Bird
+            .ms-text-4xl.ms-font-bold.ms-mb-4
+              | ¥42,000
+              .ms-text-lg.ms-font-normal.ms-line-through.ms-opacity-50 ¥60,000
+            p.ms-image-link__description
+              | • All sessions access
+              br
+              | • Networking events
+              br
+              | • Conference materials
+              br
+              | • 30% Off • Ends Feb 1
+            span.ms-image-link__cta Register Now
+
+        //- VIP
+        a.ms-image-link.ms-image-link--glow(
+          href="https://forms.example.com/tech-summit-2025-registration"
+          target="_blank"
+          rel="noopener noreferrer"
+        )
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&h=600&fit=crop&q=80"
+              alt="VIP ticket"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Standard Pass
+            .ms-text-4xl.ms-font-bold.ms-mb-4
+              | ¥60,000
+              .ms-text-sm.ms-font-normal Regular Price
+            p.ms-image-link__description
+              | • All sessions access
+              br
+              | • Networking events
+              br
+              | • Digital materials
+              br
+              | • Meals included
+            span.ms-image-link__cta Register Now
+
+        //- Group
+        a.ms-image-link.ms-image-link--light(
+          href="https://forms.example.com/tech-summit-2025-group-inquiry"
+          target="_blank"
+          rel="noopener noreferrer"
+        )
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop&q=80"
+              alt="Group ticket"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Group Pass
+            .ms-text-4xl.ms-font-bold.ms-mb-4
+              | ¥50,000
+              .ms-text-sm.ms-font-normal per person (5+ tickets)
+            p.ms-image-link__description
+              | • Standard Pass benefits
+              br
+              | • Group discount
+              br
+              | • Dedicated support
+              br
+              | • Team seating
+            span.ms-image-link__cta Contact Sales
+
+  //- Past Event Highlights
+  section.ms-py-24
+    .ms-container
+      .ms-text-center.ms-mb-12
+        h2.ms-heading-2.ms-mb-4 Tech Summit 2024 Highlights
+        p.ms-lead.ms-text-secondary Last year's event was a massive success
+
+      .ms-grid.ms-grid-cols-2.ms-gap-6
+        //- Highlight 1
+        a.ms-image-link.ms-image-link--lg(href="#highlights-1")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&h=800&fit=crop&q=80"
+              alt="Keynote 2024"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title 850+ Attendees
+            p.ms-image-link__description Tech leaders from 25 countries joined us for 3 days of innovation
+            span.ms-image-link__cta View Photos
+
+        //- Highlight 2
+        a.ms-image-link.ms-image-link--lg(href="#highlights-2")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1200&h=800&fit=crop&q=80"
+              alt="Networking 2024"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title 5,000+ Connections Made
+            p.ms-image-link__description Our matchmaking platform facilitated thousands of meaningful connections
+            span.ms-image-link__cta Watch Video
+
+  //- CTA Section
+  section.ms-py-24
+    .ms-container
+      a.ms-image-link.ms-image-link--xl.ms-image-link--center.ms-image-link--glow(href="#register")
+        .ms-image-link__background
+          img.ms-image-link__image(
+            loading="lazy"
+            src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=1920&h=800&fit=crop&q=80"
+            alt="Join us"
+          )
+        .ms-image-link__overlay
+        .ms-image-link__content
+          h2.ms-image-link__title Don't Miss Out
+          p.ms-image-link__description Early bird pricing ends in 30 days. Secure your spot now and save 30%.
+          span.ms-image-link__cta Register Now

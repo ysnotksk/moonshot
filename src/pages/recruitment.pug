@@ -1,0 +1,392 @@
+extends _layouts/default
+
+- var title = "Careers - Join Our Team | Moonshot"
+- var description = "Careers - Join our team and build the future of technology"
+- var activeNav = "careers"
+
+block append jsonLd
+  script(type="application/ld+json").
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "TechCorp",
+      "url": "https://example.com"
+    }
+
+block content
+  //- Hero
+  section
+    a.ms-image-link.ms-image-link--xl.ms-image-link--center.ms-image-link--hero(href="#positions")
+      .ms-image-link__background
+        img.ms-image-link__image(
+          src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1920&h=900&fit=crop&q=80"
+          alt="Join our team"
+        )
+      .ms-image-link__overlay
+      .ms-image-link__content
+        h1.ms-image-link__title Build the Future With Us
+        p.ms-image-link__description
+          | Join a team of passionate engineers, designers, and product managers shaping the next
+          | generation of enterprise technology. Remote-first, globally distributed, endlessly
+          | curious.
+        span.ms-image-link__cta View Open Positions
+
+  //- Company Stats
+  section.ms-py-10.ms-bg-secondary(data-stats-section)
+    .ms-container
+      .ms-grid.ms-grid-cols-4.ms-gap-8.ms-text-center
+        div
+          .ms-text-5xl.ms-font-bold.ms-text-brand-primary.ms-mb-2(data-stat-value="28") 0
+          .ms-text-sm.ms-text-secondary.ms-uppercase.ms-tracking-wider Team Members
+        div
+          .ms-text-5xl.ms-font-bold.ms-text-brand-primary.ms-mb-2(data-stat-value="12") 0
+          .ms-text-sm.ms-text-secondary.ms-uppercase.ms-tracking-wider Nationalities
+        div
+          .ms-text-5xl.ms-font-bold.ms-text-brand-primary.ms-mb-2(data-stat-value="100" data-stat-suffix="%") 0
+          .ms-text-sm.ms-text-secondary.ms-uppercase.ms-tracking-wider Remote-First
+        div
+          .ms-text-5xl.ms-font-bold.ms-text-brand-primary.ms-mb-2(data-stat-value="5K" data-stat-prefix="$") $0
+          .ms-text-sm.ms-text-secondary.ms-uppercase.ms-tracking-wider Learning Budget
+
+  //- Why Join Us
+  section.ms-py-24
+    .ms-container
+      .ms-text-center.ms-mb-12
+        h2.ms-heading-2.ms-mb-4 Why Moonshot?
+        p.ms-lead.ms-text-secondary More than just a job—a mission
+
+      .ms-grid.ms-grid-cols-2.ms-gap-6
+        //- Impact
+        a.ms-image-link.ms-image-link--lg(href="#impact")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&h=800&fit=crop&q=80"
+              alt="Real impact"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Real Impact
+            p.ms-image-link__description
+              | Work on products used by millions. Your code, design, and decisions directly
+              | influence customer success. No bureaucracy, just results.
+            span.ms-image-link__cta Learn More
+
+        //- Growth
+        a.ms-image-link.ms-image-link--lg(href="#growth")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1200&h=800&fit=crop&q=80"
+              alt="Continuous growth"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Continuous Growth
+            p.ms-image-link__description
+              | $5,000/year learning budget. Conference tickets, online courses, books. Weekly
+              | tech talks. Mentorship programs. Grow faster than you ever imagined.
+            span.ms-image-link__cta Learn More
+
+        //- Work-Life Balance
+        a.ms-image-link.ms-image-link--lg(href="#balance")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&h=800&fit=crop&q=80"
+              alt="Work-life balance"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Sustainable Pace
+            p.ms-image-link__description
+              | Unlimited PTO. Flexible hours. Remote-first culture. Mental health support. We
+              | believe in long-term excellence, not burnout.
+            span.ms-image-link__cta Learn More
+
+        //- Team
+        a.ms-image-link.ms-image-link--lg(href="#team")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=800&fit=crop&q=80"
+              alt="Diverse team"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title World-Class Team
+            p.ms-image-link__description
+              | Work with alumni from Google, Amazon, Microsoft, and top startups. 40% women in
+              | engineering. 12 nationalities. Inclusive, respectful, collaborative.
+            span.ms-image-link__cta Meet the Team
+
+  //- Open Positions
+  section.ms-py-24.ms-bg-secondary#positions
+    .ms-container
+      .ms-text-center.ms-mb-12
+        h2.ms-heading-2.ms-mb-4 Open Positions
+        p.ms-lead.ms-text-secondary Join us in building the future
+
+      .ms-image-link-grid.ms-image-link-grid--3
+        //- Senior Backend Engineer
+        a.ms-image-link(href="#backend")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop&q=80"
+              alt="Backend engineer"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Senior Backend Engineer
+            p.ms-image-link__description
+              | Tokyo / Remote
+              br
+              | Full-time
+              br
+              | Build scalable microservices
+            span.ms-image-link__cta Apply Now
+
+        //- Frontend Engineer
+        a.ms-image-link(href="#frontend")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop&q=80"
+              alt="Frontend engineer"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Frontend Engineer
+            p.ms-image-link__description
+              | San Francisco / Remote
+              br
+              | Full-time
+              br
+              | React, TypeScript expert
+            span.ms-image-link__cta Apply Now
+
+        //- Product Designer
+        a.ms-image-link(href="#designer")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop&q=80"
+              alt="Product designer"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Product Designer
+            p.ms-image-link__description
+              | Remote
+              br
+              | Full-time
+              br
+              | UX/UI, design systems
+            span.ms-image-link__cta Apply Now
+
+        //- DevOps Engineer
+        a.ms-image-link(href="#devops")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop&q=80"
+              alt="DevOps engineer"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title DevOps Engineer
+            p.ms-image-link__description
+              | Singapore / Remote
+              br
+              | Full-time
+              br
+              | Kubernetes, AWS expert
+            span.ms-image-link__cta Apply Now
+
+        //- Product Manager
+        a.ms-image-link(href="#pm")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop&q=80"
+              alt="Product manager"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Product Manager
+            p.ms-image-link__description
+              | Tokyo / Remote
+              br
+              | Full-time
+              br
+              | Drive product strategy
+            span.ms-image-link__cta Apply Now
+
+        //- Data Scientist
+        a.ms-image-link(href="#data")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=80"
+              alt="Data scientist"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Data Scientist
+            p.ms-image-link__description
+              | Remote
+              br
+              | Full-time
+              br
+              | ML/AI specialist
+            span.ms-image-link__cta Apply Now
+
+      .ms-text-center.ms-mt-12
+        p.ms-text-lg.ms-text-secondary.ms-mb-4 Don't see a role that fits? We're always looking for exceptional talent.
+        a.ms-link.ms-text-lg(href="#") Send us your resume →
+
+  //- Interview Process
+  section.ms-py-24
+    .ms-container
+      .ms-text-center.ms-mb-12
+        h2.ms-heading-2.ms-mb-4 Our Interview Process
+        p.ms-lead.ms-text-secondary Transparent, respectful, efficient
+
+      .ms-grid.ms-grid-cols-4.ms-gap-6
+        //- Step 1
+        a.ms-image-link.ms-image-link--sm(href="#step1")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&h=400&fit=crop&q=80"
+              alt="Application"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            .ms-text-4xl.ms-font-bold.ms-mb-2 01
+            h3.ms-image-link__title Application
+            p.ms-image-link__description Submit resume and cover letter
+
+        //- Step 2
+        a.ms-image-link.ms-image-link--sm(href="#step2")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=600&h=400&fit=crop&q=80"
+              alt="Phone screen"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            .ms-text-4xl.ms-font-bold.ms-mb-2 02
+            h3.ms-image-link__title Phone Screen
+            p.ms-image-link__description 30-min chat with recruiter
+
+        //- Step 3
+        a.ms-image-link.ms-image-link--sm(href="#step3")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop&q=80"
+              alt="Technical interview"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            .ms-text-4xl.ms-font-bold.ms-mb-2 03
+            h3.ms-image-link__title Technical
+            p.ms-image-link__description Skills assessment and pairing
+
+        //- Step 4
+        a.ms-image-link.ms-image-link--sm(href="#step4")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&h=400&fit=crop&q=80"
+              alt="Team interview"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            .ms-text-4xl.ms-font-bold.ms-mb-2 04
+            h3.ms-image-link__title Team Meet
+            p.ms-image-link__description Meet your future teammates
+
+      .ms-text-center.ms-mt-8
+        p.ms-text-secondary Typically 2-3 weeks from application to offer. We value your time.
+
+  //- Benefits
+  section.ms-py-24.ms-bg-secondary
+    .ms-container
+      .ms-text-center.ms-mb-12
+        h2.ms-heading-2.ms-mb-4 Benefits &amp; Perks
+        p.ms-lead.ms-text-secondary We take care of our team
+
+      .ms-grid.ms-grid-cols-3.ms-gap-6
+        .ms-card
+          .ms-card__body
+            h3.ms-card__title Health &amp; Wellness
+            ul.ms-list
+              li Comprehensive health insurance
+              li Dental and vision coverage
+              li Mental health support
+              li Gym membership subsidy
+
+        .ms-card
+          .ms-card__body
+            h3.ms-card__title Work-Life Balance
+            ul.ms-list
+              li Unlimited PTO
+              li Flexible working hours
+              li Remote-first culture
+              li Parental leave
+
+        .ms-card
+          .ms-card__body
+            h3.ms-card__title Growth &amp; Development
+            ul.ms-list
+              li $5,000/year learning budget
+              li Conference tickets
+              li Mentorship programs
+              li Internal tech talks
+
+        .ms-card
+          .ms-card__body
+            h3.ms-card__title Compensation
+            ul.ms-list
+              li Competitive salary
+              li Equity in the company
+              li Annual bonuses
+              li 401(k) matching
+
+        .ms-card
+          .ms-card__body
+            h3.ms-card__title Equipment
+            ul.ms-list
+              li Latest MacBook Pro or PC
+              li 4K monitor
+              li Ergonomic chair
+              li $2,000 home office budget
+
+        .ms-card
+          .ms-card__body
+            h3.ms-card__title Team &amp; Culture
+            ul.ms-list
+              li Quarterly team retreats
+              li Virtual social events
+              li Diversity &amp; inclusion
+              li Open communication
+
+  //- CTA Section
+  section.ms-py-24
+    .ms-container
+      a.ms-image-link.ms-image-link--xl.ms-image-link--center.ms-image-link--glow(href="#positions")
+        .ms-image-link__background
+          img.ms-image-link__image(
+            loading="lazy"
+            src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1920&h=800&fit=crop&q=80"
+            alt="Join us"
+          )
+        .ms-image-link__overlay
+        .ms-image-link__content
+          h2.ms-image-link__title Ready to Make an Impact?
+          p.ms-image-link__description Join our mission to democratize enterprise technology for startups worldwide.
+          span.ms-image-link__cta View Open Positions

@@ -1,0 +1,189 @@
+extends _layouts/default
+
+- var title = "Blog - Moonshot CSS"
+- var description = "Blog - Insights, tutorials, and industry analysis"
+- var activeNav = "blog"
+
+block content
+  //- Hero Section
+  section
+    a.ms-image-link.ms-image-link--xl.ms-image-link--center.ms-image-link--hero(href="blog-detail.html")
+      .ms-image-link__background
+        img.ms-image-link__image(
+          src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1920&h=900&fit=crop&q=80"
+          alt="Blog"
+        )
+      .ms-image-link__overlay
+      .ms-image-link__content
+        h1.ms-image-link__title Moonshot Blog
+        p.ms-image-link__description
+          | Insights, tutorials, and best practices for building modern startup websites.
+          br
+          | Learn from our team and stay updated with the latest web development trends.
+
+  //- Blog Index Content
+  .ms-container.ms-py-16
+    .ms-breadcrumb
+      .ms-breadcrumb__item
+        a.ms-breadcrumb__link(href="front-page.html") Home
+      .ms-breadcrumb__item.ms-breadcrumb__item--active Blog
+
+  //- Featured Post
+  section.ms-container.ms-pb-16
+    .ms-text-center.ms-mb-12
+      h2.ms-heading-2.ms-mb-4 Featured Article
+
+    a.ms-image-link.ms-image-link--lg.ms-image-link--center(href="blog-detail.html")
+      .ms-image-link__background
+        img.ms-image-link__image(
+          loading="lazy"
+          src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1200&h=600&fit=crop&q=80"
+          alt="Building Modern Corporate Websites"
+        )
+      .ms-image-link__overlay
+      .ms-image-link__content
+        h2.ms-image-link__title Building Modern Corporate Websites with Moonshot CSS
+        p.ms-image-link__description
+          | Learn how to create professional, scalable websites for startups using our monochrome
+          | CSS framework. Discover best practices for rapid deployment and brand customization.
+        .ms-text-sm.ms-text-secondary.ms-mt-4 Published on December 21, 2025 · 5 min read · By John Doe
+        span.ms-image-link__cta Read Article →
+
+  //- Blog Posts Grid
+  section.ms-container.ms-pb-24
+    .ms-text-center.ms-mb-12
+      h2.ms-heading-2.ms-mb-4 Latest Articles
+      p.ms-lead.ms-text-secondary Explore our collection of articles on web development, design, and startup growth
+
+    .ms-image-link-grid.ms-image-link-grid--3.ms-gap-8
+      a.ms-image-link.ms-image-link--md(href="blog-detail.html")
+        .ms-image-link__background
+          img.ms-image-link__image(
+            loading="lazy"
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80"
+            alt="SEO Best Practices"
+          )
+        .ms-image-link__overlay
+        .ms-image-link__content
+          h3.ms-image-link__title SEO Best Practices for Startups
+          p.ms-image-link__description Learn how to optimize your startup website for search engines and drive organic traffic.
+          .ms-text-sm.ms-text-secondary.ms-mt-4 December 18, 2025 · 5 min read
+
+      a.ms-image-link.ms-image-link--md(href="blog-detail.html")
+        .ms-image-link__background
+          img.ms-image-link__image(
+            loading="lazy"
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=80"
+            alt="Choosing CSS Framework"
+          )
+        .ms-image-link__overlay
+        .ms-image-link__content
+          h3.ms-image-link__title Choosing the Right CSS Framework
+          p.ms-image-link__description Compare popular CSS frameworks and find the best fit for your project needs.
+          .ms-text-sm.ms-text-secondary.ms-mt-4 December 15, 2025 · 7 min read
+
+      a.ms-image-link.ms-image-link--md(href="blog-detail.html")
+        .ms-image-link__background
+          img.ms-image-link__image(
+            loading="lazy"
+            src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop&q=80"
+            alt="Brand Identity"
+          )
+        .ms-image-link__overlay
+        .ms-image-link__content
+          h3.ms-image-link__title Brand Identity for Startups
+          p.ms-image-link__description Create a consistent brand identity that resonates with your target audience.
+          .ms-text-sm.ms-text-secondary.ms-mt-4 December 12, 2025 · 6 min read
+
+      a.ms-image-link.ms-image-link--md(href="blog-detail.html")
+        .ms-image-link__background
+          img.ms-image-link__image(
+            loading="lazy"
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop&q=80"
+            alt="Web Performance"
+          )
+        .ms-image-link__overlay
+        .ms-image-link__content
+          h3.ms-image-link__title Web Performance Optimization
+          p.ms-image-link__description Essential techniques to improve your website's loading speed and user experience.
+          .ms-text-sm.ms-text-secondary.ms-mt-4 December 10, 2025 · 8 min read
+
+      a.ms-image-link.ms-image-link--md(href="blog-detail.html")
+        .ms-image-link__background
+          img.ms-image-link__image(
+            loading="lazy"
+            src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop&q=80"
+            alt="Mobile First Design"
+          )
+        .ms-image-link__overlay
+        .ms-image-link__content
+          h3.ms-image-link__title Mobile-First Design Principles
+          p.ms-image-link__description Why mobile-first design matters and how to implement it effectively.
+          .ms-text-sm.ms-text-secondary.ms-mt-4 December 8, 2025 · 6 min read
+
+      a.ms-image-link.ms-image-link--md(href="blog-detail.html")
+        .ms-image-link__background
+          img.ms-image-link__image(
+            loading="lazy"
+            src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop&q=80"
+            alt="Accessibility"
+          )
+        .ms-image-link__overlay
+        .ms-image-link__content
+          h3.ms-image-link__title Building Accessible Websites
+          p.ms-image-link__description A comprehensive guide to WCAG compliance and inclusive web design.
+          .ms-text-sm.ms-text-secondary.ms-mt-4 December 5, 2025 · 9 min read
+
+    //- Pagination
+    .ms-flex.ms-justify-center.ms-items-center.ms-gap-4.ms-mt-16
+      button.ms-btn.ms-btn--outline(disabled) Previous
+      .ms-flex.ms-gap-2
+        button.ms-btn.ms-btn--primary 1
+        button.ms-btn.ms-btn--outline 2
+        button.ms-btn.ms-btn--outline 3
+        span.ms-text-secondary.ms-px-2 ...
+        button.ms-btn.ms-btn--outline 10
+      button.ms-btn.ms-btn--outline Next
+
+  //- Categories Section
+  section.ms-container.ms-pb-24.ms-bg-secondary.ms-py-16.ms-rounded-xl
+    .ms-text-center.ms-mb-12
+      h2.ms-heading-2.ms-mb-4 Browse by Category
+      p.ms-lead.ms-text-secondary Explore articles by topic
+
+    .ms-grid.ms-grid-cols-4.ms-gap-6
+      a.ms-card.ms-card--hover-shadow.ms-text-center(href="#")
+        .ms-card__body
+          h3.ms-card__title Web Development
+          p.ms-card__description.ms-text-sm 12 articles
+
+      a.ms-card.ms-card--hover-shadow.ms-text-center(href="#")
+        .ms-card__body
+          h3.ms-card__title Design
+          p.ms-card__description.ms-text-sm 8 articles
+
+      a.ms-card.ms-card--hover-shadow.ms-text-center(href="#")
+        .ms-card__body
+          h3.ms-card__title SEO & Marketing
+          p.ms-card__description.ms-text-sm 10 articles
+
+      a.ms-card.ms-card--hover-shadow.ms-text-center(href="#")
+        .ms-card__body
+          h3.ms-card__title Startup Growth
+          p.ms-card__description.ms-text-sm 6 articles
+
+  //- Newsletter CTA
+  section.ms-container.ms-py-16.ms-pb-24
+    .ms-card.ms-card--glow.ms-p-16.ms-text-center
+      h2.ms-heading-2.ms-mb-6 Stay Updated
+      p.ms-lead.ms-text-secondary.ms-mb-8 Get the latest articles, tutorials, and updates delivered to your inbox.
+      form.ms-flex.ms-gap-4.ms-justify-center(style="max-width: 500px; margin: 0 auto")
+        label.ms-sr-only(for="newsletter-email") Email address
+        input.ms-form-input.ms-flex-1(
+          type="email"
+          id="newsletter-email"
+          placeholder="Enter your email"
+          required
+        )
+        button.ms-btn.ms-btn--primary(type="submit") Subscribe
+      p.ms-text-sm.ms-text-secondary.ms-mt-6 No spam. Unsubscribe anytime.

@@ -1,0 +1,17 @@
+doctype html
+html(lang=lang || "en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title= title
+    meta(name="description" content=description)
+    meta(property="og:title" content=ogTitle || title)
+    meta(property="og:description" content=description)
+    meta(property="og:type" content=ogType || "website")
+    meta(property="og:locale" content="ja_JP")
+    link(rel="stylesheet" href="../dist/moonshot.css")
+    block headStyles
+    block jsonLd
+  body
+    block body
+    script(src="../dist/moonshot.min.js")

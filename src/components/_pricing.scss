@@ -1,0 +1,146 @@
+/**
+ * Moonshot CSS Framework - Pricing Table (SCSS)
+ * Card-based pricing component for service/plan comparison
+ */
+
+@use '../abstracts' as *;
+
+// ========================================
+// PRICING GRID
+// ========================================
+
+.ms-pricing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--ms-space-8);
+  align-items: stretch;
+
+  // ========================================
+  // PRICING CARD
+  // ========================================
+
+  &__card {
+    @include flex-column;
+    @include card-base;
+
+    padding: var(--ms-space-10);
+    text-align: center;
+    position: relative;
+
+    // Featured / highlighted plan
+    &--featured {
+      border-top: 4px solid var(--ms-brand-primary);
+      box-shadow: var(--ms-shadow-lg);
+      transform: scale(1.02);
+
+      @include breakpoint-down('md') {
+        transform: none;
+      }
+    }
+  }
+
+  // ========================================
+  // PRICING HEADER
+  // ========================================
+
+  &__header {
+    margin-bottom: var(--ms-space-8);
+    padding-bottom: var(--ms-space-8);
+    border-bottom: 1px solid var(--ms-border-light);
+  }
+
+  &__name {
+    font-size: var(--ms-text-lg);
+    font-weight: var(--ms-font-semibold);
+    color: var(--ms-text-primary);
+    margin-bottom: var(--ms-space-4);
+    text-transform: uppercase;
+    letter-spacing: var(--ms-tracking-wider);
+  }
+
+  &__price {
+    font-size: var(--ms-text-5xl);
+    font-weight: var(--ms-font-bold);
+    color: var(--ms-text-primary);
+    line-height: 1;
+  }
+
+  &__period {
+    font-size: var(--ms-text-base);
+    font-weight: var(--ms-font-normal);
+    color: var(--ms-text-tertiary);
+    margin-left: var(--ms-space-1);
+  }
+
+  // ========================================
+  // PRICING FEATURES
+  // ========================================
+
+  &__features {
+    list-style: none;
+    margin: 0 0 var(--ms-space-8);
+    padding: 0;
+    flex: 1;
+    text-align: left;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: var(--ms-space-3);
+      padding: var(--ms-space-3) 0;
+      font-size: var(--ms-text-sm);
+      color: var(--ms-text-secondary);
+      border-bottom: 1px solid var(--ms-border-light);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      // Check icon for included features
+      &::before {
+        content: '';
+        flex-shrink: 0;
+        width: 18px;
+        height: 18px;
+        background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 9L7.5 12.5L14 5.5' stroke='%2310b981' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+
+      // Dash icon for excluded features
+      &.ms-pricing__feature--excluded {
+        color: var(--ms-text-disabled);
+
+        &::before {
+          background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 9H13' stroke='%239ca3af' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+        }
+      }
+    }
+  }
+
+  // ========================================
+  // PRICING CTA
+  // ========================================
+
+  &__cta {
+    margin-top: auto;
+  }
+
+  // ========================================
+  // RESPONSIVE
+  // ========================================
+
+  @include breakpoint-down('lg') {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--ms-space-6);
+  }
+
+  @include breakpoint-down('md') {
+    grid-template-columns: 1fr;
+
+    &__card {
+      padding: var(--ms-space-8);
+    }
+  }
+}

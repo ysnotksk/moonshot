@@ -1,0 +1,144 @@
+extends _layouts/default
+
+- var title = "Brand Family - Moonshot CSS"
+- var description = "Brand Family - Our product ecosystem and sub-brands"
+
+block append headStyles
+  style.
+    /* Brand color customizations */
+    .brand-blue {
+      --ms-brand-primary: #2563eb;
+      --ms-brand-secondary: #3b82f6;
+      --ms-brand-accent: #1e40af;
+    }
+    .brand-red {
+      --ms-brand-primary: #dc2626;
+      --ms-brand-secondary: #ef4444;
+      --ms-brand-accent: #b91c1c;
+    }
+    .brand-green {
+      --ms-brand-primary: #16a34a;
+      --ms-brand-secondary: #22c55e;
+      --ms-brand-accent: #15803d;
+    }
+    .brand-purple {
+      --ms-brand-primary: #9333ea;
+      --ms-brand-secondary: #a855f7;
+      --ms-brand-accent: #7e22ce;
+    }
+
+block content
+  section.ms-hero.ms-hero--subpage
+    .ms-hero__container
+      p.ms-hero__eyebrow Brand System
+      h1.ms-hero__heading Our Brand Family
+      p.ms-hero__description
+        | Multiple brands, one unified design system. Moonshot enables you to maintain brand
+        | consistency across your main brand and sub-brands through instant color customization.
+
+  section.ms-py-24.ms-bg-secondary
+    .ms-container
+      h2.ms-heading-2.ms-text-center.ms-mb-12 Main Brand
+
+      .ms-card.ms-card--elevated.ms-max-w-2xl.ms-mx-auto
+        .ms-card__body
+          .ms-flex.ms-items-center.ms-gap-6.ms-mb-6
+            .ms-w-24.ms-h-24.ms-bg-gray-200.ms-rounded-lg.ms-flex.ms-items-center.ms-justify-center.ms-text-3xl 🌙
+            div
+              h3.ms-heading-3 Moonshot
+              p.ms-text-secondary CSS Framework for Startups
+          p.ms-paragraph Clean, minimal, monochrome design system for rapid corporate website deployment.
+          .ms-flex.ms-gap-2.ms-mt-4
+            a.ms-btn.ms-btn--primary(href="#") Visit Website
+            a.ms-btn.ms-btn--outline(href="#") Documentation
+
+  section.ms-py-24
+    .ms-container
+      h2.ms-heading-2.ms-text-center.ms-mb-4 Sub-Brands
+      p.ms-lead.ms-text-center.ms-mb-12 Each brand has its own identity while maintaining design consistency
+
+      .ms-grid.ms-grid-cols-2.ms-gap-8
+        //- Sub-brand 1
+        .ms-card.ms-card--elevated.brand-blue
+          .ms-card__body
+            .ms-flex.ms-items-center.ms-gap-4.ms-mb-4
+              .ms-w-16.ms-h-16.ms-bg-brand-primary.ms-rounded-lg.ms-flex.ms-items-center.ms-justify-center.ms-text-2xl ☁️
+              div
+                h3.ms-card__title Moonshot Cloud
+                p.ms-card__subtitle Cloud Hosting Service
+            p.ms-card__description
+              | Scalable, secure cloud infrastructure optimized for startup websites and
+              | applications.
+            .ms-flex.ms-gap-2.ms-mt-6
+              a.ms-btn.ms-btn--primary.ms-btn--sm(href="#") Learn More
+              a.ms-btn.ms-btn--outline.ms-btn--sm(href="#") Get Started
+
+        //- Sub-brand 2
+        .ms-card.ms-card--elevated.brand-red
+          .ms-card__body
+            .ms-flex.ms-items-center.ms-gap-4.ms-mb-4
+              .ms-w-16.ms-h-16.ms-bg-brand-primary.ms-rounded-lg.ms-flex.ms-items-center.ms-justify-center.ms-text-2xl 📊
+              div
+                h3.ms-card__title Moonshot Analytics
+                p.ms-card__subtitle Web Analytics Platform
+            p.ms-card__description
+              | Privacy-first analytics to understand your visitors and optimize your website
+              | performance.
+            .ms-flex.ms-gap-2.ms-mt-6
+              a.ms-btn.ms-btn--primary.ms-btn--sm(href="#") Learn More
+              a.ms-btn.ms-btn--outline.ms-btn--sm(href="#") Start Free Trial
+
+        //- Sub-brand 3
+        .ms-card.ms-card--elevated.brand-green
+          .ms-card__body
+            .ms-flex.ms-items-center.ms-gap-4.ms-mb-4
+              .ms-w-16.ms-h-16.ms-bg-brand-primary.ms-rounded-lg.ms-flex.ms-items-center.ms-justify-center.ms-text-2xl ✅
+              div
+                h3.ms-card__title Moonshot Forms
+                p.ms-card__subtitle Form Builder &amp; Management
+            p.ms-card__description Create beautiful, functional forms for your website. No coding required.
+            .ms-flex.ms-gap-2.ms-mt-6
+              a.ms-btn.ms-btn--primary.ms-btn--sm(href="#") Learn More
+              a.ms-btn.ms-btn--outline.ms-btn--sm(href="#") Try for Free
+
+        //- Sub-brand 4
+        .ms-card.ms-card--elevated.brand-purple
+          .ms-card__body
+            .ms-flex.ms-items-center.ms-gap-4.ms-mb-4
+              .ms-w-16.ms-h-16.ms-bg-brand-primary.ms-rounded-lg.ms-flex.ms-items-center.ms-justify-center.ms-text-2xl 🎨
+              div
+                h3.ms-card__title Moonshot Studio
+                p.ms-card__subtitle Design Consultation
+            p.ms-card__description Professional design services to create custom brand identities and visual systems.
+            .ms-flex.ms-gap-2.ms-mt-6
+              a.ms-btn.ms-btn--primary.ms-btn--sm(href="#") Learn More
+              a.ms-btn.ms-btn--outline.ms-btn--sm(href="#") Book Consultation
+
+  section.ms-py-24.ms-bg-secondary
+    .ms-container
+      h2.ms-heading-2.ms-text-center.ms-mb-12 Brand Customization Example
+      p.ms-text-center.ms-mb-8 Change 3 CSS variables to instantly apply brand colors
+
+      .ms-card.ms-max-w-2xl.ms-mx-auto
+        .ms-card__body
+          pre.ms-code-block
+            code.
+              /* Default Monochrome */
+              :root {
+                --ms-brand-primary: #374151;
+                --ms-brand-secondary: #6b7280;
+                --ms-brand-accent: #1f2937;
+              }
+
+              /* Your Brand Colors */
+              :root {
+                --ms-brand-primary: #2563eb;
+                --ms-brand-secondary: #3b82f6;
+                --ms-brand-accent: #1e40af;
+              }
+
+  section.ms-py-24
+    .ms-container.ms-text-center
+      h2.ms-heading-2.ms-mb-6 Build Your Brand Family
+      p.ms-lead.ms-mb-8 Start creating consistent, professional websites across all your brands
+      a.ms-btn.ms-btn--primary.ms-btn--xl(href="#") Get Started

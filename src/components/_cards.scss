@@ -1,0 +1,225 @@
+/**
+ * Moonshot CSS Framework - Cards (SCSS)
+ * Card components with variants using SCSS nesting
+ */
+
+@use 'sass:math';
+@use '../abstracts' as *;
+
+// ========================================
+// BASE CARD
+// ========================================
+
+.ms-card {
+  @include flex-column;
+  @include card-base;
+
+  overflow: hidden;
+
+  // ========================================
+  // CARD ELEMENTS
+  // ========================================
+
+  &__image {
+    @include image-cover;
+
+    display: block;
+  }
+
+  &__image-wrapper {
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--ms-gray-100);
+
+    &--16-9 {
+      @include image-aspect(math.div(16, 9));
+    }
+
+    &--4-3 {
+      @include image-aspect(math.div(4, 3));
+    }
+
+    &--square {
+      @include image-aspect(math.div(1, 1));
+    }
+  }
+
+  &__header {
+    padding: var(--ms-space-6);
+    border-bottom: 1px solid var(--ms-border-light);
+  }
+
+  &__body {
+    padding: var(--ms-space-6);
+    flex: 1;
+  }
+
+  &__footer {
+    padding: var(--ms-space-6);
+    border-top: 1px solid var(--ms-border-light);
+    background-color: var(--ms-bg-secondary);
+  }
+
+  &__title {
+    font-size: var(--ms-text-xl);
+    font-weight: var(--ms-font-semibold);
+    line-height: var(--ms-leading-tight);
+    margin-bottom: var(--ms-space-2);
+    color: var(--ms-text-primary);
+  }
+
+  &__subtitle {
+    font-size: var(--ms-text-sm);
+    color: var(--ms-text-secondary);
+    margin-bottom: var(--ms-space-4);
+  }
+
+  &__description {
+    font-size: var(--ms-text-base);
+    line-height: var(--ms-leading-relaxed);
+    color: var(--ms-text-secondary);
+  }
+
+  // ========================================
+  // CARD VARIANTS
+  // ========================================
+
+  &--elevated {
+    border: none;
+    box-shadow: var(--ms-shadow-md);
+
+    &:hover {
+      @include card-hover;
+    }
+  }
+
+  &--outlined {
+    border: 1px solid var(--ms-border-light);
+    box-shadow: none;
+  }
+
+  &--flat {
+    border: none;
+    box-shadow: none;
+    background-color: var(--ms-bg-secondary);
+  }
+
+  &--interactive {
+    cursor: pointer;
+
+    &:hover {
+      border-color: var(--ms-brand-primary);
+      box-shadow: var(--ms-shadow-md);
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: var(--ms-shadow-sm);
+    }
+  }
+
+  // ========================================
+  // CARD SIZES
+  // ========================================
+
+  &--sm {
+    .ms-card__header,
+    .ms-card__body,
+    .ms-card__footer {
+      padding: var(--ms-space-4);
+    }
+  }
+
+  &--lg {
+    .ms-card__header,
+    .ms-card__body,
+    .ms-card__footer {
+      padding: var(--ms-space-8);
+    }
+  }
+
+  // ========================================
+  // HORIZONTAL CARD
+  // ========================================
+
+  &--horizontal {
+    flex-direction: row;
+
+    .ms-card__image-wrapper {
+      width: 40%;
+      flex-shrink: 0;
+    }
+
+    .ms-card__body {
+      width: 60%;
+    }
+
+    @include breakpoint-down('md') {
+      flex-direction: column;
+
+      .ms-card__image-wrapper,
+      .ms-card__body {
+        width: 100%;
+      }
+    }
+  }
+
+  // ========================================
+  // SPECIAL CARDS
+  // ========================================
+
+  &--profile {
+    text-align: center;
+
+    .ms-card__image {
+      width: 120px;
+      height: 120px;
+      border-radius: var(--ms-radius-full);
+      margin: var(--ms-space-6) auto var(--ms-space-4);
+      object-fit: cover;
+    }
+  }
+
+  &--feature {
+    text-align: center;
+    border: none;
+    background-color: var(--ms-bg-secondary);
+
+    .ms-card__icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto var(--ms-space-4);
+
+      @include flex-center;
+
+      background-color: var(--ms-brand-primary);
+      color: var(--ms-white);
+      border-radius: var(--ms-radius-lg);
+    }
+  }
+
+  &--stats {
+    background: linear-gradient(135deg, var(--ms-brand-primary) 0%, var(--ms-brand-accent) 100%);
+    color: var(--ms-white);
+    border: none;
+
+    .ms-card__title,
+    .ms-card__subtitle,
+    .ms-card__description {
+      color: var(--ms-white);
+    }
+
+    .ms-card__value {
+      font-size: var(--ms-text-5xl);
+      font-weight: var(--ms-font-bold);
+      line-height: 1;
+      margin-bottom: var(--ms-space-2);
+    }
+
+    .ms-card__label {
+      font-size: var(--ms-text-sm);
+      opacity: 0.9;
+    }
+  }
+}

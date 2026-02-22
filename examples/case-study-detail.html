@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: FinTech Startup - 300% Revenue Growth | TechCorp</title>
+    <meta name="description" content="How TechCorp helped a fintech startup scale from 10K to 1M users with cloud infrastructure and AI-powered fraud detection.">
+    <meta property="og:title" content="Case Study: FinTech Startup - 300% Revenue Growth | TechCorp">
+    <meta property="og:description" content="How TechCorp helped a fintech startup scale from 10K to 1M users with cloud infrastructure and AI-powered fraud detection.">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ja_JP">
+    <link rel="stylesheet" href="../dist/moonshot.css">
+    <style>
+      .case-study-layout {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: var(--ms-space-12);
+        align-items: start;
+      }
+      @media (max-width: 1024px) {
+        .case-study-layout {
+          grid-template-columns: 1fr;
+        }
+      }
+      .case-study-sidebar {
+        position: sticky;
+        top: calc(100px + var(--ms-space-6));
+      }
+      @media (max-width: 1024px) {
+        .case-study-sidebar {
+          position: static;
+        }
+      }
+      .sidebar-card {
+        background-color: var(--ms-bg-secondary);
+        border-radius: var(--ms-radius-lg);
+        padding: var(--ms-space-8);
+      }
+      .sidebar-item {
+        padding: var(--ms-space-3) 0;
+        border-bottom: 1px solid var(--ms-border-light);
+      }
+      .sidebar-item:last-child {
+        border-bottom: none;
+      }
+      .sidebar-label {
+        font-size: var(--ms-text-xs);
+        font-weight: var(--ms-font-semibold);
+        color: var(--ms-text-tertiary);
+        text-transform: uppercase;
+        letter-spacing: var(--ms-tracking-wider);
+        margin-bottom: var(--ms-space-1);
+      }
+      .sidebar-value {
+        font-size: var(--ms-text-sm);
+        color: var(--ms-text-primary);
+      }
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--ms-space-6);
+      }
+      @media (max-width: 768px) {
+        .metrics-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .metric-card {
+        text-align: center;
+        padding: var(--ms-space-8);
+        background: linear-gradient(135deg, var(--ms-brand-primary) 0%, var(--ms-brand-accent) 100%);
+        border-radius: var(--ms-radius-lg);
+        color: #fff;
+      }
+      .metric-value {
+        font-size: var(--ms-text-4xl);
+        font-weight: var(--ms-font-bold);
+        line-height: 1;
+        margin-bottom: var(--ms-space-2);
+      }
+      .metric-label {
+        font-size: var(--ms-text-sm);
+        opacity: 0.9;
+      }
+      
+    </style>
+  </head>
+  <body><a class="ms-skip-link" href="#main-content">Skip to main content</a>
+    <header class="ms-header">
+      <nav class="ms-navbar"><a class="ms-navbar__brand" href="front-page.html"><img class="ms-navbar__logo" src="assets/logo.svg" alt="Moonshot">Moonshot</a>
+        <ul class="ms-navbar__menu" id="navbar-menu">
+          <li class="ms-navbar__item ms-navbar__item--has-mega"><a class="ms-navbar__link ms-navbar__link--active" href="service-page.html">Services</a>
+            <div class="ms-mega-menu">
+              <div class="ms-mega-menu__grid">
+                <div class="ms-mega-menu__section">
+                  <h4 class="ms-mega-menu__heading">Solutions</h4>
+                  <ul>
+                    <li><a class="ms-mega-menu__link" href="service-page.html#cloud">Cloud Infrastructure</a></li>
+                    <li><a class="ms-mega-menu__link" href="service-page.html#analytics">Data Analytics &amp; BI</a></li>
+                    <li><a class="ms-mega-menu__link" href="service-page.html#ai">AI &amp; Machine Learning</a></li>
+                    <li><a class="ms-mega-menu__link" href="service-page.html#transformation">Digital Transformation</a></li>
+                  </ul>
+                </div>
+                <div class="ms-mega-menu__section">
+                  <h4 class="ms-mega-menu__heading">Industries</h4>
+                  <ul>
+                    <li><a class="ms-mega-menu__link" href="#">FinTech</a></li>
+                    <li><a class="ms-mega-menu__link" href="#">Healthcare</a></li>
+                    <li><a class="ms-mega-menu__link" href="#">E-commerce</a></li>
+                    <li><a class="ms-mega-menu__link" href="#">Education</a></li>
+                  </ul>
+                </div>
+                <div class="ms-mega-menu__section">
+                  <h4 class="ms-mega-menu__heading">Resources</h4>
+                  <ul>
+                    <li><a class="ms-mega-menu__link" href="case-study-detail.html">Case Studies</a></li>
+                    <li><a class="ms-mega-menu__link" href="service-page.html#pricing">Pricing</a></li>
+                    <li><a class="ms-mega-menu__link" href="service-page.html#faq">FAQ</a></li>
+                    <li><a class="ms-mega-menu__link" href="contact.html">Contact</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="ms-navbar__item"><a class="ms-navbar__link" href="event-page.html">Events</a></li>
+          <li class="ms-navbar__item"><a class="ms-navbar__link" href="blog.html">Blog</a></li>
+          <li class="ms-navbar__item"><a class="ms-navbar__link" href="recruitment.html">Careers</a></li>
+          <li class="ms-navbar__item"><a class="ms-navbar__link" href="about.html">About</a></li>
+          <li class="ms-navbar__item"><a class="ms-navbar__link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="ms-navbar__actions"><a class="ms-btn ms-btn--primary ms-btn--sm" href="demo.html">Get Demo</a></div>
+        <button class="ms-navbar__toggle" id="navbar-toggle" aria-label="Toggle navigation"><span class="ms-navbar__toggle-bar"></span><span class="ms-navbar__toggle-bar"></span><span class="ms-navbar__toggle-bar"></span></button>
+      </nav>
+    </header>
+    <main id="main-content">
+      <section class="ms-hero ms-hero--subpage">
+        <div class="ms-hero__container">
+          <p class="ms-hero__eyebrow">Case Study</p>
+          <h1 class="ms-hero__heading">300% Revenue Growth in 12 Months</h1>
+          <p class="ms-hero__description">
+            How we helped a leading fintech startup scale from 10K to 1M users with cloud
+            infrastructure and AI-powered fraud detection.
+          </p>
+        </div>
+      </section>
+      <section class="ms-pb-24">
+        <div class="ms-container">
+          <div class="case-study-layout">
+            <div>
+              <section class="ms-mb-16">
+                <h2 class="ms-heading-2 ms-mb-6">The Challenge</h2>
+                <p class="ms-text-base ms-leading-relaxed ms-mb-4">
+                  PayFlow, a rapidly growing fintech startup, was experiencing severe growing pains.
+                  Their legacy infrastructure couldn't handle the surge in transaction volume, and
+                  their manual fraud review process was creating a bottleneck that cost them both
+                  money and customer trust.
+                </p>
+                <p class="ms-text-base ms-leading-relaxed ms-mb-4">
+                  With a 200% increase in user sign-ups over six months, their existing systems were
+                  cracking under pressure. Page load times exceeded 5 seconds during peak hours, and
+                  their fraud detection flagged too many legitimate transactions, leading to a 15%
+                  false positive rate.
+                </p>
+                <ul class="ms-list-disc ms-list-inside ms-space-y-2 ms-mb-6 ms-ml-4">
+                  <li>Infrastructure couldn't scale beyond 10K concurrent users</li>
+                  <li>Manual fraud review delayed transactions by up to 48 hours</li>
+                  <li>15% false positive rate on fraud detection</li>
+                  <li>Customer churn rate increasing 3% month-over-month</li>
+                </ul>
+              </section>
+              <section class="ms-mb-16">
+                <h2 class="ms-heading-2 ms-mb-6">Our Solution</h2>
+                <p class="ms-text-base ms-leading-relaxed ms-mb-4">
+                  We implemented a three-phase transformation plan that addressed PayFlow's
+                  infrastructure, analytics, and security needs simultaneously.
+                </p>
+                <h3 class="ms-heading-4 ms-mb-4 ms-mt-8">Phase 1: Cloud Migration</h3>
+                <p class="ms-text-base ms-leading-relaxed ms-mb-4">
+                  We migrated PayFlow's entire infrastructure to a multi-region AWS setup with
+                  auto-scaling groups, reducing their infrastructure costs by 40% while increasing
+                  capacity by 10x.
+                </p>
+                <h3 class="ms-heading-4 ms-mb-4 ms-mt-8">Phase 2: AI-Powered Fraud Detection</h3>
+                <p class="ms-text-base ms-leading-relaxed ms-mb-4">
+                  Our machine learning team built a custom fraud detection model trained on
+                  PayFlow's transaction data, reducing false positives from 15% to under 2% while
+                  catching 99.7% of actual fraudulent transactions.
+                </p>
+                <h3 class="ms-heading-4 ms-mb-4 ms-mt-8">Phase 3: Real-Time Analytics</h3>
+                <p class="ms-text-base ms-leading-relaxed ms-mb-4">
+                  We deployed a real-time analytics dashboard that gives PayFlow's team instant
+                  visibility into transaction patterns, user behavior, and system health.
+                </p>
+              </section>
+              <section class="ms-mb-16">
+                <h2 class="ms-heading-2 ms-mb-8">The Results</h2>
+                <div class="metrics-grid">
+                  <div class="metric-card">
+                    <div class="metric-value">300%</div>
+                    <div class="metric-label">Revenue Growth</div>
+                  </div>
+                  <div class="metric-card">
+                    <div class="metric-value">1M+</div>
+                    <div class="metric-label">Active Users</div>
+                  </div>
+                  <div class="metric-card">
+                    <div class="metric-value">99.7%</div>
+                    <div class="metric-label">Fraud Detection Rate</div>
+                  </div>
+                </div>
+              </section>
+              <section class="ms-mb-16">
+                <div class="ms-testimonial ms-testimonial--featured">
+                  <blockquote class="ms-testimonial__quote">
+                    "TechCorp didn't just fix our infrastructure — they transformed our entire
+                    business. The AI fraud detection alone saved us over $2M in the first year, and
+                    our customers love the instant transaction processing."
+                  </blockquote>
+                  <div class="ms-testimonial__author"><img class="ms-testimonial__avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=96&amp;h=96&amp;fit=crop&amp;q=80" alt="Alex Rivera">
+                    <div class="ms-testimonial__info"><span class="ms-testimonial__name">Alex Rivera</span><span class="ms-testimonial__title">CTO</span><span class="ms-testimonial__company">PayFlow</span></div>
+                  </div>
+                </div>
+              </section>
+              <section class="ms-py-24">
+                <div class="ms-container"><a class="ms-image-link ms-image-link--xl ms-image-link--center ms-image-link--glow" href="demo.html">
+                    <div class="ms-image-link__background"><img class="ms-image-link__image" loading="lazy" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1920&amp;h=800&amp;fit=crop&amp;q=80" alt="Get similar results"></div>
+                    <div class="ms-image-link__overlay"></div>
+                    <div class="ms-image-link__content">
+                      <h2 class="ms-image-link__title">Get Similar Results</h2>
+                      <p class="ms-image-link__description">
+                        Ready to transform your business? Let's discuss how we can help you achieve
+                        your goals.
+                      </p><span class="ms-image-link__cta">Book a Demo</span>
+                    </div></a></div>
+              </section>
+            </div>
+            <aside class="case-study-sidebar">
+              <div class="sidebar-card">
+                <h3 style="font-size: var(--ms-text-lg); font-weight: var(--ms-font-semibold); color: var(--ms-text-primary); margin: 0 0 var(--ms-space-6) 0;">Client Information</h3>
+                <div class="sidebar-item">
+                  <div class="sidebar-label">Client</div>
+                  <div class="sidebar-value">PayFlow</div>
+                </div>
+                <div class="sidebar-item">
+                  <div class="sidebar-label">Industry</div>
+                  <div class="sidebar-value">FinTech / Financial Services</div>
+                </div>
+                <div class="sidebar-item">
+                  <div class="sidebar-label">Company Size</div>
+                  <div class="sidebar-value">50-200 employees</div>
+                </div>
+                <div class="sidebar-item">
+                  <div class="sidebar-label">Services Used</div>
+                  <div class="sidebar-value">Cloud Infrastructure, AI & ML, Data Analytics</div>
+                </div>
+                <div class="sidebar-item">
+                  <div class="sidebar-label">Timeline</div>
+                  <div class="sidebar-value">12 months</div>
+                </div>
+                <div class="sidebar-item">
+                  <div class="sidebar-label">Region</div>
+                  <div class="sidebar-value">Asia-Pacific</div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="ms-footer">
+      <div class="ms-footer__container">
+        <div class="ms-footer__grid">
+          <div class="ms-footer__section">
+            <h4 class="ms-footer__heading">Product</h4><a class="ms-footer__link" href="service-page.html">Services</a><a class="ms-footer__link" href="service-page.html#pricing">Pricing</a><a class="ms-footer__link" href="image-links-demo.html">Components</a><a class="ms-footer__link" href="#">Documentation</a>
+          </div>
+          <div class="ms-footer__section">
+            <h4 class="ms-footer__heading">Company</h4><a class="ms-footer__link" href="about.html">About Us</a><a class="ms-footer__link" href="blog.html">Blog</a><a class="ms-footer__link" href="recruitment.html">Careers</a><a class="ms-footer__link" href="contact.html">Contact</a>
+          </div>
+          <div class="ms-footer__section">
+            <h4 class="ms-footer__heading">Legal</h4><a class="ms-footer__link" href="legal-template.html">Privacy Policy</a><a class="ms-footer__link" href="terms.html">Terms of Service</a><a class="ms-footer__link" href="#">License</a>
+          </div>
+          <div class="ms-footer__section">
+            <h4 class="ms-footer__heading">Newsletter</h4>
+            <p style="font-size: var(--ms-text-sm); color: #9ca3af; margin-bottom: var(--ms-space-4); line-height: 1.6;">Get the latest insights delivered to your inbox.</p>
+            <form action="#" method="post" style="display: flex; gap: var(--ms-space-2);">
+              <input class="ms-input ms-input--sm" type="email" placeholder="you@company.com" style="flex: 1; background: #1f2937; border-color: #374151; color: #f9fafb;">
+              <button class="ms-btn ms-btn--primary ms-btn--sm" type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="ms-footer__bottom">
+          <div class="ms-footer__copyright">&copy; 2025 Moonshot CSS Framework. All rights reserved.</div>
+          <div class="ms-footer__social"><a class="ms-footer__social-link" href="#" aria-label="GitHub">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"></path>
+              </svg></a><a class="ms-footer__social-link" href="#" aria-label="Twitter">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path>
+              </svg></a><a class="ms-footer__social-link" href="#" aria-label="LinkedIn">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+              </svg></a></div>
+        </div>
+      </div>
+    </footer>
+    <button class="ms-back-to-top" aria-label="Back to top">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M18 15l-6-6-6 6"></path>
+      </svg>
+    </button>
+    <script src="../dist/moonshot.min.js"></script>
+  </body>
+</html>

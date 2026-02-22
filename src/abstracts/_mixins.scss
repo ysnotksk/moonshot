@@ -1,0 +1,294 @@
+/**
+ * Moonshot CSS Framework - Mixins
+ * Reusable SCSS patterns and utilities
+ */
+
+@use 'sass:map';
+@use 'sass:list';
+@use 'sass:math';
+@use 'variables' as *;
+
+// ========================================
+// LAYOUT MIXINS
+// ========================================
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin absolute-cover {
+  position: absolute;
+  inset: 0;
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// ========================================
+// IMAGE MIXINS
+// ========================================
+
+@mixin image-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@mixin image-contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@mixin image-aspect($ratio: math.div(16, 9)) {
+  aspect-ratio: $ratio;
+  overflow: hidden;
+}
+
+// ========================================
+// TEXT MIXINS
+// ========================================
+
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin text-clamp($lines: 2) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  overflow: hidden;
+}
+
+@mixin heading-base {
+  font-family: var(--ms-font-sans);
+  font-weight: var(--ms-font-bold);
+  line-height: var(--ms-leading-tight);
+  color: var(--ms-text-primary);
+}
+
+@mixin body-text {
+  font-family: var(--ms-font-sans);
+  font-weight: var(--ms-font-normal);
+  line-height: var(--ms-leading-normal);
+  color: var(--ms-text-primary);
+}
+
+// ========================================
+// INTERACTIVE MIXINS
+// ========================================
+
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-weight: var(--ms-font-medium);
+  line-height: var(--ms-leading-tight);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  border: none; // No border by default
+  border-radius: var(--ms-radius-md);
+  transition: all var(--ms-transition-fast);
+  outline: none;
+
+  &:focus-visible {
+    outline: none; // Remove focus outline
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+@mixin link-underline($color: currentColor) {
+  position: relative;
+  text-decoration: none;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: $color;
+    transition: width var(--ms-transition-fast);
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+@mixin focus-ring($color: var(--ms-brand-primary)) {
+  &:focus-visible {
+    outline: 3px solid $color;
+    outline-offset: 3px;
+  }
+}
+
+// ========================================
+// VISUAL EFFECTS MIXINS
+// ========================================
+
+@mixin card-base {
+  background-color: var(--ms-bg-primary);
+  border: 1px solid var(--ms-border-light);
+  border-radius: var(--ms-radius-lg);
+  box-shadow: var(--ms-shadow-sm);
+  transition: all var(--ms-transition-base);
+}
+
+@mixin card-hover {
+  &:hover {
+    box-shadow: var(--ms-shadow-lg);
+    transform: translateY(-2px);
+  }
+}
+
+@mixin overlay-gradient($from: rgba(0, 0, 0, 0.2), $to: rgba(0, 0, 0, 0.6)) {
+  background: linear-gradient(180deg, $from 0%, $to 100%);
+}
+
+@mixin glass-effect {
+  background: rgb(255 255 255 / 10%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgb(255 255 255 / 20%);
+}
+
+// ========================================
+// RESPONSIVE MIXINS
+// ========================================
+
+@mixin breakpoint($size) {
+  @if map.has-key($breakpoints, $size) {
+    @media (min-width: map.get($breakpoints, $size)) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint #{$size} not found in $breakpoints map.";
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @if map.has-key($breakpoints, $size) {
+    @media (max-width: map.get($breakpoints, $size) - 1px) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint #{$size} not found in $breakpoints map.";
+  }
+}
+
+@mixin container($max-width: 'xl') {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--ms-space-4);
+  padding-right: var(--ms-space-4);
+
+  @if map.has-key($max-widths, $max-width) {
+    max-width: map.get($max-widths, $max-width);
+  }
+}
+
+// ========================================
+// ANIMATION MIXINS
+// ========================================
+
+@mixin transition($properties...) {
+  $transitions: ();
+
+  @each $property in $properties {
+    $transitions: list.append($transitions, $property var(--ms-transition-base), comma);
+  }
+
+  transition: $transitions;
+}
+
+@mixin hover-lift {
+  transition: transform var(--ms-transition-base);
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@mixin hover-scale($scale: 1.05) {
+  transition: transform var(--ms-transition-base);
+
+  &:hover {
+    transform: scale($scale);
+  }
+}
+
+// ========================================
+// UTILITY MIXINS
+// ========================================
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@mixin scrollbar-custom(
+  $width: 8px,
+  $track-color: var(--ms-gray-100),
+  $thumb-color: var(--ms-gray-400)
+) {
+  &::-webkit-scrollbar {
+    width: $width;
+    height: $width;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $track-color;
+    border-radius: var(--ms-radius-full);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $thumb-color;
+    border-radius: var(--ms-radius-full);
+
+    &:hover {
+      background: var(--ms-gray-500);
+    }
+  }
+}
+
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}

@@ -1,0 +1,354 @@
+extends _layouts/default
+
+- var title = "Our Services - Enterprise Solutions | Moonshot"
+- var description = "Our Services - Cloud infrastructure, data analytics, and AI solutions"
+- var activeNav = "services"
+
+block content
+  //- Hero - Service Overview
+  section
+    a.ms-image-link.ms-image-link--xl.ms-image-link--center.ms-image-link--hero(href="#services")
+      .ms-image-link__background
+        img.ms-image-link__image(
+          src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&h=800&fit=crop&q=80"
+          alt="Enterprise services"
+        )
+      .ms-image-link__overlay
+      .ms-image-link__content
+        h1.ms-image-link__title Enterprise Solutions
+        p.ms-image-link__description
+          | Comprehensive services designed to accelerate your business growth. From consulting to
+          | implementation, we deliver results that matter.
+        span.ms-image-link__cta Explore Our Services
+
+  //- Service Grid - Main Services
+  section.ms-py-24#services
+    .ms-container
+      .ms-text-center.ms-mb-12
+        h2.ms-heading-2.ms-mb-4 What We Offer
+        p.ms-lead.ms-text-secondary End-to-end solutions for modern businesses
+
+      .ms-image-link-grid.ms-image-link-grid--2
+        a.ms-image-link.ms-image-link--lg(href="service-detail.html")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=800&fit=crop&q=80"
+              alt="Cloud infrastructure"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Cloud Infrastructure
+            p.ms-image-link__description
+              | Scalable, secure cloud solutions built on AWS, Azure, and GCP. Auto-scaling,
+              | disaster recovery, and 99.99% uptime SLA.
+            span.ms-image-link__cta Learn More
+
+        a.ms-image-link.ms-image-link--lg(href="#analytics")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop&q=80"
+              alt="Data analytics"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Data Analytics & BI
+            p.ms-image-link__description
+              | Transform raw data into actionable insights. Real-time dashboards, predictive
+              | analytics, and custom reporting.
+            span.ms-image-link__cta Learn More
+
+        a.ms-image-link.ms-image-link--lg(href="#ai")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=800&fit=crop&q=80"
+              alt="AI and machine learning"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title AI & Machine Learning
+            p.ms-image-link__description
+              | Leverage cutting-edge AI to automate processes, enhance decision-making, and
+              | unlock new revenue streams.
+            span.ms-image-link__cta Learn More
+
+        a.ms-image-link.ms-image-link--lg(href="#transformation")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=800&fit=crop&q=80"
+              alt="Digital transformation"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Digital Transformation
+            p.ms-image-link__description
+              | Modernize legacy systems, streamline operations, and create digital-first customer
+              | experiences.
+            span.ms-image-link__cta Learn More
+
+        a.ms-image-link.ms-image-link--lg(href="#security")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&h=800&fit=crop&q=80"
+              alt="Security"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Security & Compliance
+            p.ms-image-link__description
+              | Protect your business with enterprise-grade security. SOC 2, ISO 27001, GDPR, and
+              | HIPAA compliance.
+            span.ms-image-link__cta Learn More
+
+  //- Process Section - How We Work
+  section.ms-py-24.ms-bg-secondary
+    .ms-container
+      .ms-text-center.ms-mb-12
+        h2.ms-heading-2.ms-mb-4 Our Process
+        p.ms-lead.ms-text-secondary A proven methodology that delivers results
+
+      .ms-grid.ms-grid-cols-4.ms-gap-6
+        a.ms-image-link.ms-image-link--sm(href="#discovery")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&h=400&fit=crop&q=80"
+              alt="Discovery"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            .ms-text-4xl.ms-font-bold.ms-mb-2 01
+            h3.ms-image-link__title Discovery
+            p.ms-image-link__description Understand your goals and challenges
+
+        a.ms-image-link.ms-image-link--sm(href="#strategy")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop&q=80"
+              alt="Strategy"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            .ms-text-4xl.ms-font-bold.ms-mb-2 02
+            h3.ms-image-link__title Strategy
+            p.ms-image-link__description Design a custom solution roadmap
+
+        a.ms-image-link.ms-image-link--sm(href="#implementation")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop&q=80"
+              alt="Implementation"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            .ms-text-4xl.ms-font-bold.ms-mb-2 03
+            h3.ms-image-link__title Implementation
+            p.ms-image-link__description Build and deploy with agile methodology
+
+        a.ms-image-link.ms-image-link--sm(href="#optimization")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&q=80"
+              alt="Optimization"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            .ms-text-4xl.ms-font-bold.ms-mb-2 04
+            h3.ms-image-link__title Optimization
+            p.ms-image-link__description Monitor, measure, and continuously improve
+
+  //- Case Studies / Success Stories
+  section.ms-py-24
+    .ms-container
+      .ms-text-center.ms-mb-12
+        h2.ms-heading-2.ms-mb-4 Success Stories
+        p.ms-lead.ms-text-secondary Real results from real clients
+
+      .ms-image-link-grid.ms-image-link-grid--3.ms-image-link-grid--featured
+        a.ms-image-link(href="case-study-detail.html")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&h=800&fit=crop&q=80"
+              alt="Fintech case study"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title 300% Revenue Growth in 12 Months
+            p.ms-image-link__description
+              | How we helped a fintech startup scale from 10K to 1M users with cloud
+              | infrastructure and AI-powered fraud detection.
+            span.ms-image-link__cta Read Case Study
+
+        a.ms-image-link(href="case-study-detail.html")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&q=80"
+              alt="Retail case study"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title E-commerce Transformation
+            p.ms-image-link__description Migrated legacy system to modern cloud platform, reducing costs by 40%.
+            span.ms-image-link__cta Read More
+
+        a.ms-image-link(href="case-study-detail.html")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop&q=80"
+              alt="Healthcare case study"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title HIPAA-Compliant Platform
+            p.ms-image-link__description Built secure telemedicine platform serving 50K+ patients.
+            span.ms-image-link__cta Read More
+
+        a.ms-image-link(href="case-study-detail.html")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop&q=80"
+              alt="Manufacturing case study"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title IoT & Predictive Maintenance
+            p.ms-image-link__description Reduced downtime by 60% with AI-powered monitoring.
+            span.ms-image-link__cta Read More
+
+        a.ms-image-link(href="case-study-detail.html")
+          .ms-image-link__background
+            img.ms-image-link__image(
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=600&fit=crop&q=80"
+              alt="Education case study"
+            )
+          .ms-image-link__overlay
+          .ms-image-link__content
+            h3.ms-image-link__title Online Learning Platform
+            p.ms-image-link__description Scaled to 100K concurrent users during peak enrollment.
+            span.ms-image-link__cta Read More
+
+  //- Pricing Tiers
+  section.ms-py-24.ms-bg-secondary#pricing
+    .ms-container
+      .ms-text-center.ms-mb-12
+        h2.ms-heading-2.ms-mb-4 Flexible Pricing
+        p.ms-lead.ms-text-secondary Choose the plan that fits your needs
+
+      .ms-pricing
+        .ms-pricing__card
+          .ms-pricing__header
+            .ms-pricing__name Starter
+            .ms-pricing__price $2,500
+            .ms-pricing__period per month
+          ul.ms-pricing__features
+            li 1 Service included
+            li Basic support (email)
+            li Monthly reports
+            li 99.9% uptime SLA
+            li.ms-pricing__feature--excluded Dedicated manager
+            li.ms-pricing__feature--excluded Custom integrations
+          .ms-pricing__cta
+            a.ms-btn.ms-btn--outline.ms-btn--lg(href="demo.html" style="width: 100%") Get Started
+
+        .ms-pricing__card.ms-pricing__card--featured
+          .ms-pricing__header
+            .ms-pricing__name Professional
+            .ms-pricing__price $7,500
+            .ms-pricing__period per month
+          ul.ms-pricing__features
+            li 3 Services included
+            li Priority support (24h response)
+            li Weekly reports & dashboards
+            li 99.99% uptime SLA
+            li Dedicated account manager
+            li.ms-pricing__feature--excluded Custom integrations
+          .ms-pricing__cta
+            a.ms-btn.ms-btn--primary.ms-btn--lg(href="demo.html" style="width: 100%") Get Started
+
+        .ms-pricing__card
+          .ms-pricing__header
+            .ms-pricing__name Enterprise
+            .ms-pricing__price Custom
+            .ms-pricing__period tailored to your needs
+          ul.ms-pricing__features
+            li Unlimited services
+            li 24/7 dedicated support
+            li Real-time dashboards
+            li Custom SLA
+            li Dedicated success team
+            li Custom integrations & API
+          .ms-pricing__cta
+            a.ms-btn.ms-btn--outline.ms-btn--lg(href="contact.html" style="width: 100%") Contact Sales
+
+  //- FAQ Section
+  section.ms-py-24#faq
+    .ms-container
+      .ms-text-center.ms-mb-12
+        h2.ms-heading-2.ms-mb-4 Frequently Asked Questions
+        p.ms-lead.ms-text-secondary Common questions about our services and process
+
+      .ms-accordion(style="max-width: 800px; margin: 0 auto")
+        details.ms-accordion__item
+          summary.ms-accordion__header How long does a typical project take?
+          .ms-accordion__body
+            | Project timelines vary based on scope and complexity. A typical cloud infrastructure
+            | setup takes 4-8 weeks, while a full digital transformation project may take 3-6
+            | months. We provide detailed timelines during the discovery phase.
+
+        details.ms-accordion__item
+          summary.ms-accordion__header Can I switch plans after signing up?
+          .ms-accordion__body
+            | Yes, you can upgrade or downgrade your plan at any time. Changes take effect at the
+            | start of your next billing cycle. Our team will help ensure a smooth transition
+            | between service tiers.
+
+        details.ms-accordion__item
+          summary.ms-accordion__header What industries do you specialize in?
+          .ms-accordion__body
+            | We have deep expertise in FinTech, Healthcare, E-commerce, and Education. However,
+            | our solutions are adaptable to any industry. We've successfully delivered projects
+            | across manufacturing, logistics, and professional services as well.
+
+        details.ms-accordion__item
+          summary.ms-accordion__header Do you offer a free consultation?
+          .ms-accordion__body
+            | Absolutely. We offer a complimentary 30-minute discovery call to understand your
+            | needs and provide initial recommendations. Book a demo through our website or
+            | contact our sales team directly.
+
+        details.ms-accordion__item
+          summary.ms-accordion__header What support is included with each plan?
+          .ms-accordion__body
+            | Starter plans include email support with 48-hour response time. Professional plans
+            | get priority support with 24-hour response and a dedicated account manager.
+            | Enterprise clients receive 24/7 dedicated support with a full success team.
+
+  //- CTA Section
+  section.ms-py-24
+    .ms-container
+      a.ms-image-link.ms-image-link--xl.ms-image-link--center.ms-image-link--glow(href="#contact")
+        .ms-image-link__background
+          img.ms-image-link__image(
+            loading="lazy"
+            src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1920&h=800&fit=crop&q=80"
+            alt="Contact us"
+          )
+        .ms-image-link__overlay
+        .ms-image-link__content
+          h2.ms-image-link__title Ready to Transform Your Business?
+          p.ms-image-link__description
+            | Schedule a free consultation with our experts. Let's discuss how we can help you
+            | achieve your goals.
+          span.ms-image-link__cta Book a Free Consultation

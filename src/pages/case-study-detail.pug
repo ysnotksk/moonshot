@@ -1,0 +1,208 @@
+extends _layouts/default
+
+- var title = "Case Study: FinTech Startup - 300% Revenue Growth | TechCorp"
+- var description = "How TechCorp helped a fintech startup scale from 10K to 1M users with cloud infrastructure and AI-powered fraud detection."
+- var activeNav = "services"
+- var ogType = "article"
+
+block append headStyles
+  style.
+    .case-study-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: var(--ms-space-12);
+      align-items: start;
+    }
+    @media (max-width: 1024px) {
+      .case-study-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+    .case-study-sidebar {
+      position: sticky;
+      top: calc(100px + var(--ms-space-6));
+    }
+    @media (max-width: 1024px) {
+      .case-study-sidebar {
+        position: static;
+      }
+    }
+    .sidebar-card {
+      background-color: var(--ms-bg-secondary);
+      border-radius: var(--ms-radius-lg);
+      padding: var(--ms-space-8);
+    }
+    .sidebar-item {
+      padding: var(--ms-space-3) 0;
+      border-bottom: 1px solid var(--ms-border-light);
+    }
+    .sidebar-item:last-child {
+      border-bottom: none;
+    }
+    .sidebar-label {
+      font-size: var(--ms-text-xs);
+      font-weight: var(--ms-font-semibold);
+      color: var(--ms-text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: var(--ms-tracking-wider);
+      margin-bottom: var(--ms-space-1);
+    }
+    .sidebar-value {
+      font-size: var(--ms-text-sm);
+      color: var(--ms-text-primary);
+    }
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--ms-space-6);
+    }
+    @media (max-width: 768px) {
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .metric-card {
+      text-align: center;
+      padding: var(--ms-space-8);
+      background: linear-gradient(135deg, var(--ms-brand-primary) 0%, var(--ms-brand-accent) 100%);
+      border-radius: var(--ms-radius-lg);
+      color: #fff;
+    }
+    .metric-value {
+      font-size: var(--ms-text-4xl);
+      font-weight: var(--ms-font-bold);
+      line-height: 1;
+      margin-bottom: var(--ms-space-2);
+    }
+    .metric-label {
+      font-size: var(--ms-text-sm);
+      opacity: 0.9;
+    }
+
+block content
+  //- Hero
+  section.ms-hero.ms-hero--subpage
+    .ms-hero__container
+      p.ms-hero__eyebrow Case Study
+      h1.ms-hero__heading 300% Revenue Growth in 12 Months
+      p.ms-hero__description
+        | How we helped a leading fintech startup scale from 10K to 1M users with cloud
+        | infrastructure and AI-powered fraud detection.
+
+  //- Case Study Content
+  section.ms-pb-24
+    .ms-container
+      .case-study-layout
+        //- Main Content
+        div
+          //- Challenge
+          section.ms-mb-16
+            h2.ms-heading-2.ms-mb-6 The Challenge
+            p.ms-text-base.ms-leading-relaxed.ms-mb-4
+              | PayFlow, a rapidly growing fintech startup, was experiencing severe growing pains.
+              | Their legacy infrastructure couldn't handle the surge in transaction volume, and
+              | their manual fraud review process was creating a bottleneck that cost them both
+              | money and customer trust.
+            p.ms-text-base.ms-leading-relaxed.ms-mb-4
+              | With a 200% increase in user sign-ups over six months, their existing systems were
+              | cracking under pressure. Page load times exceeded 5 seconds during peak hours, and
+              | their fraud detection flagged too many legitimate transactions, leading to a 15%
+              | false positive rate.
+            ul.ms-list-disc.ms-list-inside.ms-space-y-2.ms-mb-6.ms-ml-4
+              li Infrastructure couldn't scale beyond 10K concurrent users
+              li Manual fraud review delayed transactions by up to 48 hours
+              li 15% false positive rate on fraud detection
+              li Customer churn rate increasing 3% month-over-month
+
+          //- Solution
+          section.ms-mb-16
+            h2.ms-heading-2.ms-mb-6 Our Solution
+            p.ms-text-base.ms-leading-relaxed.ms-mb-4
+              | We implemented a three-phase transformation plan that addressed PayFlow's
+              | infrastructure, analytics, and security needs simultaneously.
+            h3.ms-heading-4.ms-mb-4.ms-mt-8 Phase 1: Cloud Migration
+            p.ms-text-base.ms-leading-relaxed.ms-mb-4
+              | We migrated PayFlow's entire infrastructure to a multi-region AWS setup with
+              | auto-scaling groups, reducing their infrastructure costs by 40% while increasing
+              | capacity by 10x.
+            h3.ms-heading-4.ms-mb-4.ms-mt-8 Phase 2: AI-Powered Fraud Detection
+            p.ms-text-base.ms-leading-relaxed.ms-mb-4
+              | Our machine learning team built a custom fraud detection model trained on
+              | PayFlow's transaction data, reducing false positives from 15% to under 2% while
+              | catching 99.7% of actual fraudulent transactions.
+            h3.ms-heading-4.ms-mb-4.ms-mt-8 Phase 3: Real-Time Analytics
+            p.ms-text-base.ms-leading-relaxed.ms-mb-4
+              | We deployed a real-time analytics dashboard that gives PayFlow's team instant
+              | visibility into transaction patterns, user behavior, and system health.
+
+          //- Results
+          section.ms-mb-16
+            h2.ms-heading-2.ms-mb-8 The Results
+            .metrics-grid
+              .metric-card
+                .metric-value 300%
+                .metric-label Revenue Growth
+              .metric-card
+                .metric-value 1M+
+                .metric-label Active Users
+              .metric-card
+                .metric-value 99.7%
+                .metric-label Fraud Detection Rate
+
+          //- Client Testimonial
+          section.ms-mb-16
+            .ms-testimonial.ms-testimonial--featured
+              blockquote.ms-testimonial__quote
+                | "TechCorp didn't just fix our infrastructure — they transformed our entire
+                | business. The AI fraud detection alone saved us over $2M in the first year, and
+                | our customers love the instant transaction processing."
+              .ms-testimonial__author
+                img.ms-testimonial__avatar(
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=96&h=96&fit=crop&q=80"
+                  alt="Alex Rivera"
+                )
+                .ms-testimonial__info
+                  span.ms-testimonial__name Alex Rivera
+                  span.ms-testimonial__title CTO
+                  span.ms-testimonial__company PayFlow
+
+          //- CTA Section
+          section.ms-py-24
+            .ms-container
+              a.ms-image-link.ms-image-link--xl.ms-image-link--center.ms-image-link--glow(href="demo.html")
+                .ms-image-link__background
+                  img.ms-image-link__image(
+                    loading="lazy"
+                    src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1920&h=800&fit=crop&q=80"
+                    alt="Get similar results"
+                  )
+                .ms-image-link__overlay
+                .ms-image-link__content
+                  h2.ms-image-link__title Get Similar Results
+                  p.ms-image-link__description
+                    | Ready to transform your business? Let's discuss how we can help you achieve
+                    | your goals.
+                  span.ms-image-link__cta Book a Demo
+
+        //- Sidebar
+        aside.case-study-sidebar
+          .sidebar-card
+            h3(style="font-size: var(--ms-text-lg); font-weight: var(--ms-font-semibold); color: var(--ms-text-primary); margin: 0 0 var(--ms-space-6) 0;") Client Information
+            .sidebar-item
+              .sidebar-label Client
+              .sidebar-value PayFlow
+            .sidebar-item
+              .sidebar-label Industry
+              .sidebar-value FinTech / Financial Services
+            .sidebar-item
+              .sidebar-label Company Size
+              .sidebar-value 50-200 employees
+            .sidebar-item
+              .sidebar-label Services Used
+              .sidebar-value Cloud Infrastructure, AI & ML, Data Analytics
+            .sidebar-item
+              .sidebar-label Timeline
+              .sidebar-value 12 months
+            .sidebar-item
+              .sidebar-label Region
+              .sidebar-value Asia-Pacific

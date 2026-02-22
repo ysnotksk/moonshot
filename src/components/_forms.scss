@@ -1,0 +1,380 @@
+/**
+ * Moonshot CSS Framework - Forms (SCSS)
+ * Form elements and input components using SCSS nesting
+ */
+
+@use '../abstracts' as *;
+
+// ========================================
+// FORM GROUPS
+// ========================================
+
+.ms-form-group {
+  margin-bottom: var(--ms-space-6);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// ========================================
+// LABELS
+// ========================================
+
+.ms-label {
+  display: block;
+  font-size: var(--ms-text-sm);
+  font-weight: var(--ms-font-medium);
+  color: var(--ms-text-primary);
+  margin-bottom: var(--ms-space-2);
+
+  &--required::after {
+    content: '*';
+    color: var(--ms-error);
+    margin-left: var(--ms-space-1);
+  }
+}
+
+// ========================================
+// INPUT BASE
+// ========================================
+
+%input-base {
+  width: 100%;
+  font-family: inherit;
+  font-size: var(--ms-text-base);
+  line-height: var(--ms-leading-normal);
+  color: var(--ms-text-primary);
+  background-color: var(--ms-bg-primary);
+  border: 1px solid var(--ms-border-medium);
+  border-radius: var(--ms-radius-md);
+  padding: var(--ms-space-3) var(--ms-space-4);
+
+  @include transition(border-color, box-shadow);
+
+  outline: none;
+
+  &:hover {
+    border-color: var(--ms-border-dark);
+  }
+
+  &:focus {
+    border-color: var(--ms-brand-primary);
+    box-shadow: 0 0 0 3px rgb(55 65 81 / 10%);
+  }
+
+  &::placeholder {
+    color: var(--ms-text-disabled);
+  }
+
+  &:disabled {
+    background-color: var(--ms-bg-disabled);
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.ms-input,
+.ms-textarea,
+.ms-select {
+  @extend %input-base;
+}
+
+// ========================================
+// INPUT VARIANTS
+// ========================================
+
+.ms-input {
+  &--sm {
+    font-size: var(--ms-text-sm);
+    padding: var(--ms-space-2) var(--ms-space-3);
+  }
+
+  &--lg {
+    font-size: var(--ms-text-lg);
+    padding: var(--ms-space-4) var(--ms-space-5);
+  }
+
+  &--error {
+    border-color: var(--ms-error);
+
+    &:focus {
+      border-color: var(--ms-error);
+      box-shadow: 0 0 0 3px rgb(239 68 68 / 10%);
+    }
+  }
+
+  &--success {
+    border-color: var(--ms-success);
+
+    &:focus {
+      border-color: var(--ms-success);
+      box-shadow: 0 0 0 3px rgb(16 185 129 / 10%);
+    }
+  }
+}
+
+// ========================================
+// TEXTAREA
+// ========================================
+
+.ms-textarea {
+  min-height: 120px;
+  resize: vertical;
+
+  &--no-resize {
+    resize: none;
+  }
+}
+
+// ========================================
+// SELECT
+// ========================================
+
+.ms-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%234b5563' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--ms-space-4) center;
+  padding-right: var(--ms-space-10);
+}
+
+// ========================================
+// CHECKBOX & RADIO
+// ========================================
+
+%custom-input {
+  appearance: none;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--ms-border-medium);
+  background-color: var(--ms-bg-primary);
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0;
+
+  &:hover {
+    border-color: var(--ms-brand-primary);
+    background-color: var(--ms-bg-secondary);
+  }
+
+  &:active {
+    transform: scale(0.92);
+  }
+
+  &:checked {
+    background-color: var(--ms-brand-primary);
+    border-color: var(--ms-brand-primary);
+    box-shadow: 0 0 0 2px rgb(55 65 81 / 8%);
+  }
+
+  &:checked:hover {
+    filter: brightness(1.1);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  @include focus-ring;
+}
+
+.ms-checkbox {
+  @extend %custom-input;
+
+  border-radius: var(--ms-radius-sm);
+
+  // Checkmark icon — hidden by default, animated on check
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5L4.5 8.5L11 1.5' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 0; // Hidden when unchecked
+
+  &:checked {
+    background-size: 12px 10px; // Reveal checkmark with size transition
+  }
+}
+
+.ms-radio {
+  @extend %custom-input;
+
+  border-radius: var(--ms-radius-full);
+
+  // Inner dot — scaled to 0 by default
+  &::after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: var(--ms-radius-full);
+    background-color: var(--ms-white);
+    margin: 3px;
+    transform: scale(0);
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &:checked::after {
+    transform: scale(1);
+  }
+}
+
+// Checkbox/Radio with Label
+.ms-checkbox-wrapper,
+.ms-radio-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ms-space-3);
+  cursor: pointer;
+  user-select: none;
+  padding: var(--ms-space-2) 0;
+  border-radius: var(--ms-radius-sm);
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: var(--ms-text-primary);
+  }
+
+  // Align checkbox/radio with first line of text
+  input {
+    margin-top: 2px;
+  }
+
+  &__label {
+    font-size: var(--ms-text-sm);
+    color: var(--ms-text-secondary);
+    cursor: pointer;
+    line-height: var(--ms-leading-normal);
+    transition: color 0.15s ease;
+  }
+
+  &:hover &__label {
+    color: var(--ms-text-primary);
+  }
+}
+
+// ========================================
+// INPUT GROUP
+// ========================================
+
+.ms-input-group {
+  display: flex;
+  width: 100%;
+
+  .ms-input,
+  .ms-button,
+  .ms-btn {
+    border-radius: 0;
+
+    &:first-child {
+      border-top-left-radius: var(--ms-radius-md);
+      border-bottom-left-radius: var(--ms-radius-md);
+    }
+
+    &:last-child {
+      border-top-right-radius: var(--ms-radius-md);
+      border-bottom-right-radius: var(--ms-radius-md);
+    }
+
+    &:not(:last-child) {
+      border-right-width: 0;
+    }
+  }
+
+  &__addon {
+    display: flex;
+    align-items: center;
+    padding: var(--ms-space-3) var(--ms-space-4);
+    font-size: var(--ms-text-base);
+    background-color: var(--ms-bg-secondary);
+    border: 1px solid var(--ms-border-medium);
+    color: var(--ms-text-secondary);
+    white-space: nowrap;
+
+    &:first-child {
+      border-top-left-radius: var(--ms-radius-md);
+      border-bottom-left-radius: var(--ms-radius-md);
+      border-right-width: 0;
+    }
+
+    &:last-child {
+      border-top-right-radius: var(--ms-radius-md);
+      border-bottom-right-radius: var(--ms-radius-md);
+      border-left-width: 0;
+    }
+  }
+}
+
+// ========================================
+// HELPER TEXT
+// ========================================
+
+.ms-form-help {
+  display: block;
+  margin-top: var(--ms-space-2);
+  font-size: var(--ms-text-sm);
+  color: var(--ms-text-tertiary);
+}
+
+.ms-form-error {
+  display: block;
+  margin-top: var(--ms-space-2);
+  font-size: var(--ms-text-sm);
+  color: var(--ms-error);
+}
+
+.ms-form-success {
+  display: block;
+  margin-top: var(--ms-space-2);
+  font-size: var(--ms-text-sm);
+  color: var(--ms-success);
+}
+
+// ========================================
+// SWITCH TOGGLE
+// ========================================
+
+.ms-switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+
+  &__input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked + .ms-switch__slider {
+      background-color: var(--ms-brand-primary);
+
+      &::before {
+        transform: translateX(24px);
+      }
+    }
+
+    @include focus-ring;
+  }
+
+  &__slider {
+    position: absolute;
+    inset: 0;
+    background-color: var(--ms-gray-300);
+    border-radius: var(--ms-radius-full);
+    transition: all var(--ms-transition-fast);
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: var(--ms-white);
+      border-radius: var(--ms-radius-full);
+      transition: transform var(--ms-transition-fast);
+    }
+  }
+}

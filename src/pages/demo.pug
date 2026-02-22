@@ -1,0 +1,239 @@
+extends _layouts/default
+
+- var title = "Book a Demo - TechCorp"
+- var description = "Schedule a personalized demo of TechCorp's enterprise solutions. See how we can accelerate your business growth."
+
+block append headStyles
+  style.
+    .demo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--ms-space-16);
+      align-items: start;
+    }
+    @media (max-width: 768px) {
+      .demo-grid {
+        grid-template-columns: 1fr;
+        gap: var(--ms-space-10);
+      }
+    }
+    .demo-form-card {
+      background-color: var(--ms-bg-primary);
+      border: 1px solid var(--ms-border-light);
+      border-radius: var(--ms-radius-lg);
+      padding: var(--ms-space-10);
+    }
+    @media (max-width: 768px) {
+      .demo-form-card {
+        padding: var(--ms-space-6);
+      }
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--ms-space-4);
+    }
+    @media (max-width: 480px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+    .value-prop {
+      display: flex;
+      gap: var(--ms-space-4);
+      align-items: flex-start;
+    }
+    .value-prop__icon {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--ms-bg-secondary);
+      border-radius: var(--ms-radius-md);
+      color: var(--ms-brand-primary);
+    }
+    .trust-badges {
+      display: flex;
+      gap: var(--ms-space-4);
+      flex-wrap: wrap;
+      margin-top: var(--ms-space-8);
+      padding-top: var(--ms-space-8);
+      border-top: 1px solid var(--ms-border-light);
+    }
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: var(--ms-space-2);
+      font-size: var(--ms-text-xs);
+      color: var(--ms-text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: var(--ms-tracking-wider);
+    }
+
+block append jsonLd
+  script(type="application/ld+json").
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Book a Demo - TechCorp",
+      "url": "https://example.com/demo",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "TechCorp",
+        "url": "https://example.com"
+      }
+    }
+
+block content
+  //- Hero
+  section.ms-hero.ms-hero--subpage
+    .ms-hero__container
+      p.ms-hero__eyebrow Book a Demo
+      h1.ms-hero__heading See It in Action
+      p.ms-hero__description
+        | Schedule a personalized demo with our team. We'll walk you through how TechCorp can
+        | accelerate your business growth.
+
+  //- Demo Form + Value Props
+  section.ms-section
+    .ms-container
+      .demo-grid
+        //- Left: Demo Request Form
+        .demo-form-card
+          h2(style="font-size: var(--ms-text-xl); font-weight: var(--ms-font-semibold); color: var(--ms-text-primary); margin: 0 0 var(--ms-space-2) 0;") Request Your Demo
+          p(style="font-size: var(--ms-text-sm); color: var(--ms-text-tertiary); margin: 0 0 var(--ms-space-8) 0;") Fill out the form and we'll be in touch within 24 hours.
+
+          form(action="#" method="post" novalidate)
+            .form-row
+              .ms-form-group
+                label.ms-label.ms-label--required(for="demo-first-name") First Name
+                input.ms-input#demo-first-name(
+                  type="text"
+                  name="first_name"
+                  placeholder="Taro"
+                  required
+                )
+              .ms-form-group
+                label.ms-label.ms-label--required(for="demo-last-name") Last Name
+                input.ms-input#demo-last-name(
+                  type="text"
+                  name="last_name"
+                  placeholder="Yamada"
+                  required
+                )
+
+            .ms-form-group
+              label.ms-label.ms-label--required(for="demo-email") Work Email
+              input.ms-input#demo-email(
+                type="email"
+                name="email"
+                placeholder="taro@company.com"
+                required
+              )
+
+            .ms-form-group
+              label.ms-label.ms-label--required(for="demo-company") Company
+              input.ms-input#demo-company(
+                type="text"
+                name="company"
+                placeholder="Company name"
+                required
+              )
+
+            .form-row
+              .ms-form-group
+                label.ms-label(for="demo-role") Job Title
+                input.ms-input#demo-role(
+                  type="text"
+                  name="role"
+                  placeholder="e.g. CTO, VP Engineering"
+                )
+              .ms-form-group
+                label.ms-label(for="demo-team-size") Team Size
+                select.ms-select#demo-team-size(name="team_size")
+                  option(value="" disabled selected) Select
+                  option(value="1-10") 1-10
+                  option(value="11-50") 11-50
+                  option(value="51-200") 51-200
+                  option(value="201-1000") 201-1,000
+                  option(value="1000+") 1,000+
+
+            .ms-form-group
+              label.ms-label(for="demo-message") What are you hoping to achieve?
+              textarea.ms-textarea#demo-message(
+                name="message"
+                rows="4"
+                placeholder="Tell us about your goals and challenges..."
+              )
+
+            .ms-form-group
+              .ms-checkbox-wrapper
+                input.ms-checkbox#demo-privacy(
+                  type="checkbox"
+                  name="privacy"
+                  required
+                )
+                label.ms-checkbox-wrapper__label(for="demo-privacy")
+                  | I agree to the
+                  |
+                  a(href="legal-template.html" style="text-decoration: underline") Privacy Policy
+
+            button.ms-btn.ms-btn--primary.ms-btn--lg(type="submit" style="width: 100%") Request Demo
+
+        //- Right: Value Props + Trust Badges
+        div
+          h2(style="font-size: var(--ms-text-2xl); font-weight: var(--ms-font-bold); color: var(--ms-text-primary); margin: 0 0 var(--ms-space-2) 0;") Why Book a Demo?
+          p(style="font-size: var(--ms-text-base); color: var(--ms-text-secondary); margin: 0 0 var(--ms-space-10) 0; line-height: var(--ms-leading-relaxed);")
+            | Get a tailored walkthrough of our platform and see exactly how we can solve your
+            | specific challenges.
+
+          div(style="display: flex; flex-direction: column; gap: var(--ms-space-8)")
+            //- Value Prop 1
+            .value-prop
+              .value-prop__icon
+                svg(width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24")
+                  path(stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z")
+              div
+                h3(style="font-size: var(--ms-text-base); font-weight: var(--ms-font-semibold); color: var(--ms-text-primary); margin: 0 0 var(--ms-space-1) 0;") Personalized Walkthrough
+                p(style="font-size: var(--ms-text-sm); color: var(--ms-text-secondary); margin: 0; line-height: var(--ms-leading-relaxed);")
+                  | See our platform configured for your specific industry and use case. No
+                  | generic slides.
+
+            //- Value Prop 2
+            .value-prop
+              .value-prop__icon
+                svg(width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24")
+                  path(stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z")
+              div
+                h3(style="font-size: var(--ms-text-base); font-weight: var(--ms-font-semibold); color: var(--ms-text-primary); margin: 0 0 var(--ms-space-1) 0;") ROI Assessment
+                p(style="font-size: var(--ms-text-sm); color: var(--ms-text-secondary); margin: 0; line-height: var(--ms-leading-relaxed);")
+                  | Get a clear picture of the time and cost savings you can expect within the
+                  | first 90 days.
+
+            //- Value Prop 3
+            .value-prop
+              .value-prop__icon
+                svg(width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24")
+                  path(stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z")
+              div
+                h3(style="font-size: var(--ms-text-base); font-weight: var(--ms-font-semibold); color: var(--ms-text-primary); margin: 0 0 var(--ms-space-1) 0;") Expert Q&A
+                p(style="font-size: var(--ms-text-sm); color: var(--ms-text-secondary); margin: 0; line-height: var(--ms-leading-relaxed);")
+                  | Bring your toughest questions. Our solutions engineers will show you exactly
+                  | how we handle them.
+
+          //- Trust Badges
+          .trust-badges
+            .trust-badge
+              svg(width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24")
+                path(stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z")
+              | SOC 2 Certified
+            .trust-badge
+              svg(width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24")
+                path(stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z")
+              | 99.99% Uptime
+            .trust-badge
+              svg(width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24")
+                path(stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z")
+              | 500+ Clients

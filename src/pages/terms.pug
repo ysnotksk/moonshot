@@ -1,0 +1,193 @@
+extends _layouts/default
+
+- var title = "Terms of Service - Moonshot CSS"
+- var description = "Terms of Service - Legal terms and conditions for using Moonshot CSS Framework"
+
+block content
+  //- Hero
+  section.ms-hero.ms-hero--subpage
+    .ms-hero__container
+      p.ms-hero__eyebrow Legal
+      h1.ms-hero__heading Terms of Service
+      p.ms-hero__description
+        | Last Updated:
+        |
+        time(datetime="2025-01-15") January 15, 2025
+
+  //- Legal Document Content
+  .ms-container.ms-pb-24
+    div(style="max-width: 900px; margin: 0 auto")
+      //- Document Introduction
+      section.ms-mb-12
+        p.ms-lead.ms-text-secondary
+          | These Terms of Service ("Terms") govern your access to and use of the Moonshot CSS
+          | Framework website, services, and products ("Services") provided by Moonshot CSS
+          | Framework ("we," "our," or "us"). By accessing or using our Services, you agree to be
+          | bound by these Terms.
+
+      //- Table of Contents
+      nav.ms-mb-16.ms-p-8.ms-bg-secondary.ms-rounded-lg
+        h2.ms-heading-4.ms-mb-6 Table of Contents
+        ol.ms-list-decimal.ms-list-inside.ms-space-y-2
+          li
+            a.ms-link(href="#acceptance") Acceptance of Terms
+          li
+            a.ms-link(href="#use-of-services") Use of Services
+          li
+            a.ms-link(href="#accounts") User Accounts
+          li
+            a.ms-link(href="#intellectual-property") Intellectual Property
+          li
+            a.ms-link(href="#payment") Payment Terms
+          li
+            a.ms-link(href="#termination") Termination
+          li
+            a.ms-link(href="#liability") Limitation of Liability
+          li
+            a.ms-link(href="#indemnification") Indemnification
+          li
+            a.ms-link(href="#governing-law") Governing Law
+          li
+            a.ms-link(href="#changes") Changes to Terms
+          li
+            a.ms-link(href="#contact") Contact Us
+
+      //- Main Content Sections
+      article
+        section#acceptance.ms-mb-16
+          h2.ms-heading-2.ms-mb-6 1. Acceptance of Terms
+          p.ms-text-base.ms-leading-relaxed.ms-mb-4
+            | By accessing or using our Services, you confirm that you are at least 18 years old
+            | (or the age of majority in your jurisdiction) and have the legal capacity to enter
+            | into these Terms. If you are using the Services on behalf of an organization, you
+            | represent that you have the authority to bind that organization to these Terms.
+          p.ms-text-base.ms-leading-relaxed.ms-mb-4
+            | If you do not agree to these Terms, you must not access or use our Services.
+
+        section#use-of-services.ms-mb-16
+          h2.ms-heading-2.ms-mb-6 2. Use of Services
+          h3.ms-heading-4.ms-mb-4.ms-mt-8 2.1 Permitted Use
+          p.ms-text-base.ms-leading-relaxed.ms-mb-4
+            | You may use our Services for lawful purposes in accordance with these Terms. The
+            | Moonshot CSS Framework is provided under the MIT License, which permits use,
+            | copying, modification, and distribution.
+          h3.ms-heading-4.ms-mb-4.ms-mt-8 2.2 Prohibited Use
+          p.ms-text-base.ms-leading-relaxed.ms-mb-4 You agree not to:
+          ul.ms-list-disc.ms-list-inside.ms-space-y-2.ms-mb-6.ms-ml-4
+            li Use the Services in any way that violates applicable laws or regulations
+            li Attempt to gain unauthorized access to our systems or networks
+            li Interfere with or disrupt the integrity of our Services
+            li Use the Services to transmit malware, viruses, or other harmful code
+            li Reverse engineer, decompile, or disassemble any part of our proprietary tools
+
+        section#accounts.ms-mb-16
+          h2.ms-heading-2.ms-mb-6 3. User Accounts
+          p.ms-text-base.ms-leading-relaxed.ms-mb-4
+            | If you create an account with us, you are responsible for maintaining the
+            | confidentiality of your account credentials and for all activities that occur under
+            | your account. You agree to notify us immediately of any unauthorized use of your
+            | account.
+          p.ms-text-base.ms-leading-relaxed.ms-mb-4
+            | We reserve the right to suspend or terminate accounts that violate these Terms or
+            | engage in fraudulent or illegal activity.
+
+        section#intellectual-property.ms-mb-16
+          h2.ms-heading-2.ms-mb-6 4. Intellectual Property
+          p.ms-text-base.ms-leading-relaxed.ms-mb-4
+            | The Moonshot CSS Framework source code is licensed under the MIT License. All other
+            | content on our website, including text, graphics, logos, and documentation, is owned
+            | by us and protected by intellectual property laws.
+          p.ms-text-base.ms-leading-relaxed.ms-mb-4
+            | The MIT License grants you the right to use, copy, modify, merge, publish,
+            | distribute, sublicense, and/or sell copies of the framework, subject to the
+            | conditions specified in the license.
+
+        section#payment.ms-mb-16
+          h2.ms-heading-2.ms-mb-6 5. Payment Terms
+          p.ms-text-base.ms-leading-relaxed.ms-mb-4
+            | If you purchase any paid services or products, you agree to pay all fees associated
+            | with your selected plan. Fees are non-refundable except as required by law or as
+            | expressly stated in our refund policy.
+          p.ms-text-base.ms-leading-relaxed.ms-mb-4
+            | We reserve the right to change our pricing at any time. We will provide notice of
+            | any price changes before they take effect.
+
+        section#termination.ms-mb-16
+          h2.ms-heading-2.ms-mb-6 6. Termination
+          p.ms-text-base.ms-leading-relaxed.ms-mb-4
+            | We may terminate or suspend your access to our Services at any time, with or without
+            | cause, with or without notice. Upon termination, your right to use the Services will
+            | immediately cease.
+          p.ms-text-base.ms-leading-relaxed.ms-mb-4
+            | All provisions of these Terms that by their nature should survive termination shall
+            | survive, including ownership provisions, warranty disclaimers, indemnification, and
+            | limitations of liability.
+
+        section#liability.ms-mb-16
+          h2.ms-heading-2.ms-mb-6 7. Limitation of Liability
+          p.ms-text-base.ms-leading-relaxed.ms-mb-4
+            | To the maximum extent permitted by law, in no event shall we be liable for any
+            | indirect, incidental, special, consequential, or punitive damages, or any loss of
+            | profits or revenues, whether incurred directly or indirectly, or any loss of data,
+            | use, goodwill, or other intangible losses.
+          p.ms-text-base.ms-leading-relaxed.ms-mb-4
+            | Our total liability for any claims arising out of or relating to these Terms or our
+            | Services shall not exceed the amount you paid us in the twelve (12) months prior to
+            | the event giving rise to the claim.
+
+        section#indemnification.ms-mb-16
+          h2.ms-heading-2.ms-mb-6 8. Indemnification
+          p.ms-text-base.ms-leading-relaxed.ms-mb-4
+            | You agree to indemnify, defend, and hold harmless Moonshot CSS Framework and its
+            | officers, directors, employees, and agents from and against any claims, liabilities,
+            | damages, losses, and expenses arising out of or in any way connected with your use
+            | of the Services or violation of these Terms.
+
+        section#governing-law.ms-mb-16
+          h2.ms-heading-2.ms-mb-6 9. Governing Law
+          p.ms-text-base.ms-leading-relaxed.ms-mb-4
+            | These Terms shall be governed by and construed in accordance with the laws of Japan,
+            | without regard to its conflict of law provisions. Any disputes arising under these
+            | Terms shall be subject to the exclusive jurisdiction of the courts located in Tokyo,
+            | Japan.
+
+        section#changes.ms-mb-16
+          h2.ms-heading-2.ms-mb-6 10. Changes to Terms
+          p.ms-text-base.ms-leading-relaxed.ms-mb-4
+            | We reserve the right to modify these Terms at any time. We will notify you of any
+            | changes by posting the new Terms on this page and updating the "Last Updated" date.
+          p.ms-text-base.ms-leading-relaxed.ms-mb-4
+            | Your continued use of the Services after any changes constitutes acceptance of the
+            | new Terms.
+
+        section#contact.ms-mb-16
+          h2.ms-heading-2.ms-mb-6 11. Contact Us
+          p.ms-text-base.ms-leading-relaxed.ms-mb-4
+            | If you have any questions about these Terms of Service, please contact us:
+          .ms-card.ms-card--hover-shadow.ms-p-8.ms-mt-6
+            h3.ms-heading-4.ms-mb-4 Moonshot CSS Framework
+            address.ms-not-italic.ms-space-y-2
+              p.ms-text-base
+                strong Email:
+                |
+                a.ms-link(href="mailto:legal@moonshot.com") legal@moonshot.com
+              p.ms-text-base
+                strong Address:
+                |  123 Innovation Street, Tech City, TC 12345, United States
+
+      //- Document Footer
+      footer.ms-mt-24.ms-pt-8.ms-border-t.ms-border-gray-200
+        .ms-text-center.ms-text-sm.ms-text-secondary
+          p.ms-mb-2
+            | This document was last updated on
+            |
+            time(datetime="2025-01-15") January 15, 2025
+            | .
+          p
+            a.ms-link(href="legal-template.html") Privacy Policy
+            |  |
+            |
+            a.ms-link(href="terms.html") Terms of Service
+            |  |
+            |
+            a.ms-link(href="legal-template.html") Cookie Policy

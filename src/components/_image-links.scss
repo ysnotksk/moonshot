@@ -1,0 +1,479 @@
+/**
+ * Moonshot CSS Framework - Image Outboxed Links (SCSS)
+ * Visually impactful link components with background images
+ * Design Philosophy: High visual impact, curiosity-triggering panel interface
+ */
+
+@use '../abstracts' as *;
+
+// ========================================
+// BASE IMAGE LINK
+// ========================================
+
+.ms-image-link {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: var(--ms-radius-lg); // All corners rounded for modern, clean look
+  transition: all var(--ms-transition-base);
+  cursor: pointer;
+  text-decoration: none;
+  border: none; // No border
+  outline: none; // No outline
+
+  // Remove hover border/outline effects
+  &:hover {
+    border: none;
+    outline: none;
+    box-shadow: none; // No shadow/border on hover
+  }
+
+  // Keep focus-visible for accessibility (keyboard navigation)
+  &:focus-visible {
+    outline: 2px solid var(--ms-brand-primary);
+    outline-offset: 4px;
+  }
+
+  // Hero variant - no rounding to connect with header
+  &--hero {
+    border-radius: 0 0 var(--ms-radius-2xl) var(--ms-radius-2xl); // Only bottom corners rounded
+    margin-top: 0;
+
+    // Position content at bottom-left
+    .ms-image-link__content {
+      justify-content: flex-end; // Bottom alignment
+      align-items: flex-start; // Left alignment
+      text-align: left;
+      padding-top: calc(
+        var(--ms-space-20) + 100px
+      ); // Base padding (80px) + navbar clearance (100px)
+    }
+  }
+
+  // Banner variant - full-width banner with no border radius
+  &--banner {
+    border-radius: 0; // No rounding for full-width banner effect
+    margin-left: calc(-50vw + 50%); // Extend to full viewport width
+    margin-right: calc(-50vw + 50%);
+    width: 100vw;
+    max-width: 100vw;
+  }
+
+  // Background & Image
+  &__background {
+    @include absolute-cover;
+
+    z-index: 0;
+  }
+
+  &__image {
+    @include image-cover;
+
+    transition: transform var(--ms-transition-slow);
+  }
+
+  &:hover &__image {
+    transform: scale(1.05);
+  }
+
+  // Overlay
+  &__overlay {
+    @include absolute-cover;
+    @include overlay-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
+
+    transition: opacity var(--ms-transition-base);
+    z-index: 1;
+  }
+
+  &:hover &__overlay {
+    opacity: 0.8;
+  }
+
+  // Content
+  &__content {
+    position: relative;
+    z-index: 2;
+    padding: var(--ms-space-12);
+
+    @include flex-column;
+
+    justify-content: flex-end; // Content anchored to bottom over image
+    min-height: 300px;
+    color: var(--ms-white);
+  }
+
+  &__title {
+    font-size: var(--ms-text-3xl);
+    font-weight: var(--ms-font-bold);
+    line-height: var(--ms-leading-tight);
+    margin-bottom: var(--ms-space-5); // Increased spacing below title
+    color: var(--ms-white);
+    transition: transform var(--ms-transition-base);
+  }
+
+  &:hover &__title {
+    transform: none;
+  }
+
+  &__description {
+    font-size: var(--ms-text-base);
+    line-height: var(--ms-leading-relaxed);
+    color: rgb(255 255 255 / 90%);
+    margin-bottom: var(--ms-space-6); // Increased spacing below description
+  }
+
+  &__cta {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    gap: var(--ms-space-2);
+    padding: 0;
+    font-size: var(--ms-text-sm);
+    font-weight: var(--ms-font-semibold);
+    color: var(--ms-white);
+    text-transform: uppercase;
+    letter-spacing: var(--ms-tracking-wider);
+    background: none;
+    border: none;
+    transition: opacity var(--ms-transition-fast);
+
+    &::after {
+      content: '→';
+      transition: transform var(--ms-transition-base);
+    }
+  }
+
+  &:hover &__cta {
+    opacity: 0.7;
+
+    &::after {
+      transform: translateX(4px);
+    }
+  }
+
+  // ========================================
+  // SIZE VARIANTS
+  // ========================================
+
+  &--sm {
+    .ms-image-link__content {
+      min-height: 200px;
+      padding: var(--ms-space-6);
+    }
+
+    .ms-image-link__title {
+      font-size: var(--ms-text-xl);
+    }
+  }
+
+  &--lg {
+    .ms-image-link__content {
+      min-height: 400px;
+      padding: var(--ms-space-12);
+    }
+
+    .ms-image-link__title {
+      font-size: var(--ms-text-5xl);
+    }
+  }
+
+  &--xl {
+    .ms-image-link__content {
+      min-height: 630px; // Reduced by 20px for more compact first view
+      padding: var(--ms-space-20); // Increased padding for more breathing room (80px)
+    }
+
+    // Hero variant with XL - extra top padding for navbar clearance
+    &.ms-image-link--hero .ms-image-link__content {
+      padding-top: calc(var(--ms-space-20) + 100px); // Base padding + navbar clearance
+    }
+
+    .ms-image-link__title {
+      font-size: var(--ms-text-6xl);
+    }
+  }
+
+  // ========================================
+  // OVERLAY VARIANTS
+  // ========================================
+
+  &--light {
+    .ms-image-link__overlay {
+      @include overlay-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+    }
+  }
+
+  &--dark {
+    .ms-image-link__overlay {
+      @include overlay-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8));
+    }
+  }
+
+  &--brand {
+    .ms-image-link__overlay {
+      @include overlay-gradient(rgba(55, 65, 81, 0.6), rgba(55, 65, 81, 0.9));
+    }
+  }
+
+  &--gradient-top {
+    .ms-image-link__overlay {
+      background: linear-gradient(0deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 80%) 100%);
+    }
+
+    .ms-image-link__content {
+      justify-content: flex-start;
+    }
+  }
+
+  // ========================================
+  // POSITION VARIANTS
+  // ========================================
+
+  &--center {
+    .ms-image-link__content {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &--top-left {
+    .ms-image-link__content {
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  }
+
+  &--top-right {
+    .ms-image-link__content {
+      justify-content: flex-start;
+      align-items: flex-end;
+    }
+  }
+
+  &--bottom-left {
+    .ms-image-link__content {
+      justify-content: flex-end;
+      align-items: flex-start;
+      text-align: left;
+    }
+  }
+
+  &--bottom-right {
+    .ms-image-link__content {
+      justify-content: flex-end;
+      align-items: flex-end;
+      text-align: right;
+    }
+  }
+
+  // ========================================
+  // SPECIAL EFFECTS
+  // ========================================
+
+  &--parallax {
+    overflow: visible;
+
+    .ms-image-link__background {
+      overflow: hidden;
+    }
+  }
+
+  &--glow {
+    // Removed border/glow effect on hover - cleaner design
+    box-shadow: none;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  &--zoom {
+    .ms-image-link__image {
+      transform: scale(1.1);
+    }
+
+    &:hover .ms-image-link__image {
+      transform: scale(1);
+    }
+  }
+
+  &--grayscale {
+    .ms-image-link__image {
+      filter: grayscale(100%);
+    }
+
+    &:hover .ms-image-link__image {
+      filter: grayscale(0%);
+    }
+  }
+
+  // ========================================
+  // BADGE / LABEL
+  // ========================================
+
+  // ========================================
+  // ACCESSIBILITY
+  // ========================================
+
+  @include focus-ring;
+
+  &:focus-visible {
+    .ms-image-link__overlay {
+      opacity: 0.9;
+    }
+  }
+
+  // Prefers reduced motion
+  @include reduced-motion {
+    &,
+    .ms-image-link__image,
+    .ms-image-link__overlay,
+    .ms-image-link__title,
+    .ms-image-link__cta::after {
+      transition: none;
+    }
+
+    &:hover .ms-image-link__image {
+      transform: none;
+    }
+
+    &:hover .ms-image-link__title {
+      transform: none;
+    }
+
+    &:hover .ms-image-link__cta::after {
+      transform: none;
+    }
+  }
+}
+
+// ========================================
+// MOBILE RESPONSIVE (Standalone Image Links)
+// ========================================
+
+@include breakpoint-down('md') {
+  .ms-image-link {
+    // Reduce padding on mobile
+    &__content {
+      padding: var(--ms-space-8);
+    }
+
+    // Mobile-specific font sizes for each size variant
+    &--sm &__title {
+      font-size: var(--ms-text-base); // 16px
+    }
+
+    &--md &__title {
+      font-size: var(--ms-text-xl); // 20px
+    }
+
+    &--lg &__title {
+      font-size: var(--ms-text-2xl); // 24px
+    }
+
+    &--xl &__title {
+      font-size: var(--ms-text-3xl); // 30px (was 60px!)
+    }
+
+    // Adjust description text on mobile
+    &__description {
+      font-size: var(--ms-text-sm); // 14px
+      line-height: var(--ms-leading-relaxed);
+    }
+
+    // Adjust CTA text on mobile
+    &__cta {
+      font-size: var(--ms-text-sm); // 14px
+    }
+  }
+}
+
+// ========================================
+// GRID LAYOUT
+// ========================================
+
+.ms-image-link-grid {
+  display: grid;
+  gap: var(--ms-space-6);
+
+  &--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  // Featured item (larger)
+  &--featured {
+    .ms-image-link:first-child {
+      grid-column: span 2;
+      grid-row: span 2;
+
+      .ms-image-link__content {
+        min-height: 500px;
+      }
+    }
+  }
+
+  // Responsive
+  @include breakpoint-down('lg') {
+    &--3,
+    &--4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include breakpoint-down('md') {
+    &--2,
+    &--3,
+    &--4 {
+      grid-template-columns: 1fr; // Single column on mobile
+    }
+
+    &--featured .ms-image-link:first-child {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+
+    .ms-image-link__content {
+      min-height: 200px; // Reduced min-height for mobile
+      padding: var(--ms-space-6);
+    }
+
+    // Reduce gap between grid items on mobile
+    gap: var(--ms-space-4);
+
+    // Mobile-specific font sizes for each variant
+    &--sm .ms-image-link__title {
+      font-size: var(--ms-text-base); // 16px
+    }
+
+    &--md .ms-image-link__title {
+      font-size: var(--ms-text-lg); // 18px
+    }
+
+    &--lg .ms-image-link__title {
+      font-size: var(--ms-text-2xl); // 24px
+    }
+
+    &--xl .ms-image-link__title {
+      font-size: var(--ms-text-3xl); // 30px (was 60px)
+    }
+
+    // Generic fallback for base image links
+    .ms-image-link__title {
+      font-size: var(--ms-text-xl); // 20px
+    }
+
+    // Adjust description text on mobile
+    .ms-image-link__description {
+      font-size: var(--ms-text-sm); // 14px
+    }
+  }
+}
