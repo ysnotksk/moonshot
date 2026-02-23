@@ -4,6 +4,8 @@
 
 Just a boring website template. Monochrome, minimal, gets the job done.
 
+**[Live Demo](https://ysnotksk.github.io/moonshot/)**
+
 SCSS-based CSS framework with 20+ page templates for corporate/startup sites. Drop in, tweak 3 CSS variables, ship.
 
 ## Why Moonshot?
