@@ -38,6 +38,9 @@
   --ms-error: #ef4444;
   --ms-warning: #f59e0b;
   --ms-info: #3b82f6;
+  --ms-gradient-from: var(--ms-gray-900);
+  --ms-gradient-to: var(--ms-gray-500);
+  --ms-gradient-angle: 135deg;
   --ms-text-primary: var(--ms-gray-900);
   --ms-text-secondary: var(--ms-gray-600);
   --ms-text-tertiary: var(--ms-gray-500);
@@ -149,6 +152,8 @@
   --ms-gray-700: #e5e5e5;
   --ms-gray-800: #f5f5f5;
   --ms-gray-900: #fafafa;
+  --ms-gradient-from: var(--ms-gray-100);
+  --ms-gradient-to: var(--ms-gray-500);
   --ms-text-primary: var(--ms-gray-900);
   --ms-text-secondary: var(--ms-gray-600);
   --ms-text-tertiary: var(--ms-gray-500);
@@ -183,6 +188,8 @@
     --ms-gray-700: #e5e5e5;
     --ms-gray-800: #f5f5f5;
     --ms-gray-900: #fafafa;
+    --ms-gradient-from: var(--ms-gray-100);
+    --ms-gradient-to: var(--ms-gray-500);
     --ms-text-primary: var(--ms-gray-900);
     --ms-text-secondary: var(--ms-gray-600);
     --ms-text-tertiary: var(--ms-gray-500);
@@ -531,6 +538,16 @@ body {
     font-size: var(--ms-text-xl);
   }
 }
+/* ========================================
+ * GRADIENT TEXT
+ * ======================================== */
+.ms-text-gradient {
+  background: linear-gradient(var(--ms-gradient-angle), var(--ms-gradient-from), var(--ms-gradient-to));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* ========================================
  * BODY TEXT
  * ======================================== */

@@ -244,6 +244,11 @@ $z-indices: (
     --ms-#{$name}: #{$value};
   }
 
+  // Gradient Colors (Client Customizable)
+  --ms-gradient-from: var(--ms-gray-900);
+  --ms-gradient-to: var(--ms-gray-500);
+  --ms-gradient-angle: 135deg;
+
   // Semantic Colors
   --ms-text-primary: var(--ms-gray-900);
   --ms-text-secondary: var(--ms-gray-600);
@@ -339,6 +344,10 @@ $z-indices: (
   --ms-gray-700: #e5e5e5;
   --ms-gray-800: #f5f5f5;
   --ms-gray-900: #fafafa;
+
+  // Gradient colors
+  --ms-gradient-from: var(--ms-gray-100);
+  --ms-gradient-to: var(--ms-gray-500);
 
   // Semantic colors
   --ms-text-primary: var(--ms-gray-900);

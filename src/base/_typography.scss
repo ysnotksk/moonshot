@@ -112,6 +112,21 @@ body {
 }
 
 /* ========================================
+ * GRADIENT TEXT
+ * ======================================== */
+
+.ms-text-gradient {
+  background: linear-gradient(
+    var(--ms-gradient-angle),
+    var(--ms-gradient-from),
+    var(--ms-gradient-to)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ========================================
  * BODY TEXT
  * ======================================== */
 
