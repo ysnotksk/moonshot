@@ -1,3 +1,5 @@
+![Moonshot CSS Framework](docs/assets/cover.png)
+
 # Moonshot
 
 Just a boring website template. Monochrome, minimal, gets the job done.
