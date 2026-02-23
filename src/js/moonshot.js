@@ -8,9 +8,10 @@
 import { Navigation } from './components/navigation.js';
 import AnimatedStats from './components/stats.js';
 import BackToTop from './components/back-to-top.js';
+import CookieBanner from './components/cookie-banner.js';
 
 // Export components for direct use
-export { Navigation, AnimatedStats, BackToTop };
+export { Navigation, AnimatedStats, BackToTop, CookieBanner };
 
 // Auto-initialize all components
 function initMoonshot() {
@@ -31,6 +32,12 @@ function initMoonshot() {
   if (backToTopElement) {
     new BackToTop();
   }
+
+  // Auto-initialize cookie banner
+  const cookieBannerElement = document.querySelector('.ms-cookie-banner');
+  if (cookieBannerElement) {
+    new CookieBanner();
+  }
 }
 
 // Initialize on DOM ready
@@ -49,6 +56,7 @@ if (typeof window !== 'undefined') {
     Navigation,
     AnimatedStats,
     BackToTop,
+    CookieBanner,
     version,
     init: initMoonshot,
   };

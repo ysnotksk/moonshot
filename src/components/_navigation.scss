@@ -111,7 +111,9 @@
   }
 
   &__link {
-    display: block;
+    display: flex;
+    align-items: center;
+    min-height: 44px; // WCAG 2.5.8 touch target minimum
     padding: var(--ms-space-2) var(--ms-space-3); // Compact padding - SpaceX style
     font-size: var(--ms-text-sm); // Smaller font for compact look
     font-weight: var(--ms-font-normal); // Normal weight for cleaner look

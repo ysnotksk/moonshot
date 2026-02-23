@@ -169,15 +169,17 @@ Available functions:
 1. **Commit your changes:**
    ```bash
    git add .
-   git commit -m "Add: new button variant"
+   git commit -m "feat(buttons): add loading spinner variant"
    ```
 
-   Use conventional commit format:
-   - `Add:` - New feature
-   - `Fix:` - Bug fix
-   - `Update:` - Change existing feature
-   - `Remove:` - Remove code
-   - `Docs:` - Documentation only
+   Use [Conventional Commits](https://www.conventionalcommits.org/):
+   - `feat` - New feature
+   - `fix` - Bug fix
+   - `docs` - Documentation only
+   - `style` - Formatting, no logic change
+   - `refactor` - Code change that neither fixes a bug nor adds a feature
+   - `perf` - Performance improvement
+   - `chore` - Build process, dependencies
 
 2. **Push to your fork:**
    ```bash
@@ -195,13 +197,12 @@ Available functions:
 
 ### PR Title Format
 
-```
-[Type] Brief description
+Use Conventional Commits format:
 
-Examples:
-[Feature] Add loading spinner component
-[Fix] Correct button hover state
-[Docs] Update SCSS migration guide
+```
+feat(component): add loading spinner component
+fix(buttons): correct hover state on ghost variant
+docs: update SCSS migration guide
 ```
 
 ### PR Description
@@ -218,6 +219,22 @@ Include:
 2. Maintainers will review your code
 3. Address any feedback
 4. Once approved, your PR will be merged
+
+## New Component Checklist
+
+When adding a new component, ensure:
+
+- [ ] File created as `src/components/_component-name.scss`
+- [ ] Uses `@use '../abstracts' as *;` for tokens access
+- [ ] BEM naming with `ms-` prefix (`.ms-component__element--modifier`)
+- [ ] Uses design tokens (no hardcoded colors, spacing, or font sizes)
+- [ ] Minimum 44px touch target on interactive elements
+- [ ] Focus-visible styles on interactive elements (`@include focus-ring`)
+- [ ] `prefers-reduced-motion` respected for animations (`@include reduced-motion`)
+- [ ] Dark mode support via CSS custom properties (no hardcoded light-mode colors)
+- [ ] Responsive behavior tested at all 5 breakpoints
+- [ ] Registered in `src/moonshot.scss` entry point
+- [ ] Example usage added or existing template updated
 
 ## Questions?
 

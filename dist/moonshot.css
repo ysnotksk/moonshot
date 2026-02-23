@@ -169,6 +169,40 @@
   --ms-shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 80%);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme=light]) {
+    --ms-white: #ffffff;
+    --ms-bg: #0a0a0a;
+    --ms-gray-50: #1a1a1a;
+    --ms-gray-100: #262626;
+    --ms-gray-200: #333333;
+    --ms-gray-300: #404040;
+    --ms-gray-400: #737373;
+    --ms-gray-500: #a3a3a3;
+    --ms-gray-600: #d4d4d4;
+    --ms-gray-700: #e5e5e5;
+    --ms-gray-800: #f5f5f5;
+    --ms-gray-900: #fafafa;
+    --ms-text-primary: var(--ms-gray-900);
+    --ms-text-secondary: var(--ms-gray-600);
+    --ms-text-tertiary: var(--ms-gray-500);
+    --ms-text-disabled: var(--ms-gray-400);
+    --ms-text-on-brand: var(--ms-white);
+    --ms-bg-primary: var(--ms-bg);
+    --ms-bg-secondary: var(--ms-gray-50);
+    --ms-bg-tertiary: var(--ms-gray-100);
+    --ms-bg-disabled: var(--ms-gray-200);
+    --ms-border-light: var(--ms-gray-200);
+    --ms-border-medium: var(--ms-gray-300);
+    --ms-border-dark: var(--ms-gray-400);
+    --ms-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 50%);
+    --ms-shadow-base: 0 1px 3px 0 rgb(0 0 0 / 60%), 0 1px 2px 0 rgb(0 0 0 / 40%);
+    --ms-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 60%), 0 2px 4px -1px rgb(0 0 0 / 40%);
+    --ms-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 70%), 0 4px 6px -2px rgb(0 0 0 / 50%);
+    --ms-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 70%), 0 10px 10px -5px rgb(0 0 0 / 50%);
+    --ms-shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 80%);
+  }
+}
 /**
  * Moonshot CSS Framework - Abstracts Index
  * Forwards all variables, functions, and mixins
@@ -977,217 +1011,7 @@ body {
 }
 
 /* ========================================
- * FLEXBOX
- * ======================================== */
-.ms-flex {
-  display: flex;
-}
-
-.ms-inline-flex {
-  display: inline-flex;
-}
-
-/* Flex direction */
-.ms-flex-row {
-  flex-direction: row;
-}
-
-.ms-flex-row-reverse {
-  flex-direction: row-reverse;
-}
-
-.ms-flex-col {
-  flex-direction: column;
-}
-
-.ms-flex-col-reverse {
-  flex-direction: column-reverse;
-}
-
-/* Flex wrap */
-.ms-flex-wrap {
-  flex-wrap: wrap;
-}
-
-.ms-flex-nowrap {
-  flex-wrap: nowrap;
-}
-
-.ms-flex-wrap-reverse {
-  flex-wrap: wrap-reverse;
-}
-
-/* Justify content */
-.ms-justify-start {
-  justify-content: flex-start;
-}
-
-.ms-justify-end {
-  justify-content: flex-end;
-}
-
-.ms-justify-center {
-  justify-content: center;
-}
-
-.ms-justify-between {
-  justify-content: space-between;
-}
-
-.ms-justify-around {
-  justify-content: space-around;
-}
-
-.ms-justify-evenly {
-  justify-content: space-evenly;
-}
-
-/* Align items */
-.ms-items-start {
-  align-items: flex-start;
-}
-
-.ms-items-end {
-  align-items: flex-end;
-}
-
-.ms-items-center {
-  align-items: center;
-}
-
-.ms-items-baseline {
-  align-items: baseline;
-}
-
-.ms-items-stretch {
-  align-items: stretch;
-}
-
-/* Align self */
-.ms-self-auto {
-  align-self: auto;
-}
-
-.ms-self-start {
-  align-self: flex-start;
-}
-
-.ms-self-end {
-  align-self: flex-end;
-}
-
-.ms-self-center {
-  align-self: center;
-}
-
-.ms-self-stretch {
-  align-self: stretch;
-}
-
-/* Flex grow/shrink */
-.ms-flex-1 {
-  flex: 1 1 0%;
-}
-
-.ms-flex-auto {
-  flex: 1 1 auto;
-}
-
-.ms-flex-initial {
-  flex: 0 1 auto;
-}
-
-.ms-flex-none {
-  flex: none;
-}
-
-.ms-grow {
-  flex-grow: 1;
-}
-
-.ms-grow-0 {
-  flex-grow: 0;
-}
-
-.ms-shrink {
-  flex-shrink: 1;
-}
-
-.ms-shrink-0 {
-  flex-shrink: 0;
-}
-
-/* ========================================
- * DISPLAY
- * ======================================== */
-.ms-block {
-  display: block;
-}
-
-.ms-inline-block {
-  display: inline-block;
-}
-
-.ms-inline {
-  display: inline;
-}
-
-.ms-hidden {
-  display: none;
-}
-
-/* ========================================
- * POSITION
- * ======================================== */
-.ms-static {
-  position: static;
-}
-
-.ms-relative {
-  position: relative;
-}
-
-.ms-absolute {
-  position: absolute;
-}
-
-.ms-fixed {
-  position: fixed;
-}
-
-.ms-sticky {
-  position: sticky;
-}
-
-/* ========================================
- * OVERFLOW
- * ======================================== */
-.ms-overflow-auto {
-  overflow: auto;
-}
-
-.ms-overflow-hidden {
-  overflow: hidden;
-}
-
-.ms-overflow-visible {
-  overflow: visible;
-}
-
-.ms-overflow-scroll {
-  overflow: scroll;
-}
-
-.ms-overflow-x-auto {
-  overflow-x: auto;
-}
-
-.ms-overflow-y-auto {
-  overflow-y: auto;
-}
-
-/* ========================================
- * RESPONSIVE UTILITIES
+ * RESPONSIVE VISIBILITY
  * ======================================== */
 /* Hide on mobile */
 @media (width <= 768px) {
@@ -2887,14 +2711,40 @@ body {
 .ms-flex-nowrap {
   flex-wrap: nowrap;
 }
+.ms-flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
 .ms-flex-1 {
-  flex: 1;
+  flex: 1 1 0%;
 }
 .ms-flex-auto {
-  flex: auto;
+  flex: 1 1 auto;
+}
+.ms-flex-initial {
+  flex: 0 1 auto;
 }
 .ms-flex-none {
   flex: none;
+}
+
+.ms-inline-flex {
+  display: inline-flex;
+}
+
+.ms-grow {
+  flex-grow: 1;
+}
+
+.ms-grow-0 {
+  flex-grow: 0;
+}
+
+.ms-shrink {
+  flex-shrink: 1;
+}
+
+.ms-shrink-0 {
+  flex-shrink: 0;
 }
 
 .ms-justify-start {
@@ -2959,6 +2809,10 @@ body {
 
 .ms-self-stretch {
   align-self: stretch;
+}
+
+.ms-self-auto {
+  align-self: auto;
 }
 
 .ms-col-span-1 {
@@ -3655,6 +3509,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-height: 44px;
   font-family: inherit;
   font-weight: var(--ms-font-medium);
   line-height: var(--ms-leading-tight);
@@ -4048,6 +3903,7 @@ body {
 .ms-textarea,
 .ms-select {
   width: 100%;
+  min-height: 44px;
   font-family: inherit;
   font-size: var(--ms-text-base);
   line-height: var(--ms-leading-normal);
@@ -4426,7 +4282,9 @@ body {
   transform: translateX(-50%) translateY(0);
 }
 .ms-navbar__link {
-  display: block;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
   padding: var(--ms-space-2) var(--ms-space-3);
   font-size: var(--ms-text-sm);
   font-weight: var(--ms-font-normal);
@@ -6307,4 +6165,149 @@ body {
   .ms-news__share {
     flex-wrap: wrap;
   }
+}
+
+/**
+ * Moonshot CSS Framework (SCSS Edition)
+ * Clean, Minimal, Monochrome - Handy CSS Framework for Startups
+ *
+ * @version 0.1.0 (SCSS Edition)
+ * @license MIT
+ */
+/* ========================================
+ * ABSTRACTS
+ * Variables, functions, and mixins
+ * ======================================== */
+/**
+ * Moonshot CSS Framework - Skeleton (SCSS)
+ * Loading placeholder with pulse animation
+ */
+.ms-skeleton {
+  background-color: var(--ms-gray-200);
+  border-radius: var(--ms-radius-md);
+  animation: ms-skeleton-pulse 1.5s ease-in-out infinite;
+}
+.ms-skeleton--circle {
+  border-radius: var(--ms-radius-full);
+}
+.ms-skeleton--rounded {
+  border-radius: var(--ms-radius-lg);
+}
+.ms-skeleton--text {
+  height: 1em;
+  width: 100%;
+}
+.ms-skeleton--heading {
+  height: 1.5em;
+  width: 60%;
+}
+.ms-skeleton--avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--ms-radius-full);
+}
+.ms-skeleton--avatar-lg {
+  width: 96px;
+  height: 96px;
+  border-radius: var(--ms-radius-full);
+}
+.ms-skeleton--thumbnail {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+.ms-skeleton--button {
+  height: 44px;
+  width: 120px;
+}
+.ms-skeleton--w-25 {
+  width: 25%;
+}
+.ms-skeleton--w-50 {
+  width: 50%;
+}
+.ms-skeleton--w-75 {
+  width: 75%;
+}
+.ms-skeleton--w-full {
+  width: 100%;
+}
+
+.ms-skeleton-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ms-space-3);
+}
+
+@keyframes ms-skeleton-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ms-skeleton {
+    animation: none;
+  }
+}
+/**
+ * Moonshot CSS Framework (SCSS Edition)
+ * Clean, Minimal, Monochrome - Handy CSS Framework for Startups
+ *
+ * @version 0.1.0 (SCSS Edition)
+ * @license MIT
+ */
+/* ========================================
+ * ABSTRACTS
+ * Variables, functions, and mixins
+ * ======================================== */
+/**
+ * Moonshot CSS Framework - Cookie Banner (SCSS)
+ * GDPR/cookie consent banner component
+ */
+.ms-cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  background-color: var(--ms-bg-primary);
+  border-top: 1px solid var(--ms-border-light);
+  box-shadow: var(--ms-shadow-lg);
+  padding: var(--ms-space-6) var(--ms-space-8);
+  transform: translateY(100%);
+  transition: transform var(--ms-transition-base);
+}
+.ms-cookie-banner--visible {
+  transform: translateY(0);
+}
+.ms-cookie-banner__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ms-space-6);
+}
+@media (width <= 768px) {
+  .ms-cookie-banner__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.ms-cookie-banner__text {
+  font-size: var(--ms-text-sm);
+  line-height: var(--ms-leading-relaxed);
+  color: var(--ms-text-secondary);
+  flex: 1;
+}
+.ms-cookie-banner__text a {
+  color: var(--ms-brand-primary);
+  text-decoration: underline;
+}
+.ms-cookie-banner__actions {
+  display: flex;
+  gap: var(--ms-space-3);
+  flex-shrink: 0;
 }

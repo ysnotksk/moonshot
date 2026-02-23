@@ -1,0 +1,73 @@
+/**
+ * Moonshot CSS Framework - Cookie Banner (SCSS)
+ * GDPR/cookie consent banner component
+ */
+
+@use 'sass:map';
+@use '../abstracts' as *;
+
+// ========================================
+// COOKIE BANNER
+// ========================================
+
+.ms-cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: map.get($z-indices, 'fixed');
+  background-color: var(--ms-bg-primary);
+  border-top: 1px solid var(--ms-border-light);
+  box-shadow: var(--ms-shadow-lg);
+  padding: var(--ms-space-6) var(--ms-space-8);
+  transform: translateY(100%);
+  transition: transform var(--ms-transition-base);
+
+  &--visible {
+    transform: translateY(0);
+  }
+
+  // ========================================
+  // LAYOUT
+  // ========================================
+
+  &__inner {
+    max-width: map.get($max-widths, 'xl');
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--ms-space-6);
+
+    @media (width <= 768px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  // ========================================
+  // CONTENT
+  // ========================================
+
+  &__text {
+    font-size: var(--ms-text-sm);
+    line-height: var(--ms-leading-relaxed);
+    color: var(--ms-text-secondary);
+    flex: 1;
+
+    a {
+      color: var(--ms-brand-primary);
+      text-decoration: underline;
+    }
+  }
+
+  // ========================================
+  // ACTIONS
+  // ========================================
+
+  &__actions {
+    display: flex;
+    gap: var(--ms-space-3);
+    flex-shrink: 0;
+  }
+}

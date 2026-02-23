@@ -142,6 +142,45 @@ block append jsonLd
       "description": "Scalable, secure cloud solutions built on AWS, Azure, and GCP. Auto-scaling, disaster recovery, and 99.99% uptime SLA.",
       "serviceType": "Cloud Infrastructure"
     }
+  script(type="application/ld+json").
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does a typical cloud migration take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A standard migration takes 4-12 weeks depending on the complexity and number of workloads. Simple lift-and-shift migrations can be completed in as little as 2 weeks, while complex re-architecture projects may take 3-6 months."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which cloud provider do you recommend?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on your specific needs. AWS offers the broadest service catalog, Azure integrates well with Microsoft ecosystems, and GCP excels in data analytics and ML. We often recommend a multi-cloud approach for critical workloads."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will there be downtime during migration?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. We use blue-green deployments and traffic shifting to ensure zero downtime during migrations. All cutover operations are performed during low-traffic windows with instant rollback capability."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's included in ongoing support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ongoing support includes 24/7 monitoring, incident response, monthly optimization reviews, security patching, and a dedicated account manager. We also provide quarterly business reviews with detailed reporting."
+          }
+        }
+      ]
+    }
 
 block content
   //- Hero

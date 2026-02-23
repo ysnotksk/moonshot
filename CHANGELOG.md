@@ -2,8 +2,22 @@
 
 All notable changes to Moonshot CSS Framework will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+### Added
+
+- Auto dark mode via `prefers-color-scheme: dark` media query (opt-out with `data-theme="light"`)
+- Skeleton loading component (`.ms-skeleton`) with pulse animation and size presets
+- Cookie consent banner component (`.ms-cookie-banner`) with JS auto-init and localStorage persistence
+- FAQPage JSON-LD structured data on templates with accordion FAQ sections
+- WCAG 2.5.8 touch target enforcement (44px minimum) on buttons, form inputs, and navbar links
+
+### Changed
+
+- Deduplicated flexbox, display, position, and overflow utilities (removed from `_grid.scss`, consolidated in `_helpers.scss`)
 
 ## [0.1.0] - 2025-12-21
 

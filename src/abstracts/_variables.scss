@@ -363,7 +363,14 @@ $z-indices: (
   --ms-shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 80%);
 }
 
-// Dark mode via explicit data attribute only (light mode is default)
+// Dark mode via explicit data attribute
 [data-theme='dark'] {
   @include dark-mode-tokens;
+}
+
+// Dark mode via system preference (auto, unless explicitly overridden)
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    @include dark-mode-tokens;
+  }
 }

@@ -324,6 +324,52 @@ var BackToTop = class {
 };
 var back_to_top_default = BackToTop;
 
+// src/js/components/cookie-banner.js
+var CookieBanner = class {
+  constructor(options = {}) {
+    this.selector = options.selector || ".ms-cookie-banner";
+    this.visibleClass = options.visibleClass || "ms-cookie-banner--visible";
+    this.storageKey = options.storageKey || "ms-cookie-consent";
+    this.banner = null;
+    this.init();
+  }
+  init() {
+    this.banner = document.querySelector(this.selector);
+    if (!this.banner)
+      return;
+    if (!this.hasConsent()) {
+      requestAnimationFrame(() => {
+        this.banner.classList.add(this.visibleClass);
+      });
+    }
+    const acceptBtn = this.banner.querySelector("[data-cookie-accept]");
+    const rejectBtn = this.banner.querySelector("[data-cookie-reject]");
+    if (acceptBtn) {
+      acceptBtn.addEventListener("click", () => this.accept());
+    }
+    if (rejectBtn) {
+      rejectBtn.addEventListener("click", () => this.reject());
+    }
+  }
+  hasConsent() {
+    return localStorage.getItem(this.storageKey) !== null;
+  }
+  accept() {
+    localStorage.setItem(this.storageKey, "accepted");
+    this.hide();
+  }
+  reject() {
+    localStorage.setItem(this.storageKey, "rejected");
+    this.hide();
+  }
+  hide() {
+    if (this.banner) {
+      this.banner.classList.remove(this.visibleClass);
+    }
+  }
+};
+var cookie_banner_default = CookieBanner;
+
 // src/js/moonshot.js
 function initMoonshot() {
   const navElement = document.querySelector(".ms-navbar");
@@ -338,6 +384,10 @@ function initMoonshot() {
   if (backToTopElement) {
     new back_to_top_default();
   }
+  const cookieBannerElement = document.querySelector(".ms-cookie-banner");
+  if (cookieBannerElement) {
+    new cookie_banner_default();
+  }
 }
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initMoonshot);
@@ -350,6 +400,7 @@ if (typeof window !== "undefined") {
     Navigation,
     AnimatedStats: stats_default,
     BackToTop: back_to_top_default,
+    CookieBanner: cookie_banner_default,
     version,
     init: initMoonshot
   };
@@ -357,6 +408,7 @@ if (typeof window !== "undefined") {
 export {
   stats_default as AnimatedStats,
   back_to_top_default as BackToTop,
+  cookie_banner_default as CookieBanner,
   Navigation,
   version
 };

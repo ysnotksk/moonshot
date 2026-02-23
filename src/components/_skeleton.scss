@@ -1,0 +1,115 @@
+/**
+ * Moonshot CSS Framework - Skeleton (SCSS)
+ * Loading placeholder with pulse animation
+ */
+
+@use '../abstracts' as *;
+
+// ========================================
+// SKELETON BASE
+// ========================================
+
+.ms-skeleton {
+  background-color: var(--ms-gray-200);
+  border-radius: var(--ms-radius-md);
+  animation: ms-skeleton-pulse 1.5s ease-in-out infinite;
+
+  // ========================================
+  // SHAPE VARIANTS
+  // ========================================
+
+  &--circle {
+    border-radius: var(--ms-radius-full);
+  }
+
+  &--rounded {
+    border-radius: var(--ms-radius-lg);
+  }
+
+  // ========================================
+  // SIZE PRESETS
+  // ========================================
+
+  &--text {
+    height: 1em;
+    width: 100%;
+  }
+
+  &--heading {
+    height: 1.5em;
+    width: 60%;
+  }
+
+  &--avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--ms-radius-full);
+  }
+
+  &--avatar-lg {
+    width: 96px;
+    height: 96px;
+    border-radius: var(--ms-radius-full);
+  }
+
+  &--thumbnail {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  &--button {
+    height: 44px;
+    width: 120px;
+  }
+
+  // ========================================
+  // WIDTH UTILITIES
+  // ========================================
+
+  &--w-25 {
+    width: 25%;
+  }
+
+  &--w-50 {
+    width: 50%;
+  }
+
+  &--w-75 {
+    width: 75%;
+  }
+
+  &--w-full {
+    width: 100%;
+  }
+}
+
+// ========================================
+// SKELETON GROUP
+// ========================================
+
+.ms-skeleton-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ms-space-3);
+}
+
+// ========================================
+// ANIMATION
+// ========================================
+
+@keyframes ms-skeleton-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@include reduced-motion {
+  .ms-skeleton {
+    animation: none;
+  }
+}

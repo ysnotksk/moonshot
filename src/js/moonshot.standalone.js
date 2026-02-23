@@ -382,6 +382,60 @@
   }
 
   /**
+   * Cookie Banner Component
+   */
+  class CookieBanner {
+    constructor(options = {}) {
+      this.selector = options.selector || '.ms-cookie-banner';
+      this.visibleClass = options.visibleClass || 'ms-cookie-banner--visible';
+      this.storageKey = options.storageKey || 'ms-cookie-consent';
+      this.banner = null;
+      this.init();
+    }
+
+    init() {
+      this.banner = document.querySelector(this.selector);
+      if (!this.banner) return;
+
+      if (!this.hasConsent()) {
+        requestAnimationFrame(() => {
+          this.banner.classList.add(this.visibleClass);
+        });
+      }
+
+      const acceptBtn = this.banner.querySelector('[data-cookie-accept]');
+      const rejectBtn = this.banner.querySelector('[data-cookie-reject]');
+
+      if (acceptBtn) {
+        acceptBtn.addEventListener('click', () => this.accept());
+      }
+      if (rejectBtn) {
+        rejectBtn.addEventListener('click', () => this.reject());
+      }
+    }
+
+    hasConsent() {
+      return localStorage.getItem(this.storageKey) !== null;
+    }
+
+    accept() {
+      localStorage.setItem(this.storageKey, 'accepted');
+      this.hide();
+    }
+
+    reject() {
+      localStorage.setItem(this.storageKey, 'rejected');
+      this.hide();
+    }
+
+    hide() {
+      if (this.banner) {
+        this.banner.classList.remove(this.visibleClass);
+      }
+    }
+  }
+
+  /**
    * Auto-initialize Moonshot
    */
   function initMoonshot() {
@@ -401,6 +455,12 @@
     if (backToTopElement) {
       new BackToTop();
     }
+
+    // Auto-initialize cookie banner
+    const cookieBannerElement = document.querySelector('.ms-cookie-banner');
+    if (cookieBannerElement) {
+      new CookieBanner();
+    }
   }
 
   // Initialize on DOM ready
@@ -415,6 +475,7 @@
     Navigation: Navigation,
     AnimatedStats: AnimatedStats,
     BackToTop: BackToTop,
+    CookieBanner: CookieBanner,
     version: '0.1.0',
     init: initMoonshot,
   };

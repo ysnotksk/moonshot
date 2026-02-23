@@ -18,6 +18,54 @@
         "url": "https://example.com",
         "description": "Innovative technology solutions for modern businesses"
       }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Moonshot CSS Framework?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Moonshot is a clean, minimal, monochrome CSS framework designed specifically for startup websites. It provides modular, block-based components that can be quickly assembled into professional corporate pages with minimal customization."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I customize the brand colors?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Simply override three CSS custom properties: --ms-brand-primary, --ms-brand-secondary, and --ms-brand-accent. The entire framework will adapt to your brand colors instantly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Moonshot suitable for Japanese websites?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Moonshot includes built-in Japanese typography optimization with Hiragino, Noto Sans JP, and Yu Gothic font stacks. Add lang=\"ja\" to your HTML element to activate Japanese-specific line-height and word-wrap settings."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What's the file size?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The core framework is under 10KB gzipped. This includes all components, utilities, and responsive styles. No JavaScript is required for most components."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need to install Node.js or any build tools?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. You can use the pre-built CSS files directly via a link tag. If you want to customize the SCSS source, then Node.js and npm are needed for the build step, but it's entirely optional."
+            }
+          }
+        ]
+      }
       
     </script>
   </head>
