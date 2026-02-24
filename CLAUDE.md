@@ -5,7 +5,7 @@
 ## Project
 
 - **Stack**: Node.js
-- **Description**: {{PROJECT_DESCRIPTION}}
+- **Description**: SCSS-based CSS framework with 21 page templates for corporate/startup sites
 
 ## Commands
 
@@ -14,13 +14,13 @@
 http-server ./ -p 8080
 
 # Build
-{{BUILD_COMMAND}}
+npm run build
 
 # Test
-{{TEST_COMMAND}}
+(none — manual testing via examples/)
 
 # Lint / Format
-{{LINT_COMMAND}}
+npm run lint && npm run format
 ```
 
 ## Process

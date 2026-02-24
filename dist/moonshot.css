@@ -5310,6 +5310,13 @@ body {
   .ms-image-link-grid--3, .ms-image-link-grid--4 {
     grid-template-columns: repeat(2, 1fr);
   }
+  .ms-image-link-grid--featured-3 .ms-image-link:first-child {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  .ms-image-link-grid--featured-3 .ms-image-link:first-child .ms-image-link__content {
+    min-height: 400px;
+  }
 }
 @media (max-width: 767px) {
   .ms-image-link-grid--2, .ms-image-link-grid--3, .ms-image-link-grid--4 {

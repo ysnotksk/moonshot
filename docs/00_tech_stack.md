@@ -60,7 +60,7 @@ Gzipped:           ~14KB
 - Page-specific: Blog, Event, Team, Service, Job listings
 - Utilities: Spacing, Colors, Display helpers
 
-### Page Templates (18 Types)
+### Page Templates (21 Total: 18 main + 3 demo/utility)
 
 1. Front Page (Landing)
 2. Service Pages (Overview)
@@ -80,6 +80,9 @@ Gzipped:           ~14KB
 16. Client Logos Demo
 17. Image Links Demo
 18. Index (Template gallery)
+19. Flow Demo
+20. News
+21. News Detail
 
 ### Developer Experience
 
@@ -111,7 +114,7 @@ moonshot/
 │   ├── moonshot.min.css
 │   ├── moonshot.js
 │   └── moonshot.min.js
-├── examples/               # 18 HTML page templates
+├── examples/               # 21 HTML page templates
 ├── docs/                   # Documentation
 └── scripts/                # Build scripts
 ```
@@ -157,8 +160,8 @@ UPPERCASE.md            /* Documentation */
 
 ### Phase 4: Release
 
-- [ ] Browser testing
+- [ ] Browser testing (cross-browser QA pending)
 - [x] Accessibility improvements (skip links, form labels, ARIA)
 - [x] SEO optimization (meta tags, OG, JSON-LD structured data)
 - [x] SCSS modernization (@use/@forward, zero deprecation warnings)
-- [ ] Security audit
+- [ ] Security audit (pre-release blocker)

@@ -89,7 +89,7 @@ block content
           ) 0
           .ms-text-sm.ms-text-secondary.ms-uppercase.ms-tracking-wider Gzipped Size
         div
-          .ms-text-5xl.ms-font-bold.ms-text-brand-primary.ms-mb-2(data-stat-value="10") 0
+          .ms-text-5xl.ms-font-bold.ms-text-brand-primary.ms-mb-2(data-stat-value="21") 0
           .ms-text-sm.ms-text-secondary.ms-uppercase.ms-tracking-wider Page Templates
         div
           .ms-text-5xl.ms-font-bold.ms-text-brand-primary.ms-mb-2(
@@ -166,8 +166,10 @@ block content
             span.ms-image-link__cta 詳細を見る
 
         //- Brand Logo
-        div(style="display: flex; align-items: center; justify-content: center; background-color: var(--ms-bg-tertiary); border-radius: var(--ms-radius-lg); padding: var(--ms-space-8);")
+        div(style="display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: var(--ms-bg-tertiary); border-radius: var(--ms-radius-lg); padding: var(--ms-space-8); text-align: center; gap: var(--ms-space-4);")
           img(src="assets/logo.svg" alt="Moonshot" style="width: 120px; height: auto; opacity: 0.15")
+          h3(style="font-size: var(--ms-text-lg); font-weight: var(--ms-font-semibold); color: var(--ms-text-primary);") Moonshot
+          p(style="font-size: var(--ms-text-sm); color: var(--ms-text-secondary);") MIT License · Zero Dependencies
 
   //- Use Cases - Horizontal Image Links
   section.ms-py-24.ms-bg-secondary#services

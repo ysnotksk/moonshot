@@ -437,6 +437,15 @@
     &--4 {
       grid-template-columns: repeat(2, 1fr);
     }
+
+    &--featured-3 .ms-image-link:first-child {
+      grid-column: span 2; // span both cols (full width)
+      grid-row: span 1; // but only 1 row tall
+
+      .ms-image-link__content {
+        min-height: 400px;
+      }
+    }
   }
 
   @include breakpoint-down('md') {
