@@ -6173,7 +6173,7 @@ body {
 }
 .ms-news__badge--press {
   background: var(--ms-gray-900);
-  color: #ffffff;
+  color: var(--ms-bg);
 }
 .ms-news__badge--product {
   background: var(--ms-brand-primary);
@@ -6181,7 +6181,7 @@ body {
 }
 .ms-news__badge--company {
   background: var(--ms-gray-600);
-  color: #ffffff;
+  color: var(--ms-bg);
 }
 .ms-news__badge--partnership {
   background: var(--ms-gray-400);

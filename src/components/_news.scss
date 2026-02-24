@@ -40,7 +40,7 @@
   // ---- Color variants ----
   &--press {
     background: var(--ms-gray-900);
-    color: #ffffff;
+    color: var(--ms-bg);
   }
 
   &--product {
@@ -50,7 +50,7 @@
 
   &--company {
     background: var(--ms-gray-600);
-    color: #ffffff;
+    color: var(--ms-bg);
   }
 
   &--partnership {
