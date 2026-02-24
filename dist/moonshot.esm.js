@@ -137,12 +137,10 @@ var AnimatedStats = class {
     this.setupObserver();
   }
   parseValue(value) {
-    if (!value)
-      return null;
+    if (!value) return null;
     const cleanValue = value.replace(/[^0-9.]/g, "");
     const numValue = parseFloat(cleanValue);
-    if (isNaN(numValue))
-      return null;
+    if (isNaN(numValue)) return null;
     if (value.includes("K") || value.toLowerCase().includes("k")) {
       return numValue * 1e3;
     }
@@ -236,8 +234,7 @@ var AnimatedStats = class {
     });
   }
   animateStat(stat) {
-    if (stat.animated)
-      return;
+    if (stat.animated) return;
     stat.animated = true;
     const originalValue = stat.element.getAttribute("data-stat-value");
     const startValue = 0;
@@ -303,8 +300,7 @@ var BackToTop = class {
   }
   init() {
     this.button = document.querySelector(this.selector);
-    if (!this.button)
-      return;
+    if (!this.button) return;
     window.addEventListener(
       "scroll",
       () => {
@@ -318,8 +314,24 @@ var BackToTop = class {
     );
     this.button.addEventListener("click", (e) => {
       e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      if ("scrollBehavior" in document.documentElement.style) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        this._smoothScroll();
+      }
     });
+  }
+  _smoothScroll() {
+    const startY = window.scrollY;
+    const duration = 500;
+    const startTime = Date.now();
+    const easeOut = (t) => 1 - Math.pow(1 - t, 3);
+    const step = () => {
+      const progress = Math.min((Date.now() - startTime) / duration, 1);
+      window.scrollTo(0, startY * (1 - easeOut(progress)));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
   }
 };
 var back_to_top_default = BackToTop;
@@ -335,8 +347,7 @@ var CookieBanner = class {
   }
   init() {
     this.banner = document.querySelector(this.selector);
-    if (!this.banner)
-      return;
+    if (!this.banner) return;
     if (!this.hasConsent()) {
       requestAnimationFrame(() => {
         this.banner.classList.add(this.visibleClass);

@@ -30,8 +30,27 @@ export class BackToTop {
 
     this.button.addEventListener('click', e => {
       e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Feature-detect smooth scroll (missing: iOS < 15, Android < 10)
+      if ('scrollBehavior' in document.documentElement.style) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        this._smoothScroll();
+      }
     });
+  }
+  _smoothScroll() {
+    const startY = window.scrollY;
+    const duration = 500;
+    const startTime = Date.now();
+    const easeOut = t => 1 - Math.pow(1 - t, 3);
+
+    const step = () => {
+      const progress = Math.min((Date.now() - startTime) / duration, 1);
+      window.scrollTo(0, startY * (1 - easeOut(progress)));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+
+    requestAnimationFrame(step);
   }
 }
 

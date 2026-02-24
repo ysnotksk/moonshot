@@ -32,6 +32,14 @@
 @mixin absolute-cover {
   position: absolute;
   inset: 0;
+
+  // Fallback: Android < 12, Safari < 14.1
+  @supports not (inset: 0) {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
 }
 
 @mixin absolute-center {
@@ -60,6 +68,15 @@
 @mixin image-aspect($ratio: math.div(16, 9)) {
   aspect-ratio: $ratio;
   overflow: hidden;
+
+  // Fallback: iOS < 15, Android < 9 (Chrome < 88)
+  @supports not (aspect-ratio: 1) {
+    &::before {
+      content: '';
+      display: block;
+      padding-bottom: math.percentage(math.div(1, $ratio));
+    }
+  }
 }
 
 // ========================================
@@ -176,7 +193,13 @@
 }
 
 @mixin glass-effect {
+  // Fallback for Firefox (no backdrop-filter support)
+  @supports not (backdrop-filter: blur(1px)) {
+    background: rgb(255 255 255 / 25%);
+  }
+
   background: rgb(255 255 255 / 10%);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border: 1px solid rgb(255 255 255 / 20%);
 }

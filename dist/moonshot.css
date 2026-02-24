@@ -3730,13 +3730,34 @@ body {
   aspect-ratio: 1.7777777778;
   overflow: hidden;
 }
+@supports not (aspect-ratio: 1) {
+  .ms-card__image-wrapper--16-9::before {
+    content: "";
+    display: block;
+    padding-bottom: 56.25%;
+  }
+}
 .ms-card__image-wrapper--4-3 {
   aspect-ratio: 1.3333333333;
   overflow: hidden;
 }
+@supports not (aspect-ratio: 1) {
+  .ms-card__image-wrapper--4-3::before {
+    content: "";
+    display: block;
+    padding-bottom: 75%;
+  }
+}
 .ms-card__image-wrapper--square {
   aspect-ratio: 1;
   overflow: hidden;
+}
+@supports not (aspect-ratio: 1) {
+  .ms-card__image-wrapper--square::before {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
 }
 .ms-card__header {
   padding: var(--ms-space-6);
@@ -4185,6 +4206,10 @@ body {
 .ms-switch__slider {
   position: absolute;
   inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-color: var(--ms-gray-300);
   border-radius: var(--ms-radius-full);
   transition: all var(--ms-transition-fast);
@@ -4933,6 +4958,16 @@ body {
 .ms-hero__background {
   position: absolute;
   inset: 0;
+}
+@supports not (inset: 0) {
+  .ms-hero__background {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+.ms-hero__background {
   z-index: 0;
 }
 .ms-hero__background-image {
@@ -4944,6 +4979,16 @@ body {
 .ms-hero__background-overlay {
   position: absolute;
   inset: 0;
+}
+@supports not (inset: 0) {
+  .ms-hero__background-overlay {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+.ms-hero__background-overlay {
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%);
 }
 .ms-hero__stats {
@@ -5073,6 +5118,16 @@ body {
 .ms-image-link__background {
   position: absolute;
   inset: 0;
+}
+@supports not (inset: 0) {
+  .ms-image-link__background {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+.ms-image-link__background {
   z-index: 0;
 }
 .ms-image-link__image {
@@ -5087,6 +5142,16 @@ body {
 .ms-image-link__overlay {
   position: absolute;
   inset: 0;
+}
+@supports not (inset: 0) {
+  .ms-image-link__overlay {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+.ms-image-link__overlay {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%);
   transition: opacity var(--ms-transition-base);
   z-index: 1;

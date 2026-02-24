@@ -361,6 +361,10 @@
   &__slider {
     position: absolute;
     inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; // Fallback: Android < 12
     background-color: var(--ms-gray-300);
     border-radius: var(--ms-radius-full);
     transition: all var(--ms-transition-fast);

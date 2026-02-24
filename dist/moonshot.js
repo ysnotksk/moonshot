@@ -39,12 +39,10 @@ var Moonshot = (() => {
         this.setupObserver();
       }
       parseValue(value) {
-        if (!value)
-          return null;
+        if (!value) return null;
         const cleanValue = value.replace(/[^0-9.]/g, "");
         const numValue = parseFloat(cleanValue);
-        if (isNaN(numValue))
-          return null;
+        if (isNaN(numValue)) return null;
         if (value.includes("K") || value.toLowerCase().includes("k")) {
           return numValue * 1e3;
         }
@@ -136,8 +134,7 @@ var Moonshot = (() => {
         });
       }
       animateStat(stat) {
-        if (stat.animated)
-          return;
+        if (stat.animated) return;
         stat.animated = true;
         const originalValue = stat.element.getAttribute("data-stat-value");
         const startValue = 0;
@@ -278,8 +275,7 @@ var Moonshot = (() => {
       }
       init() {
         this.button = document.querySelector(this.selector);
-        if (!this.button)
-          return;
+        if (!this.button) return;
         window2.addEventListener(
           "scroll",
           () => {
@@ -307,8 +303,7 @@ var Moonshot = (() => {
       }
       init() {
         this.banner = document.querySelector(this.selector);
-        if (!this.banner)
-          return;
+        if (!this.banner) return;
         if (!this.hasConsent()) {
           requestAnimationFrame(() => {
             this.banner.classList.add(this.visibleClass);

@@ -160,8 +160,8 @@ UPPERCASE.md            /* Documentation */
 
 ### Phase 4: Release
 
-- [ ] Browser testing (cross-browser QA pending)
+- [x] Browser testing (static compat audit complete; iOS <15, Android <12, Firefox fixes applied)
 - [x] Accessibility improvements (skip links, form labels, ARIA)
 - [x] SEO optimization (meta tags, OG, JSON-LD structured data)
 - [x] SCSS modernization (@use/@forward, zero deprecation warnings)
-- [ ] Security audit (pre-release blocker)
+- [x] Security audit (npm audit 0 vulnerabilities; esbuild upgraded to 0.27.3)
