@@ -346,8 +346,8 @@ $z-indices: (
   --ms-gray-900: #fafafa;
 
   // Gradient colors
-  --ms-gradient-from: var(--ms-gray-100);
-  --ms-gradient-to: var(--ms-gray-500);
+  --ms-gradient-from: var(--ms-gray-900);
+  --ms-gradient-to: var(--ms-gray-600);
 
   // Semantic colors
   --ms-text-primary: var(--ms-gray-900);

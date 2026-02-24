@@ -419,6 +419,18 @@
     }
   }
 
+  // Featured item spanning 3 rows (tall left panel)
+  &--featured-3 {
+    .ms-image-link:first-child {
+      grid-column: span 2;
+      grid-row: span 3;
+
+      .ms-image-link__content {
+        min-height: 700px;
+      }
+    }
+  }
+
   // Responsive
   @include breakpoint-down('lg') {
     &--3,
@@ -434,7 +446,8 @@
       grid-template-columns: 1fr; // Single column on mobile
     }
 
-    &--featured .ms-image-link:first-child {
+    &--featured .ms-image-link:first-child,
+    &--featured-3 .ms-image-link:first-child {
       grid-column: span 1;
       grid-row: span 1;
     }
