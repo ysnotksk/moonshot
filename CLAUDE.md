@@ -38,8 +38,23 @@ npm run lint && npm run format
 - Keep `docs/00_tech_stack.md` updated as source of truth.
 - No new packages without explicit justification and user approval.
 
+## Session Workflow
+
+### At Session Start
+1. Read `.backlog/SESSION_LOG.md` for previous session state.
+2. Read `.backlog/BACKLOG.md` to confirm current priorities.
+
+### At Session End (Required)
+1. Update `BACKLOG.md` — move completed items, add newly discovered items.
+2. Append today's entry to `SESSION_LOG.md`.
+3. If architectural decisions were made, record in `DECISIONS.md`.
+4. Commit backlog updates separately: `docs(backlog): update session state`
+
 ## References
 
+- Backlog: `.backlog/BACKLOG.md`
+- Decisions: `.backlog/DECISIONS.md`
+- Session log: `.backlog/SESSION_LOG.md`
 - Security guidelines: `docs/SECURITY_GUIDELINES.md`
 - Best practices: `docs/BEST_PRACTICES.md`
 - Security checklist: `docs/SECURITY.md`
