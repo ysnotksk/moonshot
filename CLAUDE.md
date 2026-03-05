@@ -1,7 +1,6 @@
 # moonshot
 
-> Source of truth: `docs/00_tech_stack.md` | Security: `docs/SECURITY_GUIDELINES.md`
-
+> Source of truth: `docs/00_tech_stack.md`
 ## Project
 
 - **Stack**: Node.js
@@ -55,6 +54,3 @@ npm run lint && npm run format
 - Backlog: `.backlog/BACKLOG.md`
 - Decisions: `.backlog/DECISIONS.md`
 - Session log: `.backlog/SESSION_LOG.md`
-- Security guidelines: `docs/SECURITY_GUIDELINES.md`
-- Best practices: `docs/BEST_PRACTICES.md`
-- Security checklist: `docs/SECURITY.md`
