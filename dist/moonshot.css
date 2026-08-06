@@ -453,16 +453,41 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Japanese text optimization */
+/* Japanese text optimization
+ *
+ * Japanese and Latin do not agree at the same font-size: kanji and kana fill
+ * close to the full em box, where Latin lowercase sits at roughly half of it
+ * on x-height. The answer is not a smaller font-size for Japanese — that
+ * harms legibility of dense glyphs — but looser leading and correct metrics.
+ *
+ * `palt` switches kana and punctuation to proportional widths. Without it
+ * Japanese punctuation carries its full full-width box and the text reads
+ * visibly gappy, especially in headings.
+ *
+ * Latin tracking must be zeroed: negative letter-spacing tightens Latin
+ * pleasantly but collides kanji, which are already at their designed spacing.
+ */
 :lang(ja) {
   font-family: var(--ms-font-ja), var(--ms-font-sans);
   line-height: var(--ms-leading-loose);
   overflow-wrap: break-word;
+  font-feature-settings: "palt";
+  /* progressive enhancement: trims the gap around full-width punctuation
+     in browsers that support it, ignored elsewhere */
+  text-spacing-trim: trim-start;
 }
 
 /* ========================================
  * HEADINGS
  * ======================================== */
+/* Headings below set `--ms-tracking-tight`, which is tuned for Latin.
+   Japanese is already spaced by design, so tracking is reset for it. */
+:lang(ja) :is(h1, h2, h3, h4, h5, h6),
+:lang(ja) :is(.ms-heading-1, .ms-heading-2, .ms-heading-3,
+.ms-heading-4, .ms-heading-5, .ms-heading-6) {
+  letter-spacing: 0;
+}
+
 .ms-heading-1,
 .ms-h1 {
   font-size: var(--ms-text-6xl);
