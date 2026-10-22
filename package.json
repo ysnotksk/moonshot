@@ -36,7 +36,7 @@
   "author": "Moonshot Team",
   "license": "MIT",
   "devDependencies": {
-    "esbuild": "^0.27.3",
+    "esbuild": "0.28.2",
     "http-server": "^14.1.1",
     "prettier": "^3.1.1",
     "pug": "^3.0.3",
@@ -58,5 +58,8 @@
   "bugs": {
     "url": "https://github.com/ysnotksk/moonshot/issues"
   },
-  "homepage": "https://ysnotksk.github.io/moonshot/"
+  "homepage": "https://ysnotksk.github.io/moonshot/",
+  "engines": {
+    "node": ">=22.23.4 <23 || >=24.22.1 <25 || >=26.12.1 <27"
+  }
 }
