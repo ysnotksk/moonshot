@@ -20,7 +20,8 @@
     "lint": "stylelint 'src/**/*.{css,scss}' --fix",
     "format": "prettier --write 'src/**/*.{css,scss,js}'",
     "clean": "rm -rf dist/*",
-    "start": "http-server ./ -p 8080"
+    "start": "http-server ./ -p 8080",
+    "mcp": "node mcp/server.mjs"
   },
   "keywords": [
     "css",
@@ -36,6 +37,7 @@
   "author": "Moonshot Team",
   "license": "MIT",
   "devDependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
     "esbuild": "0.28.2",
     "http-server": "^14.1.1",
     "prettier": "^3.1.1",
@@ -43,7 +45,8 @@
     "sass": "^1.69.5",
     "stylelint": "^16.1.0",
     "stylelint-config-standard": "^36.0.0",
-    "stylelint-config-standard-scss": "^13.0.0"
+    "stylelint-config-standard-scss": "^13.0.0",
+    "zod": "4.6.7"
   },
   "files": [
     "dist/",
