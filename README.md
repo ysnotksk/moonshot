@@ -69,6 +69,9 @@ examples/           # Generated HTML pages
 ## Docs
 
 - [Component Reference](docs/COMPONENTS.md)
+- [Theming & Customization](docs/THEMING.md)
+- [Getting Started](docs/GETTING_STARTED.md)
+- [MCP Server for coding agents](docs/MCP.md) — `npm run mcp`
 - [Tech Stack](docs/00_tech_stack.md)
 
 ## License
