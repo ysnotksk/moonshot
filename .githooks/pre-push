@@ -4,7 +4,11 @@
 # each pushed ref would add to the remote, so a secret that got past a
 # missing or bypassed (--no-verify) pre-commit is still stopped here.
 #   updated refs: <remote_sha>..<local_sha>
-#   new refs:     commits not on any remote-tracking branch
+#   new refs or an unfetched remote tip: commits not on the destination
+#   remote ($1); scoped to that remote because a commit already pushed to a
+#   *different* remote is still new here and must be scanned.
+# Buffer stdin once: git hands the ref list to this hook exactly once, and
+# .githooks/pre-push.local must receive the same list after us.
 # Skipped with a warning if gitleaks is not installed.
 # Then runs .githooks/pre-push.local, the repository's own checks, if present.
 # Bypass for a deliberate exception: git push --no-verify
@@ -12,16 +16,20 @@ set -uo pipefail
 
 red=$'\033[0;31m'; yellow=$'\033[1;33m'; off=$'\033[0m'
 zero=0000000000000000000000000000000000000000
+remote=$1
+
+refs=$(cat)
 
 ranges=()
 while read -r _local_ref local_sha _remote_ref remote_sha; do
+  [ -z "$local_sha" ] && continue
   [ "$local_sha" = "$zero" ] && continue   # ref deletion: nothing is pushed
-  if [ "$remote_sha" != "$zero" ]; then
+  if [ "$remote_sha" != "$zero" ] && git cat-file -e "${remote_sha}^{commit}" 2>/dev/null; then
     ranges+=("$remote_sha..$local_sha")
   else
-    ranges+=("$local_sha --not --remotes")
+    ranges+=("$local_sha --not --remotes=$remote")
   fi
-done
+done <<< "$refs"
 
 gitleaks_bin=$(command -v gitleaks || true)
 [ -z "$gitleaks_bin" ] && [ -x "$HOME/.local/bin/gitleaks" ] && gitleaks_bin="$HOME/.local/bin/gitleaks"
@@ -40,6 +48,6 @@ fi
 local_hook="$(git rev-parse --show-toplevel)/.githooks/pre-push.local"
 if [ -f "$local_hook" ]; then
   [ -x "$local_hook" ] || { echo "${red}.githooks/pre-push.local must be executable${off}" >&2; exit 1; }
-  exec "$local_hook" "$@"
+  exec "$local_hook" "$@" <<< "$refs"
 fi
 exit 0
