@@ -1,6 +1,6 @@
 # Node.js security runtime baseline
 
-Prepared 2026-10-21 (Asia/Tokyo) against the [October 2026 Node.js security release](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases). Supported patched minimums are 22.23.4, 24.22.1 and 26.12.1. This project selects 22.23.4 for reproducible local/CI setup; package engines permit only the supported patched lines required by this project.
+Updated 2026-11-14 (Asia/Tokyo) against the [November 2026 Node.js security release](https://nodejs.org/en/blog/vulnerability/november-2026-security-releases). Supported patched minimums are 22.23.5, 24.22.3 and 26.13.1. This project selects 22.23.5 for reproducible local/CI setup; package engines permit only the supported patched lines required by this project.
 
 ## Verification and rollout
 
@@ -14,7 +14,7 @@ No Electron dependency was changed. Any independently packaged or embedded Node 
 
 ## Human acceptance
 
-Target: a desktop browser at http://localhost:8080/examples/ and a physical mobile browser at `http://<development-machine-LAN-IP>:8080/examples/` for this PR; after a later merge, https://ysnotksk.github.io/moonshot/. Record actual device, OS and browser versions. Prerequisites: reviewed revision, Node 22.23.4 or 24.22.1, clean dependencies and successful lint/build. For physical mobile testing, use the same trusted network and verify the development server is reachable at the development machine LAN address. Full audit is currently blocked, so production rollout acceptance cannot pass.
+Target: a desktop browser at http://localhost:8080/examples/ and a physical mobile browser at `http://<development-machine-LAN-IP>:8080/examples/` for this PR; after a later merge, https://ysnotksk.github.io/moonshot/. Record actual device, OS and browser versions. Prerequisites: reviewed revision, Node 22.23.5 or 24.22.3, clean dependencies and successful lint/build. For physical mobile testing, use the same trusted network and verify the development server is reachable at the development machine LAN address. Full audit is currently blocked, so production rollout acceptance cannot pass.
 
 1. Record revision, device, OS, browser version, URL and `node --version`; run `npm start` for local review.
 2. Open the example index and representative navigation, forms and component pages. Compare desktop and narrow mobile layouts with main; exercise navigation, back-to-top and cookie-banner controls and inspect the browser console.
@@ -63,7 +63,7 @@ All affected packages are dev dependencies. The published browser JavaScript imp
 
 Source baseline: main `9788f40f8ec490b6e7f5820aac667a44ed178c52`, existing PR head `79a4b751f2578e372e648bfd4d04649dcc1968eb`. Main and the lockfile are unchanged by this follow-up. Work was medium-complexity/moderate effort; the parent performed integration and runtime checks, and one independent agent reviewed upstream dependency options and exposure.
 
-Official Node macOS arm64 archives were verified against official SHA-256 manifests. Both Node **22.23.4** and **24.22.1** passed separate Safe Chain protected clean installs (`npm ci --ignore-scripts`), non-mutating Stylelint, all CSS/JavaScript/HTML builds (21 Pug pages), dependency-tree validation, and byte-for-byte comparison of all **27** tracked dist/example artifacts with the existing PR head. Those artifacts also match main. Lifecycle scripts were disabled locally; esbuild's existing optional platform binary worked. CI uses ordinary `npm ci`, including its configured lifecycle behavior, and is tracked separately.
+Official Node macOS arm64 archives were verified against official SHA-256 manifests. Both Node **22.23.5** and **24.22.3** passed separate Safe Chain protected clean installs (`npm ci --ignore-scripts`), non-mutating Stylelint, all CSS/JavaScript/HTML builds (21 Pug pages), dependency-tree validation, and byte-for-byte comparison of all **27** tracked dist/example artifacts with the existing PR head. Those artifacts also match main. Lifecycle scripts were disabled locally; esbuild's existing optional platform binary worked. CI uses ordinary `npm ci`, including its configured lifecycle behavior, and is tracked separately.
 
 Both runtimes returned exit 1 from full `npm audit --audit-level=high` with **10 high, 0 other findings**, and exit 0 from `npm audit --omit=dev` with zero findings. No project test script or existing automated test suite is defined; lint, all build targets, dependency integrity and generated-output regression are the applicable automated checks. Browser/device acceptance and Windows-specific development-server verification remain pending.
 
